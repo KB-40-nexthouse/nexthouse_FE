@@ -15,5 +15,20 @@ export default {
 </script>
 
 <style>
+  /* 반응형 최대크기 */
+  #app 
+  { 
+    margin:0 auto; 
+    width:350px;
+    height:650px;
+    text-align:center; 
+    background-color: #ffffff;
+  }
+  
+  body
+  {
+    background-color: #000000dc;
+  }
+
 
 </style>
