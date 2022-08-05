@@ -368,7 +368,7 @@ export default {
   text-align: left;
 }
 .v57_123 {
-  width: 263px;
+  width: 250px;
   color: rgba(0,0,0,1);
   position: absolute;
   top: 0px;
