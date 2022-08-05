@@ -3,15 +3,109 @@
   <h1>최상위 app 컴포넌트</h1>
   <HelloWorld msg="Welcome to Your Vue.js App"/>
 
-  <div class="v57_66"><div class="v57_70"><div class="v57_71"></div>
-    <div class="v57_72"></div><span class="v57_77"><b>임대차 계약 관리</b></span>
-<div class="v57_78"></div></div><div class="v57_91"></div><span class="v57_114"><b>찜 목록</b></span>
-<span class="v57_171"><b>종료된 계약</b></span><div class="v57_132"><div class="v57_50"><div class="v57_51">
-    <div class="v57_52"></div></div></div><div class="v57_131"><div class="v57_125"></div><div class="v57_126"></div>
-    <span class="v57_188">진행 상태 확인</span><div class="v57_129"><span class="v57_124">300,000,000원</span>
-    <span class="v57_123">서울특별시 도봉구 천국아파트 101동</span></div></div><div class="v103_74"></div></div>
-    <div class="v57_144"><div class="v57_145"><div class="v57_146"><div class="v57_147"></div></div></div>
-    <div class="v57_148"><div class="v57_149"></div><div class="v57_150"></div><span class="v57_151">계약 진행</span><div class="v57_152"><span class="v57_153">450,000,000원</span><span class="v57_156">서울특별시 강북구 A아파트 103동</span></div><div class="v206_3"></div></div><div class="v103_77"></div></div><div class="v206_6"><div class="v206_7"><div class="v206_8"><div class="v206_9"></div></div></div><div class="v206_10"><div class="v206_11"></div><div class="v206_12"></div><span class="v206_13">계약 진행</span><div class="v206_14"><span class="v206_15">450,000,000원</span><span class="v206_16">서울특별시 강북구 B아파트 103동</span></div><div class="v206_17"></div></div><div class="v206_18"></div></div><div class="v206_19"><div class="v206_20"><div class="v206_21"><div class="v206_22"></div></div></div><div class="v206_23"><div class="v206_24"></div><div class="v206_25"></div><span class="v206_26">전자계약서 확인</span><div class="v206_27"><span class="v206_28">450,000,000원</span><span class="v206_29">서울특별시 강북구 C아파트 103동</span></div><div class="v206_30"></div></div><div class="v206_31"></div></div><span class="v57_170"><b>진행중인 계약</b></span><div class="v60_22"><div class="v60_23"></div><div class="v60_24"></div><div class="v60_25"></div></div><div class="v107_2"><div class="v86_67"></div></div></div>
+  <div class="v57_66">
+    <div class="v57_70">
+      <div class="v57_71"></div>
+      <div class="v57_72"></div>
+      <span class="v57_77"><b>임대차 계약 관리</b></span>
+      <div class="v57_78"></div>
+    </div>
+    <div class="v57_91"></div>
+    <span class="v57_114"><b>찜 목록</b></span>
+    <span class="v57_171"><b>종료된 계약</b></span>
+    <div class="v57_132">
+      <div class="v57_50">
+        <div class="v57_51">
+        <div class="v57_52"></div>
+        </div>
+      </div>
+
+      <div class="v57_131">
+        <div class="v57_125"></div>
+        <div class="v57_126"></div>
+
+        <span class="v57_188">진행 상태 확인</span>
+        <div class="v57_129">
+          <span class="v57_124">300,000,000원</span>
+          <span class="v57_123">서울특별시 도봉구 천국아파트 101동</span>
+        </div>
+      </div>
+      <div class="v103_74"></div>
+    </div>
+
+    <div class="v57_144">
+      <div class="v57_145">
+        <div class="v57_146">
+          <div class="v57_147"></div>
+        </div>
+      </div>
+
+      <div class="v57_148">
+        <div class="v57_149"></div>
+        <div class="v57_150"></div>
+        <span class="v57_151">계약 진행</span>
+        
+        <div class="v57_152">
+          <span class="v57_153">450,000,000원</span>
+          <span class="v57_156">서울특별시 강북구 A아파트 103동</span>
+        </div>
+        
+        <div class="v206_3"></div>
+      </div>
+      
+      <div class="v103_77"></div>
+    </div>
+    
+    <div class="v206_6">
+      <div class="v206_7">
+        <div class="v206_8">
+          <div class="v206_9"></div>
+        </div>
+      </div>
+      <div class="v206_10">
+        <div class="v206_11"></div>
+        <div class="v206_12"></div>
+        <span class="v206_13">계약 진행</span>
+        <div class="v206_14">
+          <span class="v206_15">450,000,000원</span>
+          <span class="v206_16">서울특별시 강북구 B아파트 103동</span>
+        </div>
+        <div class="v206_17"></div>
+      </div>
+      
+      <div class="v206_18"></div>
+    </div>
+    
+    <div class="v206_19">
+      <div class="v206_20">
+        <div class="v206_21">
+          <div class="v206_22"></div>
+        </div>
+      </div>
+      <div class="v206_23">
+        <div class="v206_24"></div>
+        <div class="v206_25"></div>
+        <span class="v206_26">전자계약서 확인</span>
+        <div class="v206_27">
+          <span class="v206_28">450,000,000원</span>
+          <span class="v206_29">서울특별시 강북구 C아파트 103동</span>
+        </div>
+        <div class="v206_30"></div>
+      </div>
+      
+      <div class="v206_31"></div>
+    </div>
+    
+    <span class="v57_170"><b>진행중인 계약</b></span>
+    <div class="v60_22">
+      <div class="v60_23"></div>
+      <div class="v60_24"></div>
+      <div class="v60_25"></div>
+    </div>
+    <div class="v107_2">
+      <div class="v86_67"></div>
+    </div>
+  </div>
 </div>
 </template>
 <script>
@@ -40,6 +134,7 @@ export default {
   {
     background-color: #000000dc;
   }
+
 
 
 .v57_66 {
@@ -265,7 +360,7 @@ export default {
   width: 145px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 27px;
+  top: 40px;
   left: 0px;
   font-family: Inter;
   font-weight: Regular;
@@ -287,7 +382,7 @@ export default {
 .v103_74 {
   width: 61px;
   height: 49px;
-  /* background: url("../images/home.png"); */
+  background: url("../images/home.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -445,7 +540,7 @@ export default {
 .v103_77 {
   width: 61px;
   height: 49px;
-  /* background: url("../images/home.png"); */
+  background: url("../images/home.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -605,7 +700,7 @@ export default {
 .v206_18 {
   width: 61px;
   height: 49px;
-  /* background: url("../images/home.png"); */
+  background: url("../images/home.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -843,7 +938,7 @@ export default {
 .v86_67 {
   width: 79px;
   height: 85px;
-  /* background: url("../images/talk.png"); */
+  background: url("../images/talk.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
