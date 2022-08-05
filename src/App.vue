@@ -368,14 +368,14 @@ export default {
   text-align: left;
 }
 .v57_123 {
-  width: 263px;
+  width: 250px;
   color: rgba(0,0,0,1);
   position: absolute;
   top: 0px;
   left: 1px;
   font-family: Inter;
   font-weight: Medium;
-  font-size: 16px;
+  font-size: 15px;
   opacity: 1;
   text-align: left;
 }
