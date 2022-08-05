@@ -207,7 +207,7 @@ export default {
 .v57_91 {
   width: 375px;
   height: 90px;
-  /* background: url("../images/navi.png"); */
+  background: url("../images/navi.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
