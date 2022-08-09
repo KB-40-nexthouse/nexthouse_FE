@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import MyHwakjung from './Hwakjung.vue'
+import router from './router'
 
-createApp(App).mount('#app')
+createApp(MyHwakjung).use(router).mount('#app')
