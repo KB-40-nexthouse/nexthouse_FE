@@ -1,5 +1,12 @@
 import { createApp } from 'vue'
 import MyHwakjung from './Hwakjung.vue'
 import router from './router'
+/*
+Vue.prototype.$axios = axios
+*/
 
-createApp(MyHwakjung).use(router).mount('#app')
+import axios from "axios"
+//const app = createApp(App) 
+const app = createApp(MyHwakjung)
+app.config.globalProperties.$axios = axios; 
+app.use(router).mount('#app')

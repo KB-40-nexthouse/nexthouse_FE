@@ -5,7 +5,7 @@
     <!-- <router-link to="/MyHwakjungEnd">MyHwakjungEnd</router-link> -->
     <!-- <router-link to="/about">About</router-link> -->
   
-  
+<button @click="fetchData"></button>
 <div class="v74_18"><div class="v74_20"><div class="v74_21"></div>
     <span class="v74_22"><b>확정일자 신고</b></span><div class="v74_23"><div class="v74_24"></div>
     <div class="v74_25"></div><div class="v74_26"></div></div><div class="v74_27"></div><div class="v74_28"></div></div>
@@ -13,7 +13,7 @@
 <div class="v74_30"></div><div class="v74_31"><div class="v74_32"></div>
 <span class="v74_33">정보 수집·이용 동의</span><div class="v74_34"></div></div>
 <button @click="Research()"><div class="v74_35"><div class="v74_36"></div><span class="v74_37"><b>동의하고 신고</b></span></div></button>
-<div class="v74_38"><span class="v74_39"><b>전체 동의</b></span><div class="v74_40"><div class="v74_41"></div></div></div>
+<div class="v74_38"><span class="v74_39"><b>전체 동의</b></span><div id="checkID" type='button' @click="ChangeCheck()" :class="{v74_40 : checked, v74_401 : !checked}"><div class="v74_41"></div></div></div>
 <div class="v74_50"><span class="v74_51"><b>개인정보 수집·이용 동의(필수)</b></span><div class="v74_52"></div></div>
 <div class="v74_58"><span class="v74_59"><b>계약서 정보 수집·이용 동의(필수)</b></span><div class="v74_60"></div></div>
 <div class="v74_47"></div><div class="v74_62"></div></div>
@@ -24,15 +24,58 @@
 
 
 <script>
+/*
+import AxiosPlugin from 'vue-axios-cors';
+var Vue = require('vue');
+Vue.use(AxiosPlugin);
+
+axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded'
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';*/
 
 export default {
   name: 'MyHwakjung',
   components: {
   },
+  data(){
+    return {
+        checked : false,
+    }
+  },
   methods: {
     Research() {
                  this.$router.push('/MyHwakjungEnd');
-                }
+                },
+    ChangeCheck(){
+        this.checked = !this.checked;
+
+    },
+    fetchData: function() {
+        //this.$axios.get('https://jsonplaceholder.typicode.com/users/')
+        this.$axios.get('/RentCntrList/100000001')
+        .then(res => {
+        console.log("");
+        console.log("응답 데이터 : " + JSON.stringify(res.data));
+        console.log("");
+        var str = JSON.stringify(res.data);
+        //console.log("parse: "+ temp);
+        var jData = JSON.parse(str);
+           for(var i=0;i<jData.length;i++){
+		var weather = jData[i];
+		console.log('******************************');
+		console.log(weather.cntrDiv);
+		console.log(weather.modelNo);
+		console.log(weather.modelNm);
+		console.log(weather.modelAddr);
+		
+	}
+
+      })
+            .catch(error => {
+        console.log("");
+        console.log("에러 데이터 : " + error.data);
+        console.log(""); 
+      });
+        }
     }
 }
 
@@ -293,7 +336,20 @@ export default {
   .v74_40 {
     width: 29px;
     height: 29px;
-    background: url("../images/check_y.png");
+    background-image: url("../images/check_y.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+   .v74_401 {
+    width: 29px;
+    height: 29px;
+    background-image: url("../images/check_g.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
