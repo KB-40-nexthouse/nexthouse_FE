@@ -11,10 +11,10 @@
       </div>
 
 
-      <div type='button' @click="ToHwakjung()" class="v223_70"></div>
-      <div type='button' @click="ToHwakjung()" class="v223_71"></div>
-      <div type='button' @click="ToHwakjung()" class="v223_72"></div>
-      <div type='button' @click="ToJunyip()" class="v223_73"></div>
+      <div :class="{gray:status<=1}" type='button' @click="ToHwakjung()" class="v223_70"></div>
+      <div :class="{gray:status<=2}" type='button' @click="ToHwakjung()" class="v223_71"></div>
+      <div :class="{gray:status<=3}" type='button' @click="ToHwakjung()" class="v223_72"></div>
+      <div :class="{gray:status<=4}" type='button' @click="ToJunyip()" class="v223_73"></div>
       <span class="v223_74"><b>계약서 작성</b></span>
       <span class="v223_75"><b>전입신고</b></span>
       <span class="v223_76"><b>확정일자 신고</b></span>
@@ -32,6 +32,11 @@
 <script>
 export default {
   name: 'StagingZero',
+  data() {
+    return {
+      status : 0,
+    }
+  },
   props: {
     
   },
@@ -44,13 +49,19 @@ export default {
     }
   },
   beforeMount(){
-    console.log(localStorage.getItem('no'));
-    console.log(localStorage.getItem('p'));
+    this.status = localStorage.getItem('p')
+    this.status = 4
   }
+
 }
 </script>
 
 <style scoped>
+
+.gray {
+  background-color: rgb(248,212,89,1) !important;
+
+}
 .v57_70 {
   width: 371px;
   height: 72px;
@@ -201,12 +212,12 @@ export default {
 .v223_70 {
   width: 340px;
   height: 52px;
-  background: rgba(248,212,89,1);
+  background: lightgray;
   opacity: 1;
   position: absolute;
   top: 102px;
   left: 21px;
-  border: 4px solid rgba(0,0,0,1);
+  border: 2px solid rgba(0,0,0,1);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   border-bottom-left-radius: 30px;
@@ -217,7 +228,7 @@ export default {
 .v223_71 {
   width: 340px;
   height: 52px;
-  background: rgba(248,212,89,1);
+  background: lightgray;
   opacity: 1;
   position: absolute;
   top: 242px;
@@ -232,7 +243,7 @@ export default {
 .v223_72 {
   width: 340px;
   height: 52px;
-  background: rgba(248,212,89,1);
+  background: lightgray;
   opacity: 1;
   position: absolute;
   top: 382px;
@@ -248,7 +259,7 @@ export default {
 .v223_73 {
   width: 340px;
   height: 52px;
-  background: rgba(248,212,89,1);
+  background: lightgray;
   opacity: 1;
   position: absolute;
   top: 522px;

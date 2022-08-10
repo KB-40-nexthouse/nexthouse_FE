@@ -23,7 +23,7 @@
       </div>
       <button @click="Research()">
         <div class="v74_35">
-          <div class="v74_36"></div>
+          <div :class="{v74_36 : checked, v74_19 : !checked}" ></div>
           <span class="v74_37"><b>동의하고 신고</b></span>
         </div>
       </button>
@@ -72,7 +72,9 @@ export default {
   },
   methods: {
     Research() {
+      if(this.checked) {
         this.$router.push('/MyHwakjungEnd');
+      }
     },
     ChangeCheck(){
         this.checked = !this.checked;
@@ -284,6 +286,16 @@ export default {
     opacity: 1;
     position: absolute;
     top: 706px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v74_19 {
+    width: 375px;
+    height: 60px;
+    background: lightgray;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
     left: 0px;
     overflow: hidden;
   }
