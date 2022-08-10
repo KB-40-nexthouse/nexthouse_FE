@@ -126,22 +126,11 @@ export default {
     onBoard(data) {
     console.log(data);
     //const article = { custNo: "100000001", modelNo: "APT000002"};
-    this.$axios.post('http://169.56.100.104:30650/nexthouse/RentCntrList', { custNo: "100000001", modelNo: "APT000002"})
+    this.$axios.post('/RentCntrIn/custNo=100000001&modelNo='+data.modelNo)
         .then(res => {
         console.log("");
         console.log("응답 데이터 : " + JSON.stringify(res.data));
         console.log("");
-        // var str = JSON.stringify(res.data);
-        // var jData = JSON.parse(str);
-        //   for(var i=0;i<jData.length;i++){
-		// var weather = jData[i];
-		// console.log('******************************');
-        // this.HomeList[Number(weather.cntrDiv[0])-1].push(weather)
-		// console.log(weather.cntrDiv);
-		// console.log(weather.modelNo);
-		// console.log(weather.modelNm);
-		// console.log(weather.modelAddr);
-        // }
         })
         .catch(error => {
         console.log("");
