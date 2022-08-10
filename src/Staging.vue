@@ -44,7 +44,8 @@ export default {
     }
   },
   beforeMount(){
-    console.log(localStorage.getItem(0))
+    console.log(localStorage.getItem('no'));
+    console.log(localStorage.getItem('p'));
   }
 }
 </script>

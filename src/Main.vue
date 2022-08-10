@@ -121,7 +121,8 @@ export default {
 
     },
     Staging(data) {
-        localStorage.setItem(0, data.modelNo);
+        localStorage.setItem('no', data.modelNo);
+        localStorage.setItem('p', data.progress);
         this.$router.push('/staging');
     },
     onBoard(data) {
@@ -138,8 +139,10 @@ export default {
         console.log("에러 데이터 : " + error.data);
         console.log(""); 
         });
-
-      this.$router.push('/staging');
+        
+    localStorage.setItem('no', data.modelNo);
+    localStorage.setItem('p', data.progress);
+    this.$router.push('/staging');
     }
     },
   beforeMount(){
