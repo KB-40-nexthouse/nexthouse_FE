@@ -1,7 +1,7 @@
 <template>
 <div>
-
-<div class="v57_66">
+<nav>
+  <div class="v57_66">
     <!-- 제목 -->
     
     <div class="v57_70">
@@ -18,7 +18,7 @@
                     <!-- 홈뷰 -->
                     <div class="v57_132">
                         <div class="v57_131">
-                            <span class="v57_188">진행 상태 확인</span>
+                            <span type='button' @click="Staging()" class="v57_188">진행 상태 확인</span>
                             <div class="v57_129">
                                 <span class="v57_122">{{H.modelNm}}</span>
                                 <span class="v57_123">{{H.modelAddr}}</span>
@@ -73,6 +73,8 @@
     <div class="v86_67"></div>
 </div>
 
+</nav>
+<router-view/>
 </div>
 </template>
 
@@ -117,6 +119,10 @@ export default {
         console.log("에러 데이터 : " + error.data);
         console.log(""); 
       });
+
+    },
+    Staging() {
+      this.$router.push('/staging');
     }
     },
   beforeMount(){
