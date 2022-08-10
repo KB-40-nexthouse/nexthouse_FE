@@ -4,12 +4,12 @@
       <div class="v76_88"></div>
       <div class="v76_89">
         <div class="v76_90"></div>
-        <span class="v76_91"><b>확정일자 신고</b></span>
+        <span class="v76_91"><b>전입일자 신고</b></span>
         <div class="v76_92"></div>
         <div class="v76_96"></div>
         <div class="v76_97"></div>
       </div>
-      <span class="v76_98"><b>확정일자 신고가 완료되었습니다.</b></span>
+      <span class="v76_98"><b>전입일자 신고가 완료되었습니다.</b></span>
       <div class="v76_104">
         <div class="v76_105"></div>
         <span type='button' @click="goBacktoStaging()" class="v76_106"><b>다음</b></span>
@@ -28,7 +28,7 @@
 <script>
 
 export default {
-  name: 'MyHwakjungEnd',
+  name: 'MyJunyipEnd',
   components: {
   },
   methods:{

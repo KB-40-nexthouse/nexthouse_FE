@@ -35,7 +35,7 @@
                     <div class="hop"></div>
                     <div class="v57_132">
                         <div class="v57_131">
-                            <span class="v57_188">계약 진행</span>
+                            <span type='button' @click="onBoard(H)" class="v57_188">계약 진행</span>
                             <div class="v57_129">
                                 <span class="v57_122">{{H.modelNm}}</span>
                                 <span class="v57_123">{{H.modelAddr}}</span>
@@ -111,10 +111,9 @@ export default {
 		//console.log(weather.modelNo);
 		//console.log(weather.modelNm);
 		console.log(weather.modelAddr);
-	}
-
+        }
       })
-            .catch(error => {
+    .catch(error => {
         console.log("");
         console.log("에러 데이터 : " + error.data);
         console.log(""); 
@@ -122,6 +121,34 @@ export default {
 
     },
     Staging() {
+      this.$router.push('/staging');
+    },
+    onBoard(data) {
+    console.log(data);
+    //const article = { custNo: "100000001", modelNo: "APT000002"};
+    this.$axios.post('http://169.56.100.104:30650/nexthouse/RentCntrList', { custNo: "100000001", modelNo: "APT000002"})
+        .then(res => {
+        console.log("");
+        console.log("응답 데이터 : " + JSON.stringify(res.data));
+        console.log("");
+        // var str = JSON.stringify(res.data);
+        // var jData = JSON.parse(str);
+        //   for(var i=0;i<jData.length;i++){
+		// var weather = jData[i];
+		// console.log('******************************');
+        // this.HomeList[Number(weather.cntrDiv[0])-1].push(weather)
+		// console.log(weather.cntrDiv);
+		// console.log(weather.modelNo);
+		// console.log(weather.modelNm);
+		// console.log(weather.modelAddr);
+        // }
+        })
+        .catch(error => {
+        console.log("");
+        console.log("에러 데이터 : " + error.data);
+        console.log(""); 
+        });
+
       this.$router.push('/staging');
     }
     },

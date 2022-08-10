@@ -5,7 +5,7 @@
     <div class="v74_18">
       <div class="v74_20">
         <div class="v74_21"></div>
-        <span class="v74_22"><b>확정일자 신고</b></span>
+        <span class="v74_22"><b>전입일자 신고</b></span>
         <div class="v74_23">
           <div class="v74_24"></div>
           <div class="v74_25"></div>
@@ -14,7 +14,7 @@
         <div class="v74_27"></div>
         <div class="v74_28"></div>
       </div>
-      <span class="v74_29"><b>개인정보와 전세계약서 수집 이용을 동의하고 확정일자를 신고해주세요.</b></span>
+      <span class="v74_29"><b>개인정보와 전세계약서 수집 이용을 동의하고 전입일자를 신고해주세요.</b></span>
       <div class="v74_30"></div>
       <div class="v74_31">
         <div class="v74_32"></div>
@@ -24,7 +24,7 @@
       <button @click="Research()">
         <div class="v74_35">
           <div class="v74_36"></div>
-          <span class="v74_37"><b>동의하고 신고</b></span>
+          <span class="v74_37"><b>전입신고서</b></span>
         </div>
       </button>
       <div class="v74_38">
@@ -62,7 +62,7 @@ axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencod
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';*/
 
 export default {
-  name: 'MyHwakjung',
+  name: 'MyJunyip',
   components: {
   },
   data(){
@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     Research() {
-        this.$router.push('/MyHwakjungEnd');
+        this.$router.push('/MyJunyipEnd');
     },
     ChangeCheck(){
         this.checked = !this.checked;
