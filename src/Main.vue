@@ -20,6 +20,7 @@
                         <div class="v57_131">
                             <span class="v57_188">진행 상태 확인</span>
                             <div class="v57_129">
+                                <span class="v57_122">{{H.modelNm}}</span>
                                 <span class="v57_123">{{H.modelAddr}}</span>
                                 <span class="v57_124">{{H.price}} 원</span>
                             </div>
@@ -36,6 +37,7 @@
                         <div class="v57_131">
                             <span class="v57_188">계약 진행</span>
                             <div class="v57_129">
+                                <span class="v57_122">{{H.modelNm}}</span>
                                 <span class="v57_123">{{H.modelAddr}}</span>
                                 <span class="v57_124">{{H.price}} 원</span>
                             </div>
@@ -52,6 +54,7 @@
                         <div class="v57_131">
                             <span class="v57_188">전자계약서 확인</span>
                             <div class="v57_129">
+                                <span class="v57_122">{{H.modelNm}}</span>
                                 <span class="v57_123">{{H.modelAddr}}</span>
                                 <span class="v57_124">{{H.price}} 원</span>
                             </div>
@@ -90,6 +93,7 @@ export default {
     fetchData: function() {
         //this.$axios.get('https://jsonplaceholder.typicode.com/users/')
         this.$axios.get('/RentCntrList/100000001')
+        //http://169.56.100.104:30650/nexthouse/RentCntrList/100000001
         .then(res => {
         console.log("");
         console.log("응답 데이터 : " + JSON.stringify(res.data));
@@ -284,6 +288,7 @@ body {
   border-top-right-radius: 150px;
   border-bottom-left-radius: 150px;
   border-bottom-right-radius: 150px;
+  padding: 5px;
   text-align: center;
 }
 .v57_129 {
@@ -298,6 +303,20 @@ body {
   top: 32px;
   left: 0px;
   /* overflow: hidden; */
+}
+.v57_122 {
+  width: 300px;
+  color: rgba(0,0,0,1);
+  position: relative;
+  top: 17px;
+  left: 60px;
+  display: block;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 17px;
+  opacity: 1;
+  text-align: right;
+  overflow: visible;
 }
 .v57_123 {
   width: 300px;
@@ -317,7 +336,7 @@ body {
   width: 200px;
   color: rgba(0,0,0,1);
   position: relative;
-  top: 27px;
+  top: 20px;
   left: 170px;
   font-family: Inter;
   font-weight: Regular;

@@ -7,7 +7,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/':{
-        "target":'http://localhost:8080',
+        "target":'http://169.56.100.104:30650/nexthouse',
         "pathRewrite":{'^/':''},
         "changeOrigin":true,
         "secure":false
