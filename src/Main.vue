@@ -18,7 +18,7 @@
                     <!-- 홈뷰 -->
                     <div class="v57_132">
                         <div class="v57_131">
-                            <span type='button' @click="Staging()" class="v57_188">진행 상태 확인</span>
+                            <span type='button' @click="Staging(H)" class="v57_188">진행 상태 확인</span>
                             <div class="v57_129">
                                 <span class="v57_122">{{H.modelNm}}</span>
                                 <span class="v57_123">{{H.modelAddr}}</span>
@@ -120,8 +120,9 @@ export default {
       });
 
     },
-    Staging() {
-      this.$router.push('/staging');
+    Staging(data) {
+        localStorage.setItem(0, data.modelNo);
+        this.$router.push('/staging');
     },
     onBoard(data) {
     console.log(data);

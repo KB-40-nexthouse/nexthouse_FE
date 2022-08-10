@@ -42,6 +42,9 @@ export default {
     ToJunyip() {
       this.$router.push('/MyJunyip');
     }
+  },
+  beforeMount(){
+    console.log(localStorage.getItem(0))
   }
 }
 </script>
