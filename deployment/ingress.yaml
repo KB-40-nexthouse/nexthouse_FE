@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nexthouse_FE-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: "nexthouse_FE.kbfg.kubepia.com"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nexthouse_FE-service
+            port:
+              number: 8080
+      - path: /api/
+        pathType: Prefix
+        backend:
+          service:
+            name: nexthouse
+            port:
+              number: 8888

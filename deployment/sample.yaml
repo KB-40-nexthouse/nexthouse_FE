@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nexthouse_FE
+  labels:
+    app: nexthouse_FE
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nexthouse_FE
+  template:
+    metadata:
+      labels:
+        app: nexthouse_FE
+    spec:
+      containers:
+      - name: nexthouse_FE
+        image: eastshine96/nexthouse_FE:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SERVLET_CONTEXT_PATH
+          valueFrom:
+            configMapKeyRef:
+              name: nexthouse_FE-config
+              key: SERVLET_CONTEXT_PATH
