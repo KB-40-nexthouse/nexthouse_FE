@@ -1,11 +1,12 @@
 <template>
-    <div class="about">
-    <h1>This is App page</h1>
-  </div>
-  <!-- <router-view/> -->
+
+  <router-view/>
 </template>
 
 <style>
+
+@import url('@/assets/style/reset.css');
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

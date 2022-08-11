@@ -1,12 +1,16 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createWebHistory,createRouter } from 'vue-router'
 
-import Main from '../Main.vue'
+// import Main from '../Main.vue'
 
 const routes = [
   {
-    path: '/',
-    name: 'MyMain',
-    component: Main
+    path: '',
+    redirect: {name : "Main"},
+  },
+  {
+    path: '/Main',
+    name: 'Main',
+    component: () => import(/* webpackChunkName: "about" */ '../Main.vue')
   },
   /*
   {
@@ -56,12 +60,18 @@ const routes = [
     path: '/MyBojeongEnd',
     name: 'MyBojeongEnd',
     component: () => import(/* webpackChunkName: "about" */ '../Bojeong_end.vue')
+  },
+  {
+    path: '/ChatPage',
+    name: 'ChatPage',
+    component: () => import(/* webpackChunkName: "about" */ '../ChatPage.vue')
   }
 ]
 
 const router = createRouter({
   // history: createWebHashHistory(),
   history: createWebHistory(),
+  base: process.env.BASE_URL,
   routes
 })
 
