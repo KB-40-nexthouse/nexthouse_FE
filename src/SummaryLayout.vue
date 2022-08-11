@@ -1,4 +1,5 @@
 <template>
+<nav>
   <!--Header-->
   <div class="header">
     <h2 style="float: left;">
@@ -32,14 +33,19 @@
     <h4>KB국민은행을 이용해주셔서 감사합니다</h4>
     <h4>KB국민은행은 고객의 만족을 위해 언제나 최선을 다하겠습니다</h4>
     <div class="tyImage" style="float: center; padding:10px;">
-      <img src="../assets/images/liivFriends-300.jpeg" alt="tyIcon">
+      <img src="./assets/liivFriends-300.jpeg" alt="tyIcon">
     </div>
-  </div>
+    {{this.Home.modelAddr}}
   <!-- Footer Area-->
-  <div class="footer clear">
+  <div @type='button' @click="goNext()" class="footer clear">
     <h5 style="float: center; padding-top: 20px;">확인</h5>
   </div>
+  </div>
+
+</nav>
+<router-view/>
 </template>
+
 <style scoped>
 /* 폰트 import후 사용 */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&display=swap');
@@ -52,7 +58,7 @@
 }
 
 .footer {
-    position: absolute;
+    /* position: absolute; */
     text-align: center;
     background-color: #F9BE20;
     width: 100%;
@@ -119,6 +125,51 @@ export default {
   name: 'summaryLayout',
   mounted () {
     console.log('summaryLayout mounted.')
+  },
+  data(){
+    return {
+        modelNo : 0,
+        status : 0,
+        rentNo : 0,
+        Home : 0
+    }
+  },
+  props: {},
+  methods: {
+    goNext() {
+    localStorage.setItem('no', this.modelNo);
+    localStorage.setItem('p', 4);
+    localStorage.setItem('rent', this.rentNo);
+    this.postProgress();
+    this.$router.go(-3);
+    },
+    getInfo(){
+        this.$axios.get('/RentCntrRslt/'+this.rentNo)
+        .then(res => {
+          console.log("");  
+          console.log("응답 데이터 : " + JSON.stringify(res.data));
+          console.log("");
+          var str = JSON.stringify(res.data);
+            //console.log("parse: "+ temp);
+          var jData = JSON.parse(str);
+          this.Home = jData[0];
+        })
+        .catch(error => {
+            console.log("");
+            console.log("에러 데이터 : " + error.data);
+            console.log(""); 
+        });
+    }
+  },
+  beforeMount(){
+    this.status = localStorage.getItem('p')
+    this.modelNo = localStorage.getItem('no')
+    this.rentNo = localStorage.getItem('rent')
+    console.log("Bojeong end !!!");
+    console.log(this.status+":status");
+    console.log(this.modelNo+":modelNo");
+    console.log(this.rentNo+":rentNo");
+    this.getInfo();
   }
 }
 
