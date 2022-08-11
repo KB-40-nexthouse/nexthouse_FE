@@ -40,7 +40,7 @@ export default {
     this.$router.go(-2);
     },
     postProgress() {
-        this.$axios.post('/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=3')
+        this.$axios.post('/nexthouse/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=3')
           .then(res => {
           console.log("응답 데이터 : " + JSON.stringify(res.data));
           })

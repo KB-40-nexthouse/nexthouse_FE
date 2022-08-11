@@ -137,7 +137,7 @@ export default {
     onBoard(data) {
         console.log(data);
         //const article = { custNo: "100000001", modelNo: "APT000002"};
-        this.$axios.post('/RentCntrIn/custNo=100000001&modelNo='+data.modelNo)
+        this.$axios.post('/nexthouse/RentCntrIn/custNo=100000001&modelNo='+data.modelNo)
           .then(res => {
           console.log("");
           console.log("응답 데이터 : " + JSON.stringify(res.data));
