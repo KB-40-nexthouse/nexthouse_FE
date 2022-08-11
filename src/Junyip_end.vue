@@ -45,7 +45,7 @@ export default {
       localStorage.setItem('p', 5);
       localStorage.setItem('rent', this.rentNo);
       this.postProgress();
-      this.$router.go(-3);
+      this.$router.push('/summary');
     },
     postProgress() {
         this.$axios.post('/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=4')
