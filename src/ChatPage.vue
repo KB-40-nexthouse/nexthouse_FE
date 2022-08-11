@@ -36,7 +36,7 @@
           <div class="date">오후 2:59</div>
           <div class="text">짧을 땐 괜찮아!</div>
         </li>
-        <li class="your chat clear">
+        <li class="your chat clear" style="float:left">
           <div class="text">텍스트가 엄청나게 길면 문제가 생기네! 왜 그럴까?</div>
           <div class="date">오후 2:59</div>
         </li>
@@ -46,7 +46,7 @@
           <div class="date">오후 2:59</div>
           <div class="text">너는 괜찮은데, 내 쪽에서 텍스트가 길면 문제가 발생하는 것 같아!</div>
         </li>
-        <li class="your chat clear">
+        <li class="your chat clear" style="float:left">
           <div class="text">이걸 어떻게 해결할 수 있을까?</div>
           <div class="date">오후 2:59</div>
         </li>
