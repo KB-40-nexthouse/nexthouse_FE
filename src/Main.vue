@@ -71,7 +71,9 @@
 
 <!-- 톡톡 -->
 <div class="v107_2"> 
-    <div type='button' @click="IntroChat()" class="v86_67"></div>
+    <router-link to='/ChatPage'>
+    <div  class="v86_67"></div>
+    </router-link>
 </div>
 
 </nav>
@@ -129,7 +131,7 @@ export default {
     },
 
     IntroChat() {
-      this.$router.push('/MyCounsel');
+      this.$router.push('/ChatPage');
     },
 
     onBoard(data) {
@@ -162,17 +164,7 @@ export default {
 </script>
 
 <style>
- #app 
-  { 
-    margin:0 auto; 
-    width:350px;
-    height:650px;
-    text-align:center; 
-    background-color: #ffffff;
-  }
-body {
-  font-size: 14px;
-}
+
 .v57_66 {
   width: 400px;
   height: 830px;
