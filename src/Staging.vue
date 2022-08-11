@@ -23,7 +23,7 @@
       <div class="v223_82"></div>
       <div class="v223_83"></div>
       <div class="v223_84"></div>
-      <span class="v223_85"><b><u>메인 이동</u></b></span>
+      <span type='button' @click="goBack()" class="v223_85"><b><u>메인 이동</u></b></span>
     </div>
 </nav>
 <router-view/>
@@ -69,6 +69,9 @@ export default {
         localStorage.setItem('rent', this.rentNo);
         this.$router.push('/MyJunyip');
       }
+    },
+    goBack() {
+      this.$router.go(-1);
     }
   },
   beforeMount(){
