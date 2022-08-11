@@ -16,17 +16,17 @@
     <h3>고객님께서 진행하신 결과를 요약한 내용입니다.</h3>
     <br>
     <h4>&#8226; 매물정보</h4>
-    <h4>금액) 일금30,000,000원정</h4>
-    <h4>주소) 서울시 강남구 삼성로11 남산빌리지</h4>
-    <h4>임대인) 이지한 &#9742; 010-4253-9000</h4>
+    <h4>금액) 일금{{this.Home.price}}원정</h4>
+    <h4>주소) {{this.Home.modelAddr}}</h4>
+    <h4>임대인) {{this.Home.ownerNm}} &#9742; {{this.Home.ownerTelNo}}</h4>
     <br>
     <h4>&#8226; 신고내용</h4>
-    <h4>확정일자) 2022-08-15</h4>
-    <h4>전입일자) 2020-08-19</h4>
+    <h4>전입일자) {{this.Home.entDt}} </h4>
+    <h4>확정일자) {{this.Home.fixDt}} </h4>
     <br>
     <h4>&#8226; 계약내용</h4>
-    <h4>계약시작일자) 2022-08-15</h4>
-    <h4>계약종료일자) 2024-08-15</h4>
+    <h4>계약시작일자) {{this.Home.rentStDt}}</h4>
+    <h4>계약종료일자) {{this.Home.rentEndDt}}</h4>
   </div>
   <br><br><br>
   <div class="doBest" style="text-align: center;">
@@ -35,7 +35,6 @@
     <div class="tyImage" style="float: center; padding:10px;">
       <img src="./assets/liivFriends-300.jpeg" alt="tyIcon">
     </div>
-    {{this.Home.modelAddr}}
   <!-- Footer Area-->
   <div @type='button' @click="goNext()" class="footer clear">
     <h5 style="float: center; padding-top: 20px;">확인</h5>
@@ -146,7 +145,7 @@ export default {
     getInfo(){
         this.$axios.get('/nexthouse/RentCntrRslt/'+this.rentNo)
         .then(res => {
-          console.log("");  
+          console.log("");
           console.log("응답 데이터 : " + JSON.stringify(res.data));
           console.log("");
           var str = JSON.stringify(res.data);
