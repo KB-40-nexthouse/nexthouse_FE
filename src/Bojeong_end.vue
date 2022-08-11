@@ -85,7 +85,7 @@ body {
       overflow: hidden;
     }
     .v76_88 {
-      width: 375px;
+      width: 400px;
       height: 30px;
       background: rgba(255,255,255,1);
       opacity: 1;
@@ -95,7 +95,7 @@ body {
       overflow: hidden;
     }
     .v76_89 {
-      width: 375px;
+      width: 400px;
       height: 44px;
       /* background: url("../images/v76_89.png"); */
       background-repeat: no-repeat;
@@ -108,7 +108,7 @@ body {
       overflow: hidden;
     }
     .v76_90 {
-      width: 375px;
+      width: 400px;
       height: 44px;
       background: rgba(255,255,255,1);
       opacity: 1;
@@ -155,7 +155,7 @@ body {
       left: 26px;
     }
     .v76_97 {
-      width: 375px;
+      width: 400px;
       height: 1px;
       background: rgba(238,238,238,1);
       opacity: 1;
@@ -177,7 +177,7 @@ body {
       text-align: left;
     }
     .v76_104 {
-      width: 375px;
+      width: 400px;
       height: 60px;
       /* background: url("../images/v76_104.png"); */
       background-repeat: no-repeat;
@@ -190,7 +190,7 @@ body {
       overflow: hidden;
     }
     .v76_105 {
-      width: 375px;
+      width: 400px;
       height: 60px;
       background: rgba(249,190,32,1);
       opacity: 1;

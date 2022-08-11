@@ -14,7 +14,7 @@
         <div class="v74_27"></div>
         <div class="v74_28"></div>
       </div>
-      <span class="v74_29"><b>개인정보와 전세계약서 수집 이용을 동의하고 전입일자를 신고해주세요.</b></span>
+      <span class="v74_29"><b>개인정보와 전세계약서 수집 이용을<br> 동의하고 전입일자를 신고해주세요.</b></span>
       <div class="v74_30"></div>
       <div class="v74_31">
         <div class="v74_32"></div>

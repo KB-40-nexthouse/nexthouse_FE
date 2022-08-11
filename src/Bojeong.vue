@@ -1,21 +1,33 @@
 <template>
 <nav>
     
-
-  <div class="v231_117"><div class="v231_118"></div><div class="v231_119"></div><div class="v231_122">
-    <div class="v231_123"></div><div class="v231_124"><div class="v231_125"></div><div class="v231_126"></div>
-    <div class="v231_127"></div></div><span class="v231_128"><b>보증금 송금</b></span><div class="v231_129"></div>
-    <div class="v231_130"></div></div><span class="v231_131"><b>계약 일자  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.08.03</b></span>
+<div class="v231_117">
+    <div class="v231_118"></div>
+    <div class="v231_119"></div>
+    <div class="v231_122">
+        <div class="v231_123"></div>
+        <div class="v231_124">
+            <div class="v231_125"></div>
+            <div class="v231_126"></div>
+            <div class="v231_127"></div>
+        </div>
+        <span class="v231_128"><b>보증금 송금</b></span>
+        <div class="v231_129"></div>
+        <div class="v231_130"></div>
+    </div>
+    <span class="v231_131"><b>계약 일자  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.08.03</b></span>
     <span class="v231_132"><b>송금 금액 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100,000,000</b></span>
-    <span class="v231_133"><b>총 금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  200,000,000</b></span><span class="v231_134"> 
-
-    </span><span class="v231_140"><b>은행 가상 계좌 &nbsp;&nbsp;&nbsp;&nbsp; 111-2222-33333</b></span><div class="v231_139">
-
-    </div><span class="v231_142"><b>실행 예정 대출&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100,000,000</b></span>
+    <span class="v231_133"><b>총 금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  200,000,000</b></span>
+    <span class="v231_134"></span>
+    <span class="v231_140"><b>은행 가상 계좌 &nbsp;&nbsp;&nbsp;&nbsp; 111-2222-33333</b></span>
+    <div class="v231_139"></div>
+    <span class="v231_142"><b>실행 예정 대출&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100,000,000</b></span>
     <div class="v231_143">
         <div type='button' @click="MoneySending" class="v231_144"></div>
-    <span class="v231_145"><b>보증금 송금</b></span>
-    </div></div>
+        <span class="v231_145"><b>보증금 송금</b></span>
+    </div>
+</div>
+
 </nav>
 <router-view/>
 </template>
@@ -62,7 +74,7 @@ export default {
     overflow: hidden;
 }
 .v231_118 {
-    width: 388px;
+    width: 400px;
     height: 100px;
     background: rgba(229,229,229,1);
     opacity: 1;
@@ -71,7 +83,7 @@ export default {
     left: 1px;
 }
 .v231_119 {
-    width: 388px;
+    width: 400px;
     height: 139px;
     background: rgba(229,229,229,1);
     opacity: 1;
@@ -160,7 +172,7 @@ export default {
 .v231_129 {
     width: 12px;
     height: 12px;
-    /* background: url("../images/arrow.png"); */
+    background: url("../images/arrow.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -261,7 +273,7 @@ export default {
     text-align: left;
 }
 .v231_143 {
-    width: 393px;
+    width: 400px;
     height: 62px;
     /* background: url("../images/v231_143.png"); */
     background-repeat: no-repeat;
@@ -269,12 +281,12 @@ export default {
     background-size: cover;
     opacity: 1;
     position: absolute;
-    top: 573px;
+    top: 706px;
     left: 1px;
     overflow: hidden;
 }
 .v231_144 {
-    width: 393px;
+    width: 400px;
     height: 62px;
     background: rgba(249,190,32,1);
     opacity: 1;

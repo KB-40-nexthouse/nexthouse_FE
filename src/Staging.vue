@@ -44,22 +44,28 @@ export default {
   },
   methods: {
     ToHwakjung() {
-      localStorage.setItem('no', this.modelNo);
-      localStorage.setItem('p', this.status);
-      localStorage.setItem('rent', this.rentNo);
-      this.$router.push('/MyHwakjung');
+      if(this.status==1){
+        localStorage.setItem('no', this.modelNo);
+        localStorage.setItem('p', this.status);
+        localStorage.setItem('rent', this.rentNo);
+        this.$router.push('/MyHwakjung');
+      }
     },
     ToBojeong() {
-      localStorage.setItem('no', this.modelNo);
-      localStorage.setItem('p', this.status);
-      localStorage.setItem('rent', this.rentNo);
-      this.$router.push('/MyBojeong')
+      if(this.status==3){
+        localStorage.setItem('no', this.modelNo);
+        localStorage.setItem('p', this.status);
+        localStorage.setItem('rent', this.rentNo);
+        this.$router.push('/MyBojeong')
+      }
     },
     ToJunyip() {
-      localStorage.setItem('no', this.modelNo);
-      localStorage.setItem('p', this.status);
-      localStorage.setItem('rent', this.rentNo);
-      this.$router.push('/MyJunyip');
+      if(this.status==4){
+        localStorage.setItem('no', this.modelNo);
+        localStorage.setItem('p', this.status);
+        localStorage.setItem('rent', this.rentNo);
+        this.$router.push('/MyJunyip');
+      }
     }
   },
   beforeMount(){
@@ -79,7 +85,7 @@ export default {
 
 }
 .v57_70 {
-  width: 371px;
+  width: 400px;
   height: 72px;
   /* background: url("../images/v57_70.png"); */
   background-repeat: no-repeat;
@@ -126,7 +132,7 @@ export default {
   overflow: hidden;
 }
 .v223_60 {
-  width: 375px;
+  width: 400x;
   height: 44px;
   /* background: url("../images/v223_60.png"); */
   background-repeat: no-repeat;
