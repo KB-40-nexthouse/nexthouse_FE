@@ -23,8 +23,8 @@
       </div>
       <button @click="Research()">
         <div class="v74_35">
-          <div class="v74_36"></div>
-          <span class="v74_37"><b>전입신고서</b></span>
+          <div :class="{v74_36 : checked, v74_36_1 : !checked}"></div>
+          <span class="v74_37"><b>동의하고 신고</b></span>
         </div>
       </button>
       <div class="v74_38">
@@ -295,6 +295,16 @@ export default {
     width: 375px;
     height: 60px;
     background: rgba(249,190,32,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v74_36_1 {
+    width: 375px;
+    height: 60px;
+    background: lightgray;
     opacity: 1;
     position: absolute;
     top: 0px;

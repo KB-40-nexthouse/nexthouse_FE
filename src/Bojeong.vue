@@ -53,7 +53,7 @@ export default {
 <style scoped>
 .v231_117 {
     width: 400px;
-    height: 800px;
+    height: 830px;
     background: rgba(255,255,255,1);
     opacity: 1;
     position: absolute;

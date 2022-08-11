@@ -75,8 +75,8 @@ body {
       font-size: 14px;
     }
     .v76_87 {
-      width: 375px;
-      height: 766px;
+      width: 400px;
+      height: 830px;
       background: rgba(255,255,255,1);
       opacity: 1;
       position: absolute;
