@@ -1,11 +1,20 @@
 <template>
+  <!--Header-->
+  <div class="header" >
+    <h2 style="float: left;">
+        &nbsp; &lt; &nbsp; KB 전문가 상담
+    </h2>
+    <div class="" style="float: right; padding-top: 15px; padding-right: 10px">
+      <img src="@/assets/hamResized.png" alt="menuIcon">
+    </div>
+  </div>
   <div class="contents">
     <!-- <hr class="bold"/> -->
     <p class="chat-date"></p>
     <div class="top clear">
       <!-- 상담사 프로필 이미지-->
       <div class="left" style="float:left; padding-top:5px;">
-        <img src="./assets/profileImg.png" alt="상담사 이미지" />
+        <img src="@/assets/profileImg.png" alt="상담사 이미지" />
       </div>
       <!-- 상담사 정보-->
       <div class="right" style="float:left; padding-left: 10px;">
@@ -50,12 +59,22 @@
         <input name="user-text" type="text" style="width:100%; padding-top:10px;" placeholder="메세지를 입력하세요."/>
       </div>
       <div class="Send-Icon" style="float: right;">
-        <img src="./assets/SendIcon.png" style="vertical-align: middle; padding-right: 10px; padding-top: 10px;" alt="sendIcon">
+        <img src="@/assets/SendIcon.png" style="vertical-align: middle; padding-right: 10px; padding-top: 10px;" alt="sendIcon">
       </div>
     </div>
   </div>
 </template>
 <style scoped>
+/* 폰트 import후 사용 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&display=swap');
+/* 헤더 디자인 */
+.header {
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  height: 44px;
+}
+
 /* float: left , right */
 /* text-align: left , right , center */
 
@@ -113,9 +132,9 @@ h6{
 
 <script type="text/javascript">
 export default {
-  name: 'chatLayout',
+  name: 'ChatLayout',
   mounted () {
-    console.log('chatLayout mounted.')
+    console.log('ChatLayout mounted.')
   }
 }
 
