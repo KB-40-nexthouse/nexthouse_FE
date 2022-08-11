@@ -35,6 +35,7 @@
     <div class="tyImage" style="float: center; padding:10px;">
       <img src="./assets/liivFriends-300.jpeg" alt="tyIcon">
     </div>
+    {{this.Home.modelAddr}}
   <!-- Footer Area-->
   <div @type='button' @click="goNext()" class="footer clear">
     <h5 style="float: center; padding-top: 20px;">확인</h5>
@@ -129,7 +130,8 @@ export default {
     return {
         modelNo : 0,
         status : 0,
-        rentNo : 0
+        rentNo : 0,
+        Home : 0
     }
   },
   props: {},
@@ -140,6 +142,23 @@ export default {
     localStorage.setItem('rent', this.rentNo);
     this.postProgress();
     this.$router.go(-3);
+    },
+    getInfo(){
+        this.$axios.get('/RentCntrRslt/'+this.rentNo)
+        .then(res => {
+          console.log("");  
+          console.log("응답 데이터 : " + JSON.stringify(res.data));
+          console.log("");
+          var str = JSON.stringify(res.data);
+            //console.log("parse: "+ temp);
+          var jData = JSON.parse(str);
+          this.Home = jData[0];
+        })
+        .catch(error => {
+            console.log("");
+            console.log("에러 데이터 : " + error.data);
+            console.log(""); 
+        });
     }
   },
   beforeMount(){
@@ -150,6 +169,7 @@ export default {
     console.log(this.status+":status");
     console.log(this.modelNo+":modelNo");
     console.log(this.rentNo+":rentNo");
+    this.getInfo();
   }
 }
 
