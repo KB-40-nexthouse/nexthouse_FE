@@ -11,8 +11,8 @@
       </div>
       <span class="v76_98"><b>전입일자 신고가 완료되었습니다.</b></span>
       <div class="v76_104">
-        <div class="v76_105"></div>
-        <span type='button' @click="goBacktoStaging()" class="v76_106"><b>다음</b></span>
+        <div class="v76_105" @type='button' @click="goNext()"></div>
+        <span type='button'  class="v76_106"><b>다음</b></span>
       </div>
       <div class="v76_107">
         <div class="v76_109">
@@ -32,9 +32,9 @@ export default {
   components: {
   },
   methods:{
-    goBacktoStaging() {
-      this.$router.go(-2);
-    }
+    goNext() {
+      this.$router.push("/staging");
+    },
   }
 }
 
