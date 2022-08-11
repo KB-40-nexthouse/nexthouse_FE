@@ -53,10 +53,10 @@
     <div class="input-wrap clear" style="position: absolute; bottom: 0; width: 100%; padding-bottom:16px;">
     <p class="chat-date"></p>
       <div class="Text-Input">
-        <input name="user-text" type="text" style="width:100%; padding-top:10px;" placeholder="메세지를 입력하세요."/>
+        <input name="user-text" type="text" v-model ="msg" style="width:100%; padding-top:10px;" placeholder="메세지를 입력하세요."/>
       </div>
       <div class="Send-Icon" style="float: right;">
-        <img src="@/assets/SendIcon.png" style="vertical-align: middle; padding-right: 10px; padding-top: 10px;" alt="sendIcon">
+        <img @click="MessageSending()" src="@/assets/SendIcon.png" style="vertical-align: middle; padding-right: 10px; padding-top: 10px;" alt="sendIcon">
       </div>
     </div>
   </div>
@@ -73,7 +73,8 @@ export default {
     return {
         ChatList : [],
         // sendId, 
-        Counseler : 0
+        Counseler : 0,
+        msg : ''
     }
   },
   methods:{
@@ -105,7 +106,22 @@ export default {
 
         this.Counseler = counselD[0];
         console.log(this.Counseler.adsrNo);
-
+      })
+      .catch(error => {
+        console.log("에러 데이터 : " + error.data);
+      });
+    },
+    MessageSending: function() {
+      this.$axios.post('/nexthouse/inselAdsr',
+        {          
+          custNo: '100000001',
+          msg: this.msg,
+          msgTime: '2022-08-11 08:52:55',
+          sendId: '100000001'
+        }
+      )
+      .then(res => {
+        console.log("message " + JSON.stringify(res.data));
 
       })
       .catch(error => {
