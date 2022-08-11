@@ -5,7 +5,7 @@
         &nbsp; &lt; &nbsp; 전세계약서 요약정리
     </h2>
     <div class="" style="float: right; padding-top: 15px; padding-right: 10px">
-      <img src="../assets/images/hamResized.png" alt="menuIcon">
+      <img src="@/assets/hamResized.png" alt="menuIcon">
     </div>
   </div>
   <!-- 구분선 -->
