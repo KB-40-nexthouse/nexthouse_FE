@@ -13,7 +13,7 @@
 
       <div :class="{gray:status<=1}" type='button' @click="ToHwakjung()" class="v223_70"></div>
       <div :class="{gray:status<=2}" type='button' @click="ToHwakjung()" class="v223_71"></div>
-      <div :class="{gray:status<=3}" type='button' @click="ToHwakjung()" class="v223_72"></div>
+      <div :class="{gray:status<=3}" type='button' @click="ToBojeong()" class="v223_72"></div>
       <div :class="{gray:status<=4}" type='button' @click="ToJunyip()" class="v223_73"></div>
       <span class="v223_74"><b>계약서 작성</b></span>
       <span class="v223_75"><b>전입신고</b></span>
@@ -44,13 +44,16 @@ export default {
     ToHwakjung() {
       this.$router.push('/MyHwakjung');
     },
+    ToBojeong() {
+      this.$router.push('/MyBojeong')
+    },
     ToJunyip() {
       this.$router.push('/MyJunyip');
     }
   },
   beforeMount(){
     this.status = localStorage.getItem('p')
-    this.status = 4
+    this.status = 1
   }
 
 }

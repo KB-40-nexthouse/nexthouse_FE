@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 //import Main from './Hwakjung.vue'
 //import Main from './Staging.vue'
 import Main from './Main.vue'
+// import App from './App.vue'
 import router from './router'
 /*
 Vue.prototype.$axios = axios

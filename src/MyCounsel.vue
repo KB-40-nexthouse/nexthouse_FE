@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'Counsel',
+  name: 'MyCounsel',
   props: {
     
   }

@@ -19,6 +19,7 @@
                     <div class="v57_132">
                         <div class="v57_131">
                             <span type='button' @click="Staging(H)" class="v57_188">진행 상태 확인</span>
+
                             <div class="v57_129">
                                 <span class="v57_122">{{H.modelNm}}</span>
                                 <span class="v57_123">{{H.modelAddr}}</span>
@@ -70,7 +71,7 @@
 
 <!-- 톡톡 -->
 <div class="v107_2"> 
-    <div class="v86_67"></div>
+    <div type='button' @click="IntroChat()" class="v86_67"></div>
 </div>
 
 </nav>
@@ -97,58 +98,62 @@ export default {
         this.$axios.get('/RentCntrList/100000001')
         //http://169.56.100.104:30650/nexthouse/RentCntrList/100000001
         .then(res => {
-        console.log("");
-        console.log("응답 데이터 : " + JSON.stringify(res.data));
-        console.log("");
-        var str = JSON.stringify(res.data);
-        //console.log("parse: "+ temp);
-        var jData = JSON.parse(str);
-           for(var i=0;i<jData.length;i++){
-		var weather = jData[i];
-		console.log('******************************');
-        this.HomeList[Number(weather.cntrDiv[0])-1].push(weather)
-		//console.log(weather.cntrDiv);
-		//console.log(weather.modelNo);
-		//console.log(weather.modelNm);
-		console.log(weather.modelAddr);
-        }
-      })
-    .catch(error => {
-        console.log("");
-        console.log("에러 데이터 : " + error.data);
-        console.log(""); 
-      });
-
+          console.log("");  
+          console.log("응답 데이터 : " + JSON.stringify(res.data));
+          console.log("");
+          var str = JSON.stringify(res.data);
+            //console.log("parse: "+ temp);
+          var jData = JSON.parse(str);
+            for(var i=0;i<jData.length;i++){
+              var weather = jData[i];
+              console.log('******************************');
+                  this.HomeList[Number(weather.cntrDiv[0])-1].push(weather)
+              //console.log(weather.cntrDiv);
+              //console.log(weather.modelNo);
+              //console.log(weather.modelNm);
+              console.log(weather.modelAddr);
+            }
+        })
+        .catch(error => {
+            console.log("");
+            console.log("에러 데이터 : " + error.data);
+            console.log(""); 
+        });
     },
+
     Staging(data) {
         localStorage.setItem('no', data.modelNo);
         localStorage.setItem('p', data.progress);
         this.$router.push('/staging');
     },
-    onBoard(data) {
-    console.log(data);
-    //const article = { custNo: "100000001", modelNo: "APT000002"};
-    this.$axios.post('/RentCntrIn/custNo=100000001&modelNo='+data.modelNo)
-        .then(res => {
-        console.log("");
-        console.log("응답 데이터 : " + JSON.stringify(res.data));
-        console.log("");
-        })
-        .catch(error => {
-        console.log("");
-        console.log("에러 데이터 : " + error.data);
-        console.log(""); 
-        });
-        
-    localStorage.setItem('no', data.modelNo);
-    localStorage.setItem('p', data.progress);
-    this.$router.push('/staging');
-    }
+
+    IntroChat() {
+      this.$router.push('/MyCounsel');
     },
+
+    onBoard(data) {
+        console.log(data);
+        //const article = { custNo: "100000001", modelNo: "APT000002"};
+        this.$axios.post('/RentCntrIn/custNo=100000001&modelNo='+data.modelNo)
+          .then(res => {
+          console.log("");
+          console.log("응답 데이터 : " + JSON.stringify(res.data));
+          console.log("");
+          })
+          .catch(error => {
+          console.log("");
+          console.log("에러 데이터 : " + error.data);
+          console.log(""); 
+          });
+          
+        localStorage.setItem('no', data.modelNo);
+        localStorage.setItem('p', data.progress);
+        this.$router.push('/staging');
+    },
+  },
   beforeMount(){
     this.fetchData();
-    }
-
+  }
 }
 
 </script>
