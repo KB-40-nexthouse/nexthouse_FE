@@ -97,7 +97,7 @@ export default {
   methods: {
     fetchData: function() {
         //this.$axios.get('https://jsonplaceholder.typicode.com/users/')
-        this.$axios.get('/RentCntrList/100000001')
+        this.$axios.get('/nexthouse/RentCntrList/100000001')
         //http://169.56.100.104:30650/nexthouse/RentCntrList/100000001
         .then(res => {
           console.log("");  
