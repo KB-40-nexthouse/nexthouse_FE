@@ -24,9 +24,9 @@
           <h6>&#8226; 12회 공인중개사, 부동산업계 경력 20년<br></h6>
         </div>
       </div>
-      <div class="changeButton" style="float:right; padding-right:20px; padding-top:10px;">
+      <!-- <div class="changeButton" style="float:right; padding-right:20px; padding-top:10px;">
           <button class="button">상담사 변경</button>
-        </div>
+        </div> -->
     </div>
     <!-- 채팅내역 -->
     <div class="bottom">
