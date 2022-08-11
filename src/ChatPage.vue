@@ -18,38 +18,35 @@
       </div>
       <!-- 상담사 정보-->
       <div class="right" style="float:left; padding-left: 10px;">
-        <h3>상담사 김민정</h3>
+        <h3>상담가 {{ this.Counseler.adsrNm }}</h3>
         <div style="padding-top:10px;">
-          <h6>&#8226; KB국민은행 부동산금융지원부<br></h6>
-          <h6>&#8226; 12회 공인중개사, 부동산업계 경력 20년<br></h6>
+          <h6>&#8226; {{ this.Counseler.departmentNm }}<br></h6>
+          <h6>&#8226; {{ this.Counseler.dtlInfo }}<br></h6>
         </div>
       </div>
-      <!-- <div class="changeButton" style="float:right; padding-right:20px; padding-top:10px;">
+      <div class="changeButton" style="float:right; padding-right:20px; padding-top:10px;">
           <button class="button">상담사 변경</button>
-        </div> -->
+        </div>
     </div>
     <!-- 채팅내역 -->
     <div class="bottom">
       <p class="chat-date"><span>2022.08.19</span></p>
       <ul style="padding : 0 16px;">
-        <li class="my chat clear" style="float:right">
-          <div class="date">오후 2:59</div>
-          <div class="text">짧을 땐 괜찮아!</div>
-        </li>
-        <li class="your chat clear" style="float:left">
-          <div class="text">텍스트가 엄청나게 길면 문제가 생기네! 왜 그럴까?</div>
-          <div class="date">오후 2:59</div>
-        </li>
-      </ul>
-      <ul style="padding : 0 16px;">
-        <li class="my chat clear" style="float:right">
-          <div class="date">오후 2:59</div>
-          <div class="text">너는 괜찮은데, 내 쪽에서 텍스트가 길면 문제가 발생하는 것 같아!</div>
-        </li>
-        <li class="your chat clear" style="float:left">
-          <div class="text">이걸 어떻게 해결할 수 있을까?</div>
-          <div class="date">오후 2:59</div>
-        </li>
+        <div v-for="(C,index) in ChatList" :key="index">
+          <div v-if="C.sendId=='100000001'">
+            <li class="my chat clear" style="float:right">
+            <div class="date">{{C.msgTime}}</div>
+            <div class="text">{{C.msg}}</div>
+            </li>
+          <!-- {{C.sendId}} -->
+          </div>
+          <div v-else>
+            <li class="your chat clear" style="float:left">
+            <div class="text">{{C.msg}}</div>
+            <div class="date">{{C.msgTime}}</div>
+            </li>
+          </div>
+        </div>
       </ul>
     </div>
     <!-- 채팅입력 -->
@@ -72,8 +69,55 @@ export default {
   name: 'ChatPage',
   components: {
   },
+  data(){
+    return {
+        ChatList : [],
+        // sendId, 
+        Counseler : 0
+    }
+  },
   methods:{
+    ChatData: function() {
+      this.$axios.get('/nexthouse/adsrMsgAll/100000001')
+      .then(res => {
+        console.log("채팅 데이터 : " + JSON.stringify(res.data));
+        var chat = JSON.stringify(res.data);
+        var cData = JSON.parse(chat);
+        console.log(cData);
 
+        for(var i=0;i<cData.length;i++){
+          var cD = cData[i];
+            console.log(cD.sendId)
+            this.ChatList.push(cD);
+        }
+      })
+      .catch(error => {
+        console.log("에러 데이터 : " + error.data);
+      });
+    },
+    CounselData: function() {
+      this.$axios.get('/nexthouse/curAdsrSel/100000001')
+      .then(res => {
+        console.log("상담자 데이터: " + JSON.stringify(res.data));
+        var counsel = JSON.stringify(res.data);
+        var counselD = JSON.parse(counsel);
+        console.log(counselD);
+
+        this.Counseler = counselD[0];
+        console.log(this.Counseler.adsrNo);
+
+
+      })
+      .catch(error => {
+        console.log("에러 데이터 : " + error.data);
+      });
+    }
+  },
+
+  beforeMount(){
+    this.ChatData();
+    console.log("ChatData"); 
+    this.CounselData();
   }
 }
 
