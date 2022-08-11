@@ -74,7 +74,8 @@ export default {
         ChatList : [],
         // sendId, 
         Counseler : 0,
-        msg : ''
+        msg : '',
+        lastTime : ''
     }
   },
   methods:{
@@ -90,6 +91,7 @@ export default {
           var cD = cData[i];
             console.log(cD.sendId)
             this.ChatList.push(cD);
+            this.lastTime = cD.msgTime;
         }
       })
       .catch(error => {
@@ -116,17 +118,26 @@ export default {
         {          
           custNo: '100000001',
           msg: this.msg,
-          msgTime: '2022-08-11 08:52:55',
+          msgTime: this.lastTime,
           sendId: '100000001'
         }
       )
       .then(res => {
         console.log("message " + JSON.stringify(res.data));
+        var msgLast = JSON.stringify(res.data);
+        var msgLast2 = JSON.parse(msgLast);
+        console.log(msgLast2);
 
+        this.lastTime = msgLast2[0].msgTime;
+        this.ChatList.push(msgLast2[0]);
+        this.Write();
       })
       .catch(error => {
         console.log("에러 데이터 : " + error.data);
       });
+    },
+    Write() {
+
     }
   },
 
