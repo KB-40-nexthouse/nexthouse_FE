@@ -23,12 +23,42 @@
 <script>
 export default {
   name: "MyBojeongEnd",
+  data(){
+    return {
+        modelNo : 0,
+        status : 0,
+        rentNo : 0
+    }
+  },
   props: {},
   methods: {
     goNext() {
-      this.$router.push("/staging");
+    localStorage.setItem('no', this.modelNo);
+    localStorage.setItem('p', 4);
+    localStorage.setItem('rent', this.rentNo);
+    this.postProgress();
+    this.$router.go(-2);
+    },
+    postProgress() {
+        this.$axios.post('/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=3')
+          .then(res => {
+          console.log("응답 데이터 : " + JSON.stringify(res.data));
+          })
+          .catch(error => {
+          console.log("에러 데이터 : " + error.data);
+          });
+        //this.$router.push('/staging');
     },
   },
+  beforeMount(){
+    this.status = localStorage.getItem('p')
+    this.modelNo = localStorage.getItem('no')
+    this.rentNo = localStorage.getItem('rent')
+    console.log("Bojeong end !!!");
+    console.log(this.status+":status");
+    console.log(this.modelNo+":modelNo");
+    console.log(this.rentNo+":rentNo");
+  }
 };
 </script>
 

@@ -30,12 +30,42 @@
 
 export default {
   name: 'MyJunyipEnd',
+  data(){
+    return {
+        modelNo : 0,
+        status : 0,
+        rentNo : 0
+    }
+  },
   components: {
   },
   methods:{
     goNext() {
-      this.$router.push("/staging");
+      localStorage.setItem('no', this.modelNo);
+      localStorage.setItem('p', 5);
+      localStorage.setItem('rent', this.rentNo);
+      this.postProgress();
+      this.$router.go(-3);
     },
+    postProgress() {
+        this.$axios.post('/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=4')
+          .then(res => {
+          console.log("응답 데이터 : " + JSON.stringify(res.data));
+          })
+          .catch(error => {
+          console.log("에러 데이터 : " + error.data);
+          });
+        //this.$router.push('/staging');
+    },
+  },
+  beforeMount(){
+    this.status = localStorage.getItem('p')
+    this.modelNo = localStorage.getItem('no')
+    this.rentNo = localStorage.getItem('rent')
+    console.log("Junyip end !!!");
+    console.log(this.status+":status");
+    console.log(this.modelNo+":modelNo");
+    console.log(this.rentNo+":rentNo");
   }
 }
 
