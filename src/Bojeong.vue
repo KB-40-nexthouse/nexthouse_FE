@@ -23,13 +23,29 @@
 <script>
 export default {
   name: 'MyBojeong',
+    data(){
+    return {
+        checked : false,
+        modelNo : 0,
+        status : 0,
+        rentNo : 0
+    }
+  },
   props: {
     
   },
   methods: {
     MoneySending() {
+        localStorage.setItem('no', this.modelNo);
+        localStorage.setItem('p', this.status);
+        localStorage.setItem('rent', this.rentNo);
         this.$router.push('/MyBojeongEnd');
     }
+  },
+    beforeMount(){
+      this.status = localStorage.getItem('p')
+      this.modelNo = localStorage.getItem('no')
+      this.rentNo = localStorage.getItem('rent')
   }
 }
 </script>

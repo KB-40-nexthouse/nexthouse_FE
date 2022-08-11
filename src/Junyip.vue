@@ -50,16 +50,7 @@
   <router-view/>
 </div>
 </template>
-
-
 <script>
-/*
-import AxiosPlugin from 'vue-axios-cors';
-var Vue = require('vue');
-Vue.use(AxiosPlugin);
-
-axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded'
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';*/
 
 export default {
   name: 'MyJunyip',
@@ -68,16 +59,29 @@ export default {
   data(){
     return {
         checked : false,
+        modelNo : 0,
+        status : 0,
+        rentNo : 0
     }
   },
   methods: {
     Research() {
+      if(this.checked) {
+        localStorage.setItem('no', this.modelNo);
+        localStorage.setItem('p', this.status);
+        localStorage.setItem('rent', this.rentNo);
         this.$router.push('/MyJunyipEnd');
+      }
     },
     ChangeCheck(){
         this.checked = !this.checked;
     }
-    }
+    },
+    beforeMount(){
+      this.status = localStorage.getItem('p')
+      this.modelNo = localStorage.getItem('no')
+      this.rentNo = localStorage.getItem('rent')
+  }
 }
 
 </script>

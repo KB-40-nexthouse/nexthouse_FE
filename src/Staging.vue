@@ -34,7 +34,9 @@ export default {
   name: 'StagingZero',
   data() {
     return {
+      modelNo : 0,
       status : 0,
+      rentNo : 0
     }
   },
   props: {
@@ -42,18 +44,29 @@ export default {
   },
   methods: {
     ToHwakjung() {
+      localStorage.setItem('no', this.modelNo);
+      localStorage.setItem('p', this.status);
+      localStorage.setItem('rent', this.rentNo);
       this.$router.push('/MyHwakjung');
     },
     ToBojeong() {
+      localStorage.setItem('no', this.modelNo);
+      localStorage.setItem('p', this.status);
+      localStorage.setItem('rent', this.rentNo);
       this.$router.push('/MyBojeong')
     },
     ToJunyip() {
+      localStorage.setItem('no', this.modelNo);
+      localStorage.setItem('p', this.status);
+      localStorage.setItem('rent', this.rentNo);
       this.$router.push('/MyJunyip');
     }
   },
   beforeMount(){
     this.status = localStorage.getItem('p')
-    this.status = 1
+    this.modelNo = localStorage.getItem('no')
+    this.rentNo = localStorage.getItem('rent')
+    console.log(this.status+" is status");
   }
 
 }

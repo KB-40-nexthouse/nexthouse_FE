@@ -8,7 +8,7 @@ module.exports = {
     proxy: {
       '/':{
         target:'http://169.56.100.104:30650/nexthouse',
-        pathRewrite:{'^/':'/'},
+        // pathRewrite:{'^/':'/'},
         changeOrigin:true,
         secure:false,
         // ws: false
