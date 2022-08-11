@@ -146,15 +146,16 @@ export default {
           console.log("에러 데이터 : " + error.data);
           console.log(""); 
           });
-          
-        localStorage.setItem('no', data.modelNo);
-        localStorage.setItem('p', data.progress);
-        localStorage.setItem('rent', data.rentCntrNo);
-        this.$router.push('/staging');
+        location.reload();
+        //localStorage.setItem('no', data.modelNo);
+        //localStorage.setItem('p', data.progress);
+        //localStorage.setItem('rent', data.rentCntrNo);
+        //this.$router.push('/staging');
     },
   },
   beforeMount(){
     this.fetchData();
+    console.log("fetchData");
   }
 }
 
