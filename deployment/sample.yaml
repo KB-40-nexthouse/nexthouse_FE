@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: test
-        image: eastshine96/nexthouse-fe:latest
+        image: nginx:stable-alpine
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
