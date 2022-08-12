@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nexthouse_fe
+  name: nexthouse-fe
   labels:
-    app: nexthouse_fe
+    app: nexthouse-fe
 spec:
   type: NodePort
   ports:
   - port: 8080
     targetPort: 8080
   selector:
-    app: nexthouse_fe
+    app: nexthouse-fe
