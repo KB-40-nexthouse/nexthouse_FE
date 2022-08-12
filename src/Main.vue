@@ -69,7 +69,7 @@
     <div  class="v86_67"></div>
     </router-link>
 </div>
-
+</div>
 </nav>
 <router-view/>
 </div>
