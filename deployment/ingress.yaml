@@ -16,10 +16,3 @@ spec:
             name: nexthouse_FE-service
             port:
               number: 8080
-      - path: /api/
-        pathType: Prefix
-        backend:
-          service:
-            name: nexthouse
-            port:
-              number: 8888
