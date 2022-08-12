@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: nexthouse-fe-config
 data:
-  SERVLET_CONTEXT_PATH: "/nexthouse-fe"
+  SERVLET_CONTEXT_PATH: "/"
