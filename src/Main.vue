@@ -47,7 +47,7 @@
                     <div class="hop"></div>
                     <div class="v57_132">
                         <div class="v57_131">
-                            <span class="v57_188">전자계약서 확인</span>
+                            <span  type='button' @click="checkContract(H)" class="v57_188">전자계약서 확인</span>
                             <div class="v57_129">
                                 <span class="v57_122">{{H.modelNm}}</span>
                                 <span class="v57_123">{{H.modelAddr}}</span>
@@ -149,6 +149,11 @@ export default {
         //localStorage.setItem('rent', data.rentCntrNo);
         //this.$router.push('/staging');
     },
+    checkContract(data){
+      console.log(data)
+      localStorage.setItem('rent', data.rentCntrNo);
+      this.$router.push('/checkContract');
+    }
   },
   beforeMount(){
     this.fetchData();

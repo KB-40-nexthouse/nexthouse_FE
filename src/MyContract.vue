@@ -1,17 +1,19 @@
 <template>
-    
+<nav>
 <div class="v259_4">
     <div class="v57_78">
       <span class="v57_77"><b>전자계약서 확인</b></span>
     </div>
     <div class="v259_16">
         <div class="v259_17"></div>
-        <span class="v259_18">전자계약서 서명</span>
+        <span class="v259_18" type='button' @click="goBack()">확인</span>
     </div>
     <div class="v259_19"></div>
     <span class="v123123">전자계약서 서명</span>
+    {{this.Home.ownerNm}}
 </div>
-
+</nav>
+<router-view/>
 </template>
 
 
@@ -22,14 +24,37 @@ export default {
   data(){
 
     return {
+        rentNo : 0,
+        Home : 0
     }
   },
   components: {
   },
   methods: {
-    
+    goBack(){
+      this.$router.go(-1);
+    },
+    fetchData: function() {
+        //this.$axios.get('https://jsonplaceholder.typicode.com/users/')
+        this.$axios.get('/nexthouse/RentCntrRslt/'+this.rentNo)
+        .then(res => {
+          console.log("");  
+          console.log("응답 데이터 : " + JSON.stringify(res.data));
+          console.log("");
+          var str = JSON.stringify(res.data);
+          var jData = JSON.parse(str);
+          this.Home = jData[0];
+        })
+        .catch(error => {
+            console.log("");
+            console.log("에러 데이터 : " + error.data);
+            console.log(""); 
+        });
+    },
   },
   beforeMount(){
+    this.rentNo = localStorage.getItem('rent');
+    this.fetchData();
   },
   mounted(){
   }
@@ -84,6 +109,7 @@ body {
   width: 430PX;
   height: 45px;
   background-color: lightgray;
+  color:lightgray;
   position: relative;
   top: 0px;
   left: 0px;

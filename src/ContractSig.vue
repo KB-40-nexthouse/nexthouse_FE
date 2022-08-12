@@ -31,7 +31,7 @@
     </div>
     <span class="v76_1224"><b>아래 서명을 기입해주세요.</b></span>
     <span class="v76_1229"><b>전자계약서 서명</b></span>
-    <div type='button' @click="handleSaveClick()" class="v76_1230"></div>
+    <div type='button' @click="handleSaveClick()" class="v76_1230_1" ></div>
     <span class="v76_1231"><b>서명 완료</b></span>
     <!-- 캔버스테스트 -->
     <canvas id="canvasT" width="150" height="150" class="v76_1232"
@@ -63,8 +63,9 @@ export default {
         ctx : null,
         canvas : null,
         modelNo : 0,
-        status : 0,
-        rentNo : 0
+        status : 2,
+        rentNo : 0,
+        buttoncolor: false,
     }
   },
   components: {
@@ -105,6 +106,7 @@ export default {
     },
     onMouseUp(){
         this.isDrawing = false;
+        
     },
     handleSaveClick(){
     const image = this.canvas.toDataURL();
@@ -112,15 +114,37 @@ export default {
     link.href = image;
     link.download = "PaintJS";
     link.click();
+    this.postProgress();
+    localStorage.setItem('no', this.modelNo);
+    localStorage.setItem('p', 2);
+    localStorage.setItem('rent', this.rentNo);
+    this.$router.go(-2);
     },
-    goNext(){
-        localStorage.setItem('no', this.modelNo);
-        localStorage.setItem('p', this.status);
-        localStorage.setItem('rent', this.rentNo);
-        this.$router.push('/MyJunyipEnd');
-    }
+    // goNext(){
+    //     localStorage.setItem('no', this.modelNo);
+    //     localStorage.setItem('p', this.status);
+    //     localStorage.setItem('rent', this.rentNo);
+    //     this.$router.push('/MyJunyipEnd');
+    // }
+    postProgress() {
+    this.$axios.post('/nexthouse/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=1')
+      .then(res => {
+      console.log("응답 데이터 : " + JSON.stringify(res.data));
+      })
+      .catch(error => {
+      console.log("에러 데이터 : " + error.data);
+      });
+    //this.$router.push('/staging');
+    },
   },
   beforeMount(){
+    this.status = localStorage.getItem('p')
+    this.modelNo = localStorage.getItem('no')
+    this.rentNo = localStorage.getItem('rent')
+    console.log("Hwakjung end !!!");
+    console.log(this.status+":status");
+    console.log(this.modelNo+":modelNo");
+    console.log(this.rentNo+":rentNo");
   },
   mounted(){
     this.canvas = document.getElementById('canvasT');
@@ -251,8 +275,8 @@ export default {
     overflow: hidden;
   }
   .v76_1213 {
-    width: 375px;
-    height: 761px;
+    width: 400px;
+    height: 830px;
     background: rgba(0,0,0,1);
     opacity: 0.30000001192092896;
     position: absolute;
@@ -284,7 +308,7 @@ export default {
     overflow: hidden;
   }
   .v76_1216 {
-    width: 375px;
+    width: 400px;
     height: 44px;
     background: rgba(255,255,255,1);
     opacity: 1;
@@ -414,9 +438,36 @@ export default {
     box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.07999999821186066);
     overflow: hidden;
   }
+  .v76_1230_1 {
+    width: 340px;
+    height: 53px;
+    background: rgba(249,190,32,1);
+    opacity: 1;
+    position: absolute;
+    top: 677px;
+    left: 21px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.07999999821186066);
+    overflow: hidden;
+  }
   .v76_1231 {
     width: 181px;
    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 690px;
+    left: 95px;
+    font-family: Inter;
+    font-weight: Medium;
+    font-size: 18px;
+    opacity: 1;
+    text-align: center;
+  }
+    .v76_1231_1 {
+    width: 181px;
+   color: rgba(249,190,32,1);
     position: absolute;
     top: 690px;
     left: 95px;

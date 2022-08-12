@@ -12,10 +12,21 @@ const routes = [
     name: 'Main',
     component: () => import(/* webpackChunkName: "about" */ '../Main.vue')
   },
+
   {
     path: '/MyHwakjung',
     name: 'MyHwakjung',
     component: () => import(/* webpackChunkName: "about" */ '../Hwakjung.vue')
+  },
+  {
+    path: '/ElecContract',
+    name: 'ElecContract',
+    component: () => import(/* webpackChunkName: "about" */ '../ElecContract.vue')
+  },
+  {
+    path: '/ContractSig',
+    name: 'ContractSig',
+    component: () => import(/* webpackChunkName: "about" */ '../ContractSig.vue')
   },
   {
     path: '/MyHwakjungEnd',
@@ -66,6 +77,11 @@ const routes = [
     path: '/JunyipSig',
     name: 'JunyipSig',
     component: () => import(/* webpackChunkName: "about" */ '../JunyipSig.vue')
+  },
+  {
+    path: '/checkContract',
+    name: 'MyContract',
+    component: () => import(/* webpackChunkName: "about" */ '../MyContract.vue')
   }
 ]
 
