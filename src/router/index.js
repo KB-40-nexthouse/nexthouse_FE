@@ -66,6 +66,11 @@ const routes = [
     path: '/JunyipSig',
     name: 'JunyipSig',
     component: () => import(/* webpackChunkName: "about" */ '../JunyipSig.vue')
+  },
+  {
+    path: '/checkContract',
+    name: 'MyContract',
+    component: () => import(/* webpackChunkName: "about" */ '../MyContract.vue')
   }
 ]
 
