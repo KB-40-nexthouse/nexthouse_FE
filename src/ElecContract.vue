@@ -1,0 +1,466 @@
+<template>
+<div>
+    <div class="v75_23">
+        <!-- <span class="v75_20"><b>전자계약서 작성</b></span> -->
+        <div class="v75_18">
+            <div class="v58_231">
+                <div class="v58_232">
+                    <span class="v58_233">img</span>
+                    <div class="v58_234"></div>
+                    <span class="v58_235">임대물 등록하러 가기</span>
+                    <div class="v58_236">
+                        <div class="v58_237"></div>
+                        <div class="v58_238"></div>
+                        <div class="v58_239">
+                            <div class="v58_240"></div>
+                            <div class="v58_241"></div>
+                            <div class="v58_242"></div>
+                        </div>
+                        <div class="v58_243">
+                            <div class="v58_244"></div>
+                            <div class="v58_245"></div>
+                            <div class="v58_246"></div>
+                        </div>
+                        <span class="v58_247"><b>전자계약서</b></span>
+
+                        <div class="v74_23">
+                            <div class="v74_24"></div>
+                            <div class="v74_25"></div>
+                            <div class="v74_26"></div>
+                        </div>
+                        
+                        <div class="v74_27"></div>
+                    </div>
+                    <div class="v58_249">
+                        <div class="v58_250"></div>
+                        <div class="v58_251"></div>
+                        <div class="v58_252"></div>
+                    </div>
+                    <div class="v58_253"></div>
+                    <div class="name"></div>
+                    <div class="name"></div>
+                    <div class="name"></div>
+                    <div class="v58_265"></div>
+                    <div class="v59_18">계약서 들어갈 곳</div>
+                    <div class="v59_29">
+                        <div class="v59_30" type="button" @click="ToContractSig"></div>
+                        <span class="v59_31" @click="ToContractSig"><b>서명하기</b></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+
+<script>
+export default {
+  name: 'ElecContract',
+  data(){
+    return {
+      
+    }
+  },
+  components: {
+
+  },
+  methods: {
+    ToContractSig() {
+        this.$router.push('/ContractSig');
+    },
+  }
+}
+
+</script>
+
+<style>
+  body {
+    font-size: 14px;
+  }
+  .v74_23 {
+    width: 15px;
+    height: 11px;
+    background: url("../images/3_layer.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 16px;
+    left: 340px;
+    overflow: hidden;
+  }
+  .v74_27 {
+    width: 12px;
+    height: 12px;
+    background: url("../images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 18px;
+    left: 22px;
+  }
+  .v75_23 {
+    width: 414px;
+    height: 825px;
+    /* background: url("../images/v75_23.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v75_20 {
+    width: 178px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 22px;
+    left: 118px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 20px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v75_18 {
+    width: 414px;
+    height: 776px;
+    /* background: url("../images/v75_18.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 49px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v58_231 {
+    width: 400px;
+    height: 830px;
+    background: rgba(251,250,250,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v58_232 {
+    width: 400px;
+    height: 830px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v58_233 {
+    width: 243px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 270px;
+    left: 67px;
+    font-family: Inter;
+    font-weight: Medium;
+    font-size: 20px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v58_234 {
+    width: 340px;
+    height: 52px;
+    background: rgba(248,212,89,1);
+    opacity: 1;
+    position: absolute;
+    top: 339px;
+    left: 628px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.07999999821186066);
+    overflow: hidden;
+  }
+  .v58_235 {
+    width: 181px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 349px;
+    left: 710px;
+    font-family: Inter;
+    font-weight: Medium;
+    font-size: 18px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v58_236 {
+    width: 413px;
+    height: 44px;
+    /* background: url("../images/3_layer.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 1px;
+    overflow: hidden;
+  }
+  .v58_237 {
+    width: 375px;
+    height: 44px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 38px;
+  }
+  .v58_238 {
+    width: 375px;
+    height: 1px;
+    background: rgba(238,238,238,1);
+    opacity: 1;
+    position: absolute;
+    top: 43px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v58_239 {
+    width: 15px;
+    height: 11px;
+    /* background: url("../images/v58_239.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 16px;
+    left: 340px;
+    overflow: hidden;
+  }
+  .v58_240 {
+    width: 1px;
+    height: 15px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    overflow: hidden;
+  }
+  .v58_241 {
+    width: 1px;
+    height: 15px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    overflow: hidden;
+  }
+  .v58_242 {
+    width: 1px;
+    height: 15px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    overflow: hidden;
+  }
+  .v58_243 {
+    width: 15px;
+    height: 11px;
+    /* background: url("../images/v58_243.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 16px;
+    left: 340px;
+    overflow: hidden;
+  }
+  .v58_244 {
+    width: 1px;
+    height: 15px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    overflow: hidden;
+  }
+  .v58_245 {
+    width: 1px;
+    height: 15px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    overflow: hidden;
+  }
+  .v58_246 {
+    width: 1px;
+    height: 15px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    overflow: hidden;
+  }
+  .v58_247 {
+    width: 170px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 13px;
+    left: 41px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v58_248 {
+    width: 8px;
+    height: 8px;
+    /* background: url("../images/v58_248.png"); */
+    opacity: 1;
+    position: absolute;
+    top: 23px;
+    left: 26px;
+    border: 1px solid rgba(34,34,34,1);
+  }
+  .v58_249 {
+    width: 15px;
+    height: 11px;
+    /* background: url("../images/v58_249.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 10px;
+    left: 341px;
+    overflow: hidden;
+  }
+  .v58_250 {
+    width: 1px;
+    height: 15px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    overflow: hidden;
+  }
+  .v58_251 {
+    width: 1px;
+    height: 15px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    overflow: hidden;
+  }
+  .v58_252 {
+    width: 1px;
+    height: 15px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    overflow: hidden;
+  }
+  .v58_253 {
+    width: 340px;
+    height: 52px;
+    /* background: url("../images/v58_253.png"); */
+    opacity: 1;
+    position: absolute;
+    top: 84px;
+    left: 22px;
+    box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.07999999821186066);
+  }
+  .name {
+    color: #fff;
+  }
+  .name {
+    color: #fff;
+  }
+  .name {
+    color: #fff;
+  }
+  .v58_265 {
+    width: 375px;
+    height: 90px;
+    /* background: url("../images/v58_265.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 671px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v59_18 {
+    width: 395px;
+    height: 457px;
+    /* background: url("../images/v59_18.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 84px;
+    left: 2px;
+    overflow: hidden;
+  }
+  .v59_29 {
+    width: 375px;
+    height: 60px;
+    /* background: url("../images/v59_29.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 686px;
+    left: 21px;
+    overflow: hidden;
+  }
+  .v59_30 {
+    width: 375px;
+    height: 60px;
+    background: rgba(249,190,32,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v59_31 {
+    width: 166px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 11px;
+    left: 102px;
+    font-family: Inter;
+    font-weight: Semi Bold;
+    font-size: 18px;
+    opacity: 1;
+    text-align: center;
+  }
+
+</style>

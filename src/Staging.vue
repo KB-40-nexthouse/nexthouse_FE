@@ -1,6 +1,6 @@
 <template>
 <Header title="진행 중인 계약" />
-<nav>
+<!-- <nav> -->
     <div class="v223_56">
       <!-- <div class="v223_60">
         <span class="v223_67"><b>진행중인 계약</b></span>
@@ -12,7 +12,7 @@
       </div> -->
 
 
-      <div :class="{gray:status<=1}" type='button' @click="ToHwakjung()" class="v223_70"></div>
+      <div :class="{gray:status<=1}" type='button' @click="ToEleccontract()" class="v223_70"></div>
       <div :class="{gray:status<=2}" type='button' @click="ToHwakjung()" class="v223_71"></div>
       <div :class="{gray:status<=3}" type='button' @click="ToBojeong()" class="v223_72"></div>
       <div :class="{gray:status<=4}" type='button' @click="ToJunyip()" class="v223_73"></div>
@@ -26,7 +26,7 @@
       <div class="v223_84"></div>
       <span type='button' @click="goBack()" class="v223_85"><b><u>메인 이동</u></b></span>
     </div>
-</nav>
+<!-- </nav> -->
 <router-view/>
 </template>
 
@@ -76,6 +76,13 @@ export default {
         localStorage.setItem('rent', this.rentNo);
         this.$router.push('/MyJunyip');
       }
+
+    },
+    ToEleccontract() {
+        localStorage.setItem('no', this.modelNo);
+        localStorage.setItem('p', this.status);
+        localStorage.setItem('rent', this.rentNo);
+        this.$router.push('/Eleccontract');
     },
     goBack() {
       this.$router.go(-1);
