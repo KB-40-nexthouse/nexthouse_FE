@@ -4,7 +4,7 @@ import App from './App.vue'
 import router from './router'
 import axios from "axios"
 // import store from './store'
-axios.defaults.baseURL = process.env.HOST + '/'
+//axios.defaults.baseURL = process.env.HOST + '/'
  
 const app = createApp(App)
 app.config.globalProperties.$axios = axios; 
