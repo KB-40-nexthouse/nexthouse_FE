@@ -1,13 +1,14 @@
 <template>
+<Header title="KB전문가 상담" />
   <!--Header-->
-  <div class="header" >
+  <!-- <div class="header" >
     <h2 style="float: left;">
         &nbsp; &lt; &nbsp; KB 전문가 상담
     </h2>
     <div class="" style="float: right; padding-top: 15px; padding-right: 10px">
       <img src="@/assets/hamResized.png" alt="menuIcon">
     </div>
-  </div>
+  </div> -->
   <div class="contents">
     <!-- <hr class="bold"/> -->
     <p class="chat-date"></p>
@@ -24,9 +25,9 @@
           <h6>&#8226; {{ this.Counseler.dtlInfo }}<br></h6>
         </div>
       </div>
-      <div class="changeButton" style="float:right; padding-right:20px; padding-top:10px;">
+      <!-- <div class="changeButton" style="float:right; padding-right:20px; padding-top:10px;">
           <button class="button">상담사 변경</button>
-        </div>
+      </div> -->
     </div>
     <!-- 채팅내역 -->
     <div class="bottom">
@@ -64,10 +65,11 @@
 
 
 <script>
-
+import Header from "./HeaderLayout.vue";
 export default {
   name: 'ChatPage',
   components: {
+    Header,
   },
   data(){
     return {

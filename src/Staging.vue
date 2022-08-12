@@ -1,14 +1,15 @@
 <template>
+<Header title="진행 중인 계약" />
 <nav>
     <div class="v223_56">
       <!-- <div class="v223_60">
         <span class="v223_67"><b>진행중인 계약</b></span>
         <div class="v223_68"></div>
       </div> -->
-      <div class="v57_70">
+      <!-- <div class="v57_70">
         <span class="v57_77"><b>진행중인 계약</b></span>
         <div class="v57_78"></div>
-      </div>
+      </div> -->
 
 
       <div :class="{gray:status<=1}" type='button' @click="ToHwakjung()" class="v223_70"></div>
@@ -30,8 +31,14 @@
 </template>
 
 <script>
+import Header from "./HeaderLayout.vue";
+
 export default {
+
   name: 'StagingZero',
+  components: {
+    Header,
+  },
   data() {
     return {
       modelNo : 0,
