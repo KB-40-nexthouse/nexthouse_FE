@@ -4,7 +4,7 @@ import App from './App.vue'
 import router from './router'
 import axios from "axios"
 // import store from './store'
-let HOST=process.env.HOST || 'http://localhost:8080'
+let HOST=process.env.HOST
 
 axios.defaults.baseURL = HOST
 const app = createApp(App)
