@@ -139,8 +139,8 @@ export default {
     localStorage.setItem('no', this.modelNo);
     localStorage.setItem('p', 4);
     localStorage.setItem('rent', this.rentNo);
-    this.postProgress();
-    this.$router.go(-3);
+    //this.postProgress();
+    this.$router.go(-5);
     },
     getInfo(){
         this.$axios.get('/nexthouse/RentCntrRslt/'+this.rentNo)
