@@ -1,10 +1,10 @@
 <template>
-  <h2>확정일자 신고</h2>
+  <h2>전입신고 화면</h2>
 </template>
 
 <script>
 export default {
-  name: 'Date',
+  name: 'MyRegister',
   props: {
     
   }

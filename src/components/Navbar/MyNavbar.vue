@@ -1,10 +1,10 @@
 <template>
-  <h2>전입신고 화면</h2>
+  <h2>화면 아래 navbar</h2>
 </template>
 
 <script>
 export default {
-  name: 'Register',
+  name: 'MyNavbar',
   props: {
     
   }
