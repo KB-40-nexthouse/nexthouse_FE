@@ -1,7 +1,7 @@
 <template>
 <div class="Wrapper" style="padding-bottom:110px;">
   <!--Header-->
-  <div class="header">
+  <div class="header" style="position:fixed;">
     <h2 style="float: left;">
         &nbsp; &lt; &nbsp; 전세계약서 요약정리
     </h2>

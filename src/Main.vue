@@ -1,8 +1,8 @@
 <template>
   <div class="Wrapper" style="padding-bottom:110px;">
   <!-- <nav> -->
-    <!--헤더-->
-    <Header title="임대차 계약 관리" />
+    <!--헤더 -> 왜 position:fixed하니까 문제가 생기지? summary는 괜찮은데??-->
+    <Header title="임대차 계약 관리" style=""/>
     <!--구분선-->
     <hr>
 
