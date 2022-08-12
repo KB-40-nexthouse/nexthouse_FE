@@ -18,6 +18,7 @@
                 <div v-for="(H,index)  in Home" :key="index">
                     <!-- 홈뷰 -->
                     <div class="v57_132">
+                      {{process.env.HOST}}
                       <span type='button' @click="Staging(H)" class="v57_188" style="background-color:#FFCC3C;">진행 상태 확인</span>
                       <span class="v57_122">{{H.modelNm}}</span>
                       <span class="v57_123">{{H.modelAddr}}</span>
