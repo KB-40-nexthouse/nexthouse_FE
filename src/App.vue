@@ -24,7 +24,39 @@ nav a {
   color: #2c3e50;
 }
 
-/* nav a.router-link-exact-active {
-  color: #42b983;
-} */
+.v-application {
+  font-family: 'NanumBarunGothic', sans-serif !important;
+}
+@font-face {
+  font-family:'NanumBarunGothic';
+  src: url('assets/fonts/NanumBarunGothic.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family:'NanumBarunGothic';
+  src: url('assets/fonts/NanumBarunGothicLight.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family:'NanumBarunGothic';
+  src: url('assets/fonts/NanumBarunGothicBold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family:'NanumBarunGothic';
+  src: url('assets/fonts/NanumBarunGothic.otf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family:'NanumBarunGothic';
+  src: url('assets/fonts/NanumBarunGothicLight.otf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family:'NanumBarunGothic';
+  src: url('assets/fonts/NanumBarunGothicBold.otf') format('truetype');
+  font-weight: 700;
+}
+
+
 </style>
