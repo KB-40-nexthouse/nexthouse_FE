@@ -4,7 +4,7 @@ module.exports = defineConfig({
   devServer: {
     proxy: {
       '/nexthouse':{
-        target:'https://nexthouse.169.56.100.104.nip.io/',
+        target:'http://nexthouse.169.56.100.104.nip.io/',
         changeOrigin:true,
       },
       '/chat':{
