@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="Wrapper" style="padding-bottom:110px;">
   <!-- <nav> -->
     <!--헤더-->
     <Header title="임대차 계약 관리" />
