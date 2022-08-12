@@ -1,7 +1,7 @@
 <template>
   <div class="header" >
     <h2 style="float: left;">
-        &nbsp; <div>&lt;</div> &nbsp; {{ title }}
+        &nbsp; &lt; &nbsp; {{ title }}
     </h2>
     <div class="" style="float: right; padding-top: 15px; padding-right: 10px">
       <img src="@/assets/hamResized.png" alt="menuIcon">

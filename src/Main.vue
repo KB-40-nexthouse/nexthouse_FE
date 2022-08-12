@@ -1,13 +1,15 @@
 <template>
+
 <div>
 <nav>
-  <!-- <div class="v57_66"> -->
+  <div class="v57_66">
+    <Header title="임대차 계약 관리" />
     <!-- 제목 -->
     
-    <div class="v57_70">
+    <!-- <div class="v57_70">
         <span class="v57_77"><b>임대차 계약 관리</b></span>
         <div class="v57_78"></div>
-    </div>
+    </div> -->
     
     <!-- 리스트 -->
     <div v-for="(Home,index) in HomeList" :key="index">
@@ -75,7 +77,7 @@
 
 
 <script>
-
+import Header from "./HeaderLayout.vue";
 
 export default {
   name: 'MyMain',
@@ -85,6 +87,7 @@ export default {
     }
   },
   components: {
+    Header,
   },
   methods: {
     fetchData: function() {
