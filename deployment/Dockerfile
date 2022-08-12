@@ -1,4 +1,4 @@
-# build stage
+# build stage 
 FROM node:lts-alpine as build-stage
 WORKDIR /app
 COPY nexthouse_FE/package*.json ./
