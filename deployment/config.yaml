@@ -1,6 +1,6 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: nexthouse_FE-config
+  name: nexthouse_fe-config
 data:
-  SERVLET_CONTEXT_PATH: "/nexthouse_FE"
+  SERVLET_CONTEXT_PATH: "/nexthouse_fe"
