@@ -15,7 +15,7 @@ spec:
         app: nexthouse-fe
     spec:
       containers:
-      - name: nexthouse-fe
+      - name: test
         image: eastshine96/nexthouse-fe:latest
         imagePullPolicy: Always
         ports:
@@ -24,5 +24,5 @@ spec:
         - name: SERVLET_CONTEXT_PATH
           valueFrom:
             configMapKeyRef:
-              name: nexthouse-fe-config
+              name: test-config
               key: SERVLET_CONTEXT_PATH
