@@ -1,5 +1,5 @@
 <template>
-<div class="Wrapper" style="padding-bottom:110px;">
+<div class="Wrapper">
   <!--Header-->
   <div class="header">
     <h2 style="float: left;">
@@ -67,6 +67,9 @@
     height: 70px;
 }
 
+.Wrapper{
+  padding-bottom: 110px;
+}
 
 /* float: left , right */
 /* text-align: left , right , center */
