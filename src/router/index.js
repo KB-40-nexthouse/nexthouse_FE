@@ -82,6 +82,11 @@ const routes = [
     path: '/checkContract',
     name: 'MyContract',
     component: () => import(/* webpackChunkName: "about" */ '../MyContract.vue')
+  },
+  {
+    path: '/NewStaging',
+    name: 'NewStaging',
+    component: () => import(/* webpackChunkName: "about" */ '../NewStaging.vue')
   }
 ]
 

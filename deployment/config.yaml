@@ -4,3 +4,4 @@ metadata:
   name: nexthouse-fe-config
 data:
   SERVLET_CONTEXT_PATH: "/"
+    HOST: http://nexthouse
