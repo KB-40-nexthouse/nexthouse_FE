@@ -3,9 +3,10 @@ module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
     proxy: {
-      '/nexthouse':{
+      '/main':{
         target:'http://nexthouse.169.56.100.104.nip.io/',
         changeOrigin:true,
+        pathRewrite: {"^/main": "/nexthouse"},
       },
       '/chat':{
         target:'http://nexthouse-chat.169.56.100.104.nip.io/',
