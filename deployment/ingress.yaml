@@ -6,13 +6,13 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: "nexthouse-fe.kbfg.kubepia.com"
+  - host: "nexthouse.kbfg.kubepia.com"
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: nexthouse-fe-service
+            name: nexthouse-fe
             port:
               number: 8080
