@@ -1,414 +1,302 @@
 <template>
-<div>
-<nav>
-  <div class="v57_66">
-    <!-- 제목 -->
-    
-    <div class="v57_70">
-        <span class="v57_77"><b>임대차 계약 관리</b></span>
-        <div class="v57_78"></div>
+  <div>
+  <!-- <nav> -->
+    <!--헤더-->
+    <Header title="임대차 계약 관리" />
+    <!--구분선-->
+    <hr>
+
+    <!-- 3종 계약 리스트 -->
+    <div v-for="(Home, index) in HomeList" :key="index">
+      
+      <!-- 진행중인 계약-->
+      <div v-if="index === 0">
+        
+        <!-- 진행중 text-->
+        <div class="진행중">
+          <div class="ongoing-Text" style="text-align: left; padding-left: 20px;">
+            <h2>진행중인 계약</h2>
+          </div>
+        </div>
+
+        <!-- 각 매물정보-->
+        <div v-for="(H, index) in Home" :key="index">
+
+          <!-- 계약프로세스 이동 버튼으로 감싸기-->
+          <div class="진행중매물정보&클릭시계약" type="button" @click="Staging(H)" style="padding-top:15px;padding-bottom:15px;">
+            <div class="OngoingLayout clear" style="padding-bottom:10px; padding-top:10px;">
+              <div class="ongoing-image" style="float:left; padding-left:20px;">
+                  <img src="@/assets/sampleImg2.png" alt="sampleRoom" style="width:120px; height: 120px; border-radius:15px;">
+              </div>
+              <div class="ongoing-info" style="width:calc(100% - 150px); float:left; height:120px; padding-top:10px; padding-bottom:30px;">
+                <p style="line-height:1; font-family: 'Inter';font-style: normal;font-size: 20px;color: #000000; text-align:left; line-height:2; padding-left:20px;">
+                <b>전세 {{H.price}}</b>
+                </p>
+                <p style="line-height:1; font-family: 'Inter';font-style: normal;font-size: 15px;color: #000000; text-align:left; line-height:1; padding-left:20px;">
+                {{H.modelAddr}}
+                </p>
+                <p style="line-height:1; font-family: 'Inter';font-style: normal;font-size: 15px;color: #000000; text-align:left; line-height:2; padding-left:20px;">
+                {{H.modelSpec}}
+                </p>
+                <p style="line-height:1; font-family: 'Inter';font-style: normal;font-size: 10px;color: #000000; text-align:left; line-height:1; padding-left:20px;">
+                {{H.ownerNm}}
+                </p>
+              </div>
+            </div>
+            <hr style="width:90%; margin: auto;">
+
+          </div>
+        </div>
+      </div>
+
+      <!--찜 목록-->
+      <div v-else-if="index === 1">
+      <!-- 찜목록 text-->
+        <div class="찜목록">
+          <div class="Checked-Text" style="text-align: left; padding-left: 20px;">
+            <h2>찜목록!!</h2>
+          </div>
+        </div>
+
+        <!-- 찜한 각 매물정보-->
+        <div v-for="(H, index) in Home" :key="index">
+
+          <!-- 계약프로세스 이동 버튼으로 감싸기-->
+          <div class="찜한매물정보&클릭시계약" type="button" @click="onBoard(H)" style="padding-top:15px;padding-bottom:15px;">
+            <div class="ChekedLayout clear" style="padding-bottom:10px; padding-top:10px;">
+              <div class="checked-image" style="float:left; padding-left:20px;">
+                  <img src="@/assets/sampleImg2.png" alt="sampleRoom" style="width:120px; height: 120px; border-radius:15px;">
+              </div>
+              <div class="checked-info" style="width:calc(100% - 150px); float:left; height:120px; padding-top:10px; padding-bottom:30px;">
+                <p style="line-height:1; font-family: 'Inter';font-style: normal;font-size: 20px;color: #000000; text-align:left; line-height:2; padding-left:20px;">
+                <b>전세 {{H.price}}</b>
+                </p>
+                <p style="line-height:1; font-family: 'Inter';font-style: normal;font-size: 15px;color: #000000; text-align:left; line-height:1; padding-left:20px;">
+                {{H.modelAddr}}
+                </p>
+                <p style="line-height:1; font-family: 'Inter';font-style: normal;font-size: 15px;color: #000000; text-align:left; line-height:2; padding-left:20px;">
+                {{H.modelSpec}}
+                </p>
+                <p style="line-height:1; font-family: 'Inter';font-style: normal;font-size: 10px;color: #000000; text-align:left; line-height:1; padding-left:20px;">
+                {{H.ownerNm}}
+                </p>
+              </div>
+            </div>
+            <hr style="width:90%; margin: auto;">
+
+          </div>
+        </div>
+      </div>
+
+      <!--종료된 계약목록-->
+      <div v-else>
+        <!-- 종료계약 Text-->
+        <div class="종료목록">
+          <div class="Finished-Text" style="text-align: left; padding-left: 20px;">
+            <h2>종료된 계약</h2>
+          </div>
+        </div>
+        <!-- 종료한 각 계약정보-->
+        <div v-for="(H,index)  in Home" :key="index">
+          <!-- 계약프로세스 이동 버튼으로 감싸기-->
+          <div class="종료한매물정보&클릭시계약서확인" type="button" style="padding-top:0px;padding-bottom:15px;">
+            <div class="FinishedLayout clear" style="padding-bottom:10px; padding-top:5px;">
+              <div class="finished-image" style="float:left; padding-left:20px;">
+                  <img src="@/assets/sampleImg2.png" alt="sampleRoom" style="width:120px; height: 120px; border-radius:15px;">
+              </div>
+              <div class="finished-info" style="width:calc(100% - 150px); float:left; height:120px; padding-top:5px; padding-bottom:30px;">
+                <p style="line-height:1; font-family: 'Inter';font-style: normal;font-size: 20px;color: #000000; text-align:left; line-height:2; padding-left:20px;">
+                <b>전세 {{H.price}}</b>
+                </p>
+                <p style="line-height:1; font-family: 'Inter';font-style: normal;font-size: 15px;color: #000000; text-align:left; line-height:1; padding-left:20px;">
+                {{H.modelAddr}}
+                </p>
+                <p style="line-height:1; font-family: 'Inter';font-style: normal;font-size: 15px;color: #000000; text-align:left; line-height:2; padding-left:20px;">
+                {{H.modelSpec}}
+                </p>
+                <p style="line-height:1; font-family: 'Inter';font-style: normal;font-size: 10px;color: #000000; text-align:left; line-height:1; padding-left:20px;">
+                {{H.ownerNm}}
+                </p>
+              </div>
+            </div>
+            <hr style="width:90%; margin: auto;">
+          </div>
+        </div>
+      </div>
+    <!-- End of three lists-->
     </div>
-    
-    <!-- 리스트 -->
-    <div v-for="(Home,index) in HomeList" :key="index">
-        <div v-if="index === 0">
-            <span class="v57_170"><b>진행중인 계약</b></span>
-                <div v-for="(H,index)  in Home" :key="index">
-                    <!-- 홈뷰 -->
-                    <div class="v57_132">
-                      <span type='button' @click="Staging(H)" class="v57_188" style="background-color:#FFCC3C;">진행 상태 확인</span>
-                      <span class="v57_122">{{H.modelNm}}</span>
-                      <span class="v57_123">{{H.modelAddr}}</span>
-                      <span class="v57_124">{{H.price}} 원</span>
-                      <div class="v103_74"></div>
-                    </div>
-                </div>
-        </div>
-        <div v-else-if="index === 1">
-            <span class="v57_114"><b>찜 목록</b></span>
-                <div v-for="(H,index)  in Home" :key="index">
-                    <div class="hop"></div>
-                    <div class="v57_132">
-                        <div class="v57_131">
-                            <span type='button' @click="onBoard(H)" class="v57_188" style="background-color:#FFCC3C;">계약 진행</span>
-                            <span class="v57_122">{{H.modelNm}}</span>
-                            <span class="v57_123">{{H.modelAddr}}</span>
-                            <span class="v57_124">{{H.price}} 원</span>
-                        </div>
-                        <div class="v103_74"></div>
-                    </div>
-                </div>
-        </div>
-        <div v-else>
-            <span class="v57_171"><b>종료된 계약</b></span>
-                <div v-for="(H,index)  in Home" :key="index">
-                    <div class="hop"></div>
-                    <div class="v57_132">
-                        <div class="v57_131">
-                            <span class="v57_188">전자계약서 확인</span>
-                            <div class="v57_129">
-                                <span class="v57_122">{{H.modelNm}}</span>
-                                <span class="v57_123">{{H.modelAddr}}</span>
-                                <span class="v57_124">{{H.price}} 원</span>
-                            </div>
-                        </div>
-                        <div class="v103_74"></div>
-                    </div>
-                </div>
-        </div>
+
+    <!-- Footer -->
+    <!-- Need To Deal With It-->
+    <div class="Footer" style="float:center; position:fixed; bottom:0; width:100%;">
+      <hr>
+      <img src="@/assets/footerResized.png" alt="footer" style="width:100%;">
     </div>
-
-    <div class="v57_91"></div>
-</div>
-
-<!-- 톡톡 -->
-<div class="v107_2"> 
-    <router-link to='/ChatPage'>
-    <div  class="v86_67"></div>
-    </router-link>
-</div>
-
-</nav>
-<router-view/>
-</div>
+  <!-- </nav> -->
+  </div>
 </template>
 
-
 <script>
-
+import Header from "./HeaderLayout.vue";
 
 export default {
-  name: 'MyMain',
-  data(){
+  name: "MyMain",
+  data() {
     return {
-        HomeList : [[],[],[]]
-    }
+      HomeList: [[], [], []],
+    };
   },
   components: {
+    Header,
   },
   methods: {
-    fetchData: function() {
-        //this.$axios.get('https://jsonplaceholder.typicode.com/users/')
-        this.$axios.get('/nexthouse/RentCntrList/100000001')
+    fetchData: function () {
+      //this.$axios.get('https://jsonplaceholder.typicode.com/users/')
+      this.$axios
+        .get("/nexthouse/RentCntrList/100000001")
         //http://169.56.100.104:30650/nexthouse/RentCntrList/100000001
-        .then(res => {
-          console.log("");  
+        .then((res) => {
+          console.log("");
           console.log("응답 데이터 : " + JSON.stringify(res.data));
           console.log("");
           var str = JSON.stringify(res.data);
-            //console.log("parse: "+ temp);
+          //console.log("parse: "+ temp);
           var jData = JSON.parse(str);
-            for(var i=0;i<jData.length;i++){
-              var weather = jData[i];
-              console.log('******************************');
-                  this.HomeList[Number(weather.cntrDiv[0])-1].push(weather)
-              //console.log(weather.cntrDiv);
-              //console.log(weather.modelNo);
-              //console.log(weather.modelNm);
-              console.log(weather.modelAddr);
-            }
+          for (var i = 0; i < jData.length; i++) {
+            var weather = jData[i];
+            console.log("******************************");
+            this.HomeList[Number(weather.cntrDiv[0]) - 1].push(weather);
+            //console.log(weather.cntrDiv);
+            //console.log(weather.modelNo);
+            //console.log(weather.modelNm);
+            console.log(weather.modelAddr);
+          }
         })
-        .catch(error => {
-            console.log("");
-            console.log("에러 데이터 : " + error.data);
-            console.log(""); 
+        .catch((error) => {
+          console.log("");
+          console.log("에러 데이터 : " + error.data);
+          console.log("");
         });
     },
 
     Staging(data) {
-        localStorage.setItem('no', data.modelNo);
-        localStorage.setItem('p', data.progress);
-        localStorage.setItem('rent', data.rentCntrNo);
-        this.$router.push('/staging');
+      localStorage.setItem("no", data.modelNo);
+      localStorage.setItem("p", data.progress);
+      localStorage.setItem("rent", data.rentCntrNo);
+      this.$router.push("/staging");
     },
 
     IntroChat() {
-      this.$router.push('/ChatPage');
+      this.$router.push("/ChatPage");
     },
 
     onBoard(data) {
-        console.log(data);
-        //const article = { custNo: "100000001", modelNo: "APT000002"};
-        this.$axios.post('/nexthouse/RentCntrIn/custNo=100000001&modelNo='+data.modelNo)
-          .then(res => {
+      console.log(data);
+      //const article = { custNo: "100000001", modelNo: "APT000002"};
+      this.$axios
+        .post("/nexthouse/RentCntrIn/custNo=100000001&modelNo=" + data.modelNo)
+        .then((res) => {
           console.log("");
           console.log("응답 데이터 : " + JSON.stringify(res.data));
           console.log("");
-          })
-          .catch(error => {
+        })
+        .catch((error) => {
           console.log("");
           console.log("에러 데이터 : " + error.data);
-          console.log(""); 
-          });
-        location.reload();
-        //localStorage.setItem('no', data.modelNo);
-        //localStorage.setItem('p', data.progress);
-        //localStorage.setItem('rent', data.rentCntrNo);
-        //this.$router.push('/staging');
+          console.log("");
+        });
+      location.reload();
+      //localStorage.setItem('no', data.modelNo);
+      //localStorage.setItem('p', data.progress);
+      //localStorage.setItem('rent', data.rentCntrNo);
+      //this.$router.push('/staging');
     },
   },
-  beforeMount(){
+  beforeMount() {
     this.fetchData();
     console.log("fetchData");
-  }
-}
-
+  },
+};
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&display=swap");
 
-.v57_66 {
-  width: 400px;
-  height: 830px;
-  background: rgba(255,255,255,1);
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
+/* 구분선 */
+hr.bold {
+  height: 12px;
 }
-.v57_70 {
-  width: 371px;
-  height: 72px;
-  /* background: url("../images/v57_70.png"); */
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  /* opacity: 1;
-  position: absolute; */
-  top: 0px;
-  left: 1px;
-  overflow: hidden;
-}
-.v57_77 {
-  width: 168px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 31px;
-  left: 40px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 17px;
-  opacity: 1;
-  text-align: left;
-}
-.hop {
-  /* width: 20px; */
-  height: 10px;
-  /*background: url("../images/arrow.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; */
-  opacity: 1;
-  /* position: absolute; */
-  /* top: 35px;
-  left: 18px; */
-}
-.v57_78 {
-  width: 20px;
-  height: 20px;
-  background: url("../images/arrow.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 35px;
-  left: 18px;
-}
-.v57_91 {
-  width: 375px;
-  height: 90px;
-  background: url("../images/navi.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  /* opacity: 1; */
-  position: absolute;
-  top: 721px;
-  left: 1px;
-  /* overflow: hidden; */
-}
-.v57_114 {
-  width: 329px;
-  color: rgba(0,0,0,1);
+.chat-date {
   position: relative;
-  top: 12px;
-  left: -130px;
-  font-family: Inter;
-  font-weight: Semi Bold;
-  font-size: 20px;
-  opacity: 1;
-  text-align: left;
-}
-.v57_171 {
-  width: 329px;
-  color: rgba(0,0,0,1);
-  position: relative;
-  top: 12px;
-  left: -110px;
-  font-family: Inter;
-  font-weight: Semi Bold;
-  font-size: 20px;
-  opacity: 1;
-  text-align: left;
-}
-.v57_132 {
-  width: 420px;
-  height: 108px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  /* overflow: hidden; */
-}
-.v57_131 {
-  width: 395px;
-  height: 108px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  /* opacity: 1; */
-  position: relative;
-  top: 5px;
-  left: 2px; 
-  /* overflow: hidden; */
-  border: 1px solid rgba(204,204,204,1);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-.v57_125 {
-  width: 251px;
-  /* background: url("../images/v57_125.png"); */
-  opacity: 1;
-  /* position: absolute; */
-  top: 93px;
-  left: 2px;
-  border: 1px solid rgba(204,204,204,1);
-}
-.v57_188 {
-  width: 124px;
-  color: rgba(0,0,0,1);
-  background: rgba(238,238,238,1);
-  position: relative;
-  top: 7px;
-  left: 130px;
-  font-family: Inter;
-  font-weight: Medium;
-  font-size: 15px;
-  opacity: 1;
-  border-top-left-radius: 150px;
-  border-top-right-radius: 150px;
-  border-bottom-left-radius: 150px;
-  border-bottom-right-radius: 150px;
-  padding: 5px;
   text-align: center;
 }
-.v57_129 {
-  width: 400px;
-  height: 100px;
-  /* background: url("../images/v57_129.png"); */
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  /* position: absolute; */
-  top: 32px;
-  left: 0px;
-  /* overflow: hidden; */
-}
-.v57_122 {
-  width: 300px;
-  color: rgba(0,0,0,1);
-  position: relative;
-  top: 17px;
-  left: 60px;
-  display: block;
-  font-family: Inter;
-  font-weight: Medium;
-  font-size: 17px;
-  opacity: 1;
-  text-align: right;
-  overflow: visible;
-}
-.v57_123 {
-  width: 300px;
-  color: rgba(0,0,0,1);
-  position: relative;
-  top: 17px;
-  left: 100px;
-  display: block;
-  font-family: Inter;
-  font-weight: Medium;
-  font-size: 17px;
-  opacity: 1;
-  text-align: left;
-  overflow: visible;
-}
-.v57_124 {
-  width: 200px;
-  color: rgba(0,0,0,1);
-  position: relative;
-  top: 20px;
-  left: 170px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 15px;
-  opacity: 1;
-  text-align: right;
-  display: block;
-}
-.v103_74 {
-  width: 61px;
-  height: 49px;
-  background: url("../images/home.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: relative;
-  top: -70px;
-  left: 6px;
-  overflow: hidden;
-}
-.v57_170 {
-  width: 329px;
-  color: rgba(0,0,0,1);
-  position: relative;
-  /*top: 76px;*/
-  left: -100px; 
-  font-family: Inter;
-  font-weight: Semi Bold;
-  font-size: 20px;
-  opacity: 1;
-  text-align: left;
-}
-.v107_2 {
-  width: 79px;
-  height: 80px;
-  background: rgba(255,255,255,1);
-  opacity: 1;
+.chat-date::before {
+  content: "";
   position: absolute;
-  top: 620px;
-  left: 300px;
-  overflow: hidden;
+  left: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  background-color: #d0d0d0;
 }
-.v86_67 {
-  width: 79px;
-  height: 85px;
-  background: url("../images/talk.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+.chat-date > span {
   position: relative;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
+  z-index: 1;
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 4px 8px;
+}
+.chat > div.text {
+  display: inline-block;
+  max-width: 500px;
+  width: auto;
+  padding: 8px 16px;
+  border-radius: 50px;
+  word-break: break-all;
+}
+.chat > div.date {
+  font-size: 12px;
+  vertical-align: bottom;
+}
+.my.chat {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.my.chat > div.text {
+  background-color: #ffcc3c;
+}
+.your.chat > div.text {
+  background-color: #d3d3d3;
+}
+.chat > div.date {
+  display: inline-block;
+}
+
+h2 {
+  font-family: "Inter";
+  font-weight: bold;
+  padding-top: 15px;
+  font-size: 20px;
+  color: #000000;
+}
+
+h3,
+h4,
+h5 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 30px;
+  color: #000000;
+  padding-top: 15px;
+}
+
+h6 {
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 12px;
+  color: #000000;
 }
 </style>
