@@ -1,7 +1,7 @@
 <template>
 <div>
 <nav>
-  <!-- <div class="v57_66"> -->
+  <div class="v57_66">
     <!-- 제목 -->
     
     <div class="v57_70">
@@ -59,7 +59,7 @@
     </div>
 
     <div class="v57_91"></div>
-  <!-- </div> -->
+</div>
 
 <!-- 톡톡 -->
 <div class="v107_2"> 
