@@ -82,7 +82,7 @@ export default {
   },
   methods:{
     ChatData: function() {
-      this.$axios.get('/nexthouse/adsrMsgAll/100000001')
+      this.$axios.get('/chat/adsrMsgAll/100000001')
       .then(res => {
         console.log("채팅 데이터 : " + JSON.stringify(res.data));
         var chat = JSON.stringify(res.data);
@@ -101,7 +101,7 @@ export default {
       });
     },
     CounselData: function() {
-      this.$axios.get('/nexthouse/curAdsrSel/100000001')
+      this.$axios.get('/chat/curAdsrSel/100000001')
       .then(res => {
         console.log("상담자 데이터: " + JSON.stringify(res.data));
         var counsel = JSON.stringify(res.data);
@@ -110,13 +110,14 @@ export default {
 
         this.Counseler = counselD[0];
         console.log(this.Counseler.adsrNo);
+        
       })
       .catch(error => {
         console.log("에러 데이터 : " + error.data);
       });
     },
     MessageSending: function() {
-      this.$axios.post('/nexthouse/inselAdsr',
+      this.$axios.post('/chat/inselAdsr',
         {          
           custNo: '100000001',
           msg: this.msg,
