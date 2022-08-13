@@ -2,6 +2,7 @@ const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
+    /*
     proxy: {
       '/main':{
         target:'http://nexthouse.169.56.100.104.nip.io/',
@@ -15,5 +16,5 @@ module.exports = defineConfig({
       }
     },
     // historyApiFallback: true,
-  }
+  */}
 })

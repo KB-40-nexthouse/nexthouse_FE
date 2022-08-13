@@ -153,8 +153,17 @@ export default {
     fetchData: function () {
       //this.$axios.get('https://jsonplaceholder.typicode.com/users/')
       this.$axios
-        .get("/main/RentCntrList/100000001")
+      .get("http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrList/100000001")
+       // this.$axios({
+         // url: 'http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrList/100000001/',
+         // method: 'get'//,
+          //data: {
+          //  firstName: 'Fred',
+          //  lastName: 'Flintstone'
+          //}
+        //})
         //http://169.56.100.104:30650/nexthouse/RentCntrList/100000001
+        //http://nexthouse.169.56.100.104.nip.io/
         .then((res) => {
           console.log("");
           console.log("응답 데이터 : " + JSON.stringify(res.data));
