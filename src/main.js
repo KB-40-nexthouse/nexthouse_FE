@@ -9,7 +9,7 @@ import axios from "axios"
 
 const app = createApp(App)
 app.config.globalProperties.$axios = axios; 
-axios.defaults.baseURL = 'http://localhost:8080';
+//axios.defaults.baseURL = 'http://localhost:8080';
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 //.use(AxiosPlugin)
