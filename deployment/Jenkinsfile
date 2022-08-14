@@ -60,9 +60,10 @@ podTemplate(containers: [
 
 		try {
 
-       			stageName = "Build maven project"
+       			stageName = "NPM Build project"
 
 			// Build Source from Repository in gitlab
+			/*
 			stage(stageName) {
 				echo "**** START : " + stageName
 				def _dir = pwd();
@@ -70,14 +71,14 @@ podTemplate(containers: [
 				echo "baseDir : ${baseDir}"
 				echo "baseDeployDir : ${baseDeployDir}"
 				sh "ls -al"
-				container('maven') {
+				container('npm') {
 						sh "mvn -B -f ${baseDir} clean package -Dmaven.testSkips=true "
 						echo "*** RESULT ***"
 						sh "pwd"
 						sh "ls -al ${baseDir}/target"
 				}
 			}
-
+			*/
 			// Code Inspection
 			stage("Inspection Code") {
 				// container("scanner") {
