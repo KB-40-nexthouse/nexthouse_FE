@@ -151,17 +151,8 @@ export default {
   },
   methods: {
     fetchData: function () {
-      //this.$axios.get('https://jsonplaceholder.typicode.com/users/')
       this.$axios
       .get("http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrList/100000001")
-       // this.$axios({
-         // url: 'http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrList/100000001/',
-         // method: 'get'//,
-          //data: {
-          //  firstName: 'Fred',
-          //  lastName: 'Flintstone'
-          //}
-        //})
         //http://169.56.100.104:30650/nexthouse/RentCntrList/100000001
         //http://nexthouse.169.56.100.104.nip.io/
         .then((res) => {
@@ -175,9 +166,6 @@ export default {
             var weather = jData[i];
             console.log("******************************");
             this.HomeList[Number(weather.cntrDiv[0]) - 1].push(weather);
-            //console.log(weather.cntrDiv);
-            //console.log(weather.modelNo);
-            //console.log(weather.modelNm);
             console.log(weather.modelAddr);
           }
         })
@@ -203,7 +191,7 @@ export default {
       console.log(data);
       //const article = { custNo: "100000001", modelNo: "APT000002"};
       this.$axios
-        .post("/nexthouse/RentCntrIn/custNo=100000001&modelNo=" + data.modelNo)
+        .post("http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrIn/custNo=100000001&modelNo=" + data.modelNo)
         .then((res) => {
           console.log("");
           console.log("응답 데이터 : " + JSON.stringify(res.data));

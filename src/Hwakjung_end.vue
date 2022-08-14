@@ -48,7 +48,7 @@ export default {
       this.$router.go(-2);
     },
     postProgress() {
-        this.$axios.post('/nexthouse/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=2')
+        this.$axios.post('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=2')
           .then(res => {
           console.log("응답 데이터 : " + JSON.stringify(res.data));
           })

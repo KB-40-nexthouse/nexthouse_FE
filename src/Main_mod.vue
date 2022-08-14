@@ -153,7 +153,7 @@ export default {
     fetchData: function () {
       //this.$axios.get('https://jsonplaceholder.typicode.com/users/')
       this.$axios
-        .get("/nexthouse/RentCntrList/100000001")
+        .get("http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrList/100000001")
         //http://169.56.100.104:30650/nexthouse/RentCntrList/100000001
         .then((res) => {
           console.log("");
@@ -194,7 +194,7 @@ export default {
       console.log(data);
       //const article = { custNo: "100000001", modelNo: "APT000002"};
       this.$axios
-        .post("/nexthouse/RentCntrIn/custNo=100000001&modelNo=" + data.modelNo)
+        .post("http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrIn/custNo=100000001&modelNo=" + data.modelNo)
         .then((res) => {
           console.log("");
           console.log("응답 데이터 : " + JSON.stringify(res.data));

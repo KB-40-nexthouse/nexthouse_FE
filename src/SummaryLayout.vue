@@ -145,7 +145,7 @@ export default {
     this.$router.go(-3);
     },
     getInfo(){
-        this.$axios.get('/nexthouse./RentCntrRslt/'+this.rentNo)
+        this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrRslt/'+this.rentNo)
         .then(res => {
           console.log("");
           console.log("응답 데이터 : " + JSON.stringify(res.data));
