@@ -1,10 +1,10 @@
 # build stage 
 FROM node:lts-alpine as build-stage
 WORKDIR /app
-COPY nexthouse_FE/package*.json ./
+COPY package*.json ./
 RUN npm install --production
 RUN npm i @vue/cli-service
-COPY ./nexthouse_FE/ .
+COPY . .
 RUN npm run build
 
 # production stage
