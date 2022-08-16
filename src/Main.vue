@@ -23,7 +23,7 @@
 
           <!-- 계약프로세스 이동 버튼으로 감싸기-->
           <div class="진행중매물정보&클릭시계약" type="button" @click="Staging(H)" style="padding-top:15px;padding-bottom:15px;">
-            <div class="OngoingLayout clear" style="padding-bottom:10px; padding-top:10px;">
+            <div class="OngoingLayout clear" style="padding-bottom:10px; padding-top:10px; cursor:grab;">
               <div class="ongoing-image" style="float:left; padding-left:20px;">
                   <img src="@/assets/sampleImg2.png" alt="sampleRoom" style="width:120px; height: 120px; border-radius:15px;">
               </div>

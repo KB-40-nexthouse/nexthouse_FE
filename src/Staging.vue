@@ -269,6 +269,7 @@ export default {
   border-bottom-right-radius: 30px;
   box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.07999999821186066);
   overflow: hidden;
+  cursor: grab;
 }
 .v223_71 {
   width: 340px;

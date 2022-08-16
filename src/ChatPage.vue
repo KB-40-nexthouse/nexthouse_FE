@@ -53,10 +53,10 @@
     <div class="input-wrap clear" style="position: fixed; bottom: 0; width: 100%; background-color:white; ">
     <p class="chat-date"></p>
       <div class="Text-Input">
-        <input name="user-text" type="text" v-model ="msg" style="width:100%; padding-top:10px;" placeholder="메세지를 입력하세요."/>
+        <input @keyup.enter ="MessageSending()" name="user-text" type="text" v-model ="msg" style="width:100%; padding-top:10px;" placeholder="메세지를 입력하세요."/>
       </div>
       <div class="Send-Icon" style="float: right;">
-        <img @click="MessageSending()" src="@/assets/SendIcon.png" style="vertical-align: middle; padding-right: 10px; padding-top: 10px;" alt="sendIcon">
+        <img @click="MessageSending()" src="@/assets/SendIcon.png" style="vertical-align: middle; padding-right: 10px; padding-top: 10px; cursor: grab;" alt="sendIcon">
       </div>
     </div>
   </div>
@@ -133,6 +133,7 @@ export default {
         this.lastTime = msgLast2[0].msgTime;
         this.ChatList.push(msgLast2[0]);
         this.Write();
+        this.msg = '';
       })
       .catch(error => {
         console.log("에러 데이터 : " + error.data);
