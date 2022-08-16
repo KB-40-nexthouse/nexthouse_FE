@@ -1,5 +1,5 @@
 <template>
-<Header title="KB전문가 상담" />
+<Header title="KB전문가 상담" style="position:fixed; top:0; border-bottom: 1px solid lightgray;"/>
   <!--Header-->
   <!-- <div class="header" >
     <h2 style="float: left;">
@@ -9,9 +9,8 @@
       <img src="@/assets/hamResized.png" alt="menuIcon">
     </div>
   </div> -->
-  <div class="contents">
+  <div class="contents" style="padding-top:44px; padding-bottom:50px;">
     <!-- <hr class="bold"/> -->
-    <p class="chat-date"></p>
     <div class="top clear">
       <!-- 상담사 프로필 이미지-->
       <div class="left" style="float:left; padding-top:5px;">
@@ -34,8 +33,8 @@
       <p class="chat-date"><span>2022.08.19</span></p>
       <ul style="padding : 0 16px;">
         <div v-for="(C,index) in ChatList" :key="index">
-          <div v-if="C.sendId=='100000001'">
-            <li class="my chat clear" style="float:right">
+          <div class="clear" v-if="C.sendId=='100000001'">
+            <li class="my chat" style="float:right">
             <div class="date">{{C.msgTime}}</div>
             <div class="text">{{C.msg}}</div>
             </li>
@@ -51,7 +50,7 @@
       </ul>
     </div>
     <!-- 채팅입력 -->
-    <div class="input-wrap clear" style="position: absolute; bottom: 0; width: 100%; padding-bottom:16px;">
+    <div class="input-wrap clear" style="position: fixed; bottom: 0; width: 100%; background-color:white; ">
     <p class="chat-date"></p>
       <div class="Text-Input">
         <input name="user-text" type="text" v-model ="msg" style="width:100%; padding-top:10px;" placeholder="메세지를 입력하세요."/>
