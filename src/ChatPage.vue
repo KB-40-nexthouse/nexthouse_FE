@@ -49,7 +49,9 @@
         </div>
       </ul>
     </div>
-    <!-- 채팅입력 -->
+
+  </div>
+      <!-- 채팅입력 -->
     <div class="input-wrap clear" style="position: fixed; bottom: 0; width: 100%; background-color:white; ">
     <p class="chat-date"></p>
       <div class="Text-Input">
@@ -59,7 +61,6 @@
         <img @click="MessageSending()" src="@/assets/SendIcon.png" style="vertical-align: middle; padding-right: 10px; padding-top: 10px; cursor: grab;" alt="sendIcon">
       </div>
     </div>
-  </div>
 </template>
 
 
@@ -140,10 +141,11 @@ export default {
         }
         // window.scrollTo(0,document.body.scrollHeight)
       })
-      window.scrollTo(0,document.body.scrollHeight)
       .catch(error => {
         console.log("에러 데이터 : " + error.data);
       });
+      window.scrollTo(0,document.body.scrollHeight);
+      // window.body.scrollTop = window.body.scrollHeight;
     },
     Write() {
 

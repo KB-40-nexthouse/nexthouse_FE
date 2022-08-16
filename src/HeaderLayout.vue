@@ -1,6 +1,6 @@
 <template>
   <div class="header" >
-    <h2 style="float: left;">
+    <h2 @click="backButton" style="float: left;">
         &nbsp; &lt; &nbsp; {{ title }}
     </h2>
     <div class="" style="float: right; padding-top: 15px; padding-right: 10px">
@@ -14,6 +14,11 @@ export default {
     name: "HeaderLayout",
     props: {
         title: String,
+    },
+    methods: {
+      backButton: function() {
+        history.back();
+      }
     }
 };
 </script>

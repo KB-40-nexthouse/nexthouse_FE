@@ -15,11 +15,12 @@
         <div class="v231_129"></div>
         <div class="v231_130"></div>
     </div>
-    <span class="v231_131"><b>계약 일자  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.08.03</b></span>
-    <span class="v231_132"><b>송금 금액 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100,000,000</b></span>
-    <span class="v231_133"><b>총 금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  200,000,000</b></span>
+    
+    <span class="v231_131"><b>계약 일자  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ this.depositInfo.cntrDt }}</b></span>
+    <span class="v231_132"><b>송금 금액 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ this.depositInfo.price }}</b></span>
+    <span class="v231_133"><b>총 금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ this.depositInfo.price }}</b></span>
     <span class="v231_134"></span>
-    <span class="v231_140"><b>은행 가상 계좌 &nbsp;&nbsp;&nbsp;&nbsp; 111-2222-33333</b></span>
+    <span class="v231_140"><b>은행 가상 계좌 &nbsp;&nbsp;&nbsp;&nbsp; {{ this.depositInfo.BankNm }} {{ this.depositInfo.acctNo }}</b></span>
     <div class="v231_139"></div>
     <span class="v231_142"><b>실행 예정 대출&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100,000,000</b></span>
     <div class="v231_143">
@@ -40,7 +41,8 @@ export default {
         checked : false,
         modelNo : 0,
         status : 0,
-        rentNo : 0
+        rentNo : 0,
+        depositInfo : 0
     }
   },
   props: {
@@ -52,12 +54,27 @@ export default {
         localStorage.setItem('p', this.status);
         localStorage.setItem('rent', this.rentNo);
         this.$router.push('/MyBojeongEnd');
-    }
+    },
+    SendingData: function() {
+      this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentDepoSndInf/100000001')
+      .then(res => {
+        console.log("보증금 데이터 : " + JSON.stringify(res.data));
+        var depo = JSON.stringify(res.data);
+        var deposit = JSON.parse(depo);
+        console.log(deposit);
+        this.depositInfo = deposit[0];
+
+      })
+      .catch(error => {
+        console.log("에러 데이터 : " + error.data);
+      });
+    },
   },
     beforeMount(){
       this.status = localStorage.getItem('p')
       this.modelNo = localStorage.getItem('no')
       this.rentNo = localStorage.getItem('rent')
+      this.SendingData()
   }
 }
 </script>
