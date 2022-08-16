@@ -11,6 +11,8 @@
     <div class="v259_19"></div>
     <!-- <span class="v123123">전자계약서 서명</span> -->
     {{this.Home.ownerNm}}
+    <canvas id="canvasT" width="50" height="50" class="v76_1232" ref = "myCanvas" ></canvas>
+    <img id="source" :src="image_source_link" width="0" height="0" class="v76_1232">
 </div>
 </nav>
 <router-view/>
@@ -25,18 +27,27 @@ export default {
 
     return {
         rentNo : 0,
-        Home : 0
+        Home : 0,
+        ctx : null,
+        canvas : null,
+        image : null,
+        image_source : '',
     }
   },
   components: {
+  },
+  computed : {
+    image_source_link(){
+      return this.image_source
+    }
   },
   methods: {
     goBack(){
       this.$router.go(-1);
     },
-    fetchData: function() {
+    fetchData: async function() {
         //this.$axios.get('https://jsonplaceholder.typicode.com/users/')
-        this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrRslt/'+this.rentNo)
+        await this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrRslt/'+this.rentNo)
         .then(res => {
           console.log("");  
           console.log("응답 데이터 : " + JSON.stringify(res.data));
@@ -51,12 +62,43 @@ export default {
             console.log(""); 
         });
     },
+    async fetchImg(){
+        await this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/ImgSel/100000077')
+        .then(res => {
+          console.log("");  
+          console.log("응답 데이터 : " + JSON.stringify(res.data));
+          console.log("");
+          var str = JSON.stringify(res.data);
+          var jData = JSON.parse(str);
+          this.Home = jData[0];
+          console.log(this.Home.img);
+        })
+        .catch(error => {
+            console.log("");
+            console.log("에러 데이터 : " + error.data);
+            console.log(""); 
+        });
+    },
+    loadImg(){
+
+      this.image.addEventListener('load', () => {
+        this.ctx.drawImage(this.image, 0,0);  
+      });
+       var source = this.Home.img;
+      this.image_source = source
+    }
   },
   beforeMount(){
     this.rentNo = localStorage.getItem('rent');
-    this.fetchData();
   },
-  mounted(){
+  async mounted(){
+    await this.fetchData();
+    await this.fetchImg();
+    this.canvas = document.getElementById('canvasT');
+    this.ctx = this.canvas.getContext('2d');
+    this.image = document.getElementById('source');
+    console.log("mounted");
+    this.loadImg();
   }
 }
 
@@ -79,6 +121,17 @@ body {
   left: 0px;
   overflow: hidden;
 }
+.v76_1232 {
+    width: 70px;
+    height: 70px;
+    /* background: red; */
+    opacity: 1;
+    position: absolute;
+    top: 420px;
+    left: 330px;
+    overflow: hidden;
+    z-index: 1;
+  }
 .v123123 {
   width: 166px;
   color: rgba(0,0,0,1);

@@ -97,12 +97,15 @@ export default {
     },
     onMouseMove(e){
         this.draw(e);
+        console.log(this.startX +" "+ this.startY);
     },
     onMouseDown(e){
     this.isDrawing = true;
     
-    this.startX = e.offsetX-20;
+    this.startX = e.offsetX;
     this.startY = e.offsetY;
+
+    console.log(this.startX +" "+ this.startY);
     },
     onMouseUp(){
         this.isDrawing = false;
@@ -110,15 +113,33 @@ export default {
     },
     handleSaveClick(){
     const image = this.canvas.toDataURL();
+    console.log(this.canvas.toDataURL());
     const link = document.createElement("a");
     link.href = image;
     link.download = "PaintJS";
     link.click();
+
+    this.testS();
     this.postProgress();
     localStorage.setItem('no', this.modelNo);
     localStorage.setItem('p', 2);
     localStorage.setItem('rent', this.rentNo);
     this.$router.go(-2);
+    },
+    testS() {
+      this.$axios.post('http://nexthouse.169.56.100.104.nip.io/nexthouse/save.do',
+        {          
+          id: '100000077',
+          img: this.canvas.toDataURL()
+        }
+      )
+      .then(res => {
+        console.log("message " + JSON.stringify(res.data));
+        
+      })
+      .catch(error => {
+        console.log("에러 데이터 : " + error.data);
+      });
     },
     // goNext(){
     //     localStorage.setItem('no', this.modelNo);
