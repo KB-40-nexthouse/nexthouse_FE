@@ -63,7 +63,7 @@ export default {
         });
     },
     async fetchImg(){
-        await this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/ImgSel/100000077')
+        await this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/ImgSel/'+this.rentNo)
         .then(res => {
           console.log("");  
           console.log("응답 데이터 : " + JSON.stringify(res.data));

@@ -11,8 +11,6 @@
     <div class="v259_19"></div>
     <!-- <span class="v123123">전자계약서 서명</span> -->
     {{this.Home.ownerNm}}
-    <canvas id="canvasT" width="0" height="0" class="v76_1232" ref = "myCanvas" ></canvas>
-    <img id="source" :src="image_source_link" width="0" height="0" >
 </div>
 </nav>
 <router-view/>
@@ -30,18 +28,9 @@ export default {
         status : 0,
         rentNo : 0,
         Home : 0,
-        ctx : null,
-        canvas : null,
-        image : null,
-        image_source : '',
     }
   },
   components: {
-  },
-  computed : {
-    image_source_link(){
-      return this.image_source
-    }
   },
   methods: {
     goBack(){
@@ -66,32 +55,6 @@ export default {
             console.log(""); 
         });
     },
-    async fetchImg(){
-        await this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/ImgSel/100000077')
-        .then(res => {
-          console.log("");  
-          console.log("응답 데이터 : " + JSON.stringify(res.data));
-          console.log("");
-          var str = JSON.stringify(res.data);
-          var jData = JSON.parse(str);
-          this.Home = jData[0];
-          console.log(this.Home.img);
-        })
-        .catch(error => {
-            console.log("");
-            console.log("에러 데이터 : " + error.data);
-            console.log(""); 
-        });
-    },
-    loadImg(){
-
-      this.image.addEventListener('load', () => {
-        this.ctx.drawImage(this.image, 0,0);  
-      });
-       var source = this.Home.img;
-      // console.log(source);
-      this.image_source = source
-    }
   },
   beforeMount(){
     this.status = localStorage.getItem('p')
@@ -101,12 +64,7 @@ export default {
   },
   async mounted(){
     await this.fetchData();
-    await this.fetchImg();
-    this.canvas = document.getElementById('canvasT');
-    this.ctx = this.canvas.getContext('2d');
-    this.image = document.getElementById('source');
     console.log("mounted");
-    this.loadImg();
   }
 }
 

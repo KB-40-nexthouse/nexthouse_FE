@@ -97,7 +97,7 @@ export default {
     },
     onMouseMove(e){
         this.draw(e);
-        console.log(this.startX +" "+ this.startY);
+        //console.log(this.startX +" "+ this.startY);
     },
     onMouseDown(e){
     this.isDrawing = true;
@@ -105,7 +105,7 @@ export default {
     this.startX = e.offsetX;
     this.startY = e.offsetY;
 
-    console.log(this.startX +" "+ this.startY);
+    //console.log(this.startX +" "+ this.startY);
     },
     onMouseUp(){
         this.isDrawing = false;
@@ -129,7 +129,7 @@ export default {
     testS() {
       this.$axios.post('http://nexthouse.169.56.100.104.nip.io/nexthouse/save.do',
         {          
-          id: '100000077',
+          id: this.rentNo,
           img: this.canvas.toDataURL()
         }
       )
