@@ -178,7 +178,7 @@ export default {
       localStorage.setItem("no", data.modelNo);
       localStorage.setItem("p", data.progress);
       localStorage.setItem("rent", data.rentCntrNo);
-      this.$router.push("/staging");
+      this.$router.push("/NewStaging");
     },
 
     IntroChat() {
