@@ -363,7 +363,7 @@ export default {
     position: absolute;
     top: 16px;
     left: 26px;
-    font-family: Inter;
+    /* font-family: Inter; */
     font-weight: Bold;
     font-size: 14px;
     opacity: 1;
@@ -385,7 +385,7 @@ export default {
     position: absolute;
     top: 426px;
     left: 26px;
-    font-family: Inter;
+    /* font-family: Inter; */
     font-weight: Semi Bold;
     font-size: 20px;
     opacity: 1;
@@ -397,7 +397,7 @@ export default {
     position: absolute;
     top: 42px;
     left: 40px;
-    font-family: Inter;
+    /* font-family: Inter; */
     font-weight: Regular;
     font-size: 14px;
     opacity: 1;
@@ -424,7 +424,7 @@ export default {
     position: absolute;
     top: 690px;
     left: 95px;
-    font-family: Inter;
+    /* font-family: Inter; */
     font-weight: Medium;
     font-size: 18px;
     opacity: 1;

@@ -39,7 +39,7 @@ export default {
 /* 헤더 텍스트 색상 */
 
 h2, h3, h4, h5, h6 {
-  font-family: 'Inter';
+  /* font-family: 'Inter'; */
   font-style: normal;
   font-weight: 100;
   font-size: 16px;

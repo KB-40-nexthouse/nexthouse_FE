@@ -123,7 +123,7 @@ body {
       position: absolute;
       top: 12px;
       left: 45px;
-      font-family: Inter;
+      /* font-family: Inter; */
       font-weight: Regular;
       font-size: 14px;
       opacity: 1;
@@ -170,7 +170,7 @@ body {
       position: absolute;
       top: 207px;
       left: 126px;
-      font-family: Inter;
+      /* font-family: Inter; */
       font-weight: Semi Bold;
       font-size: 19px;
       opacity: 1;
@@ -205,7 +205,7 @@ body {
       position: absolute;
       top: 17px;
       left: 102px;
-      font-family: Inter;
+      /* font-family: Inter; */
       font-weight: Semi Bold;
       font-size: 18px;
       opacity: 1;
