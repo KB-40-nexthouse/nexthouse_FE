@@ -32,7 +32,7 @@
             앱을 통해 간편하게 확정일자를 신고해보세요.
           </p>
           <button id='btn_02' class="btn_on" :class="{btn_end:status>2, btn_yet:status<2}"  type="button" @click="ToHwakjung()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
-            사용하기
+            신고하기
           </button>
         </div>
     </div>
@@ -49,7 +49,7 @@
             잘못된 계좌로 가지 않게 KB국민은행이 도와드릴게요.
           </p>
           <button id='btn_03'  class="btn_on" :class="{btn_end:status>3, btn_yet:status<3}"  type="button" @click="ToBojeong()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
-            사용하기
+            송금하기
           </button>
         </div>
     </div>
@@ -66,7 +66,7 @@
             앱을 통해 간편하게 전입일자를 신고해보세요.
           </p>
           <button id='btn_04' class="btn_on" :class="{btn_end:status>4, btn_yet:status<4}"  type="button" @click="ToJunyip()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
-            사용하기
+            신고하기
           </button>
         </div>
     </div>
