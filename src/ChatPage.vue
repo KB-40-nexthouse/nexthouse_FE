@@ -136,8 +136,11 @@ export default {
           this.ChatList.push(msgLast2[i]);
           this.Write();
           this.msg = '';
+
         }
+        // window.scrollTo(0,document.body.scrollHeight)
       })
+      window.scrollTo(0,document.body.scrollHeight)
       .catch(error => {
         console.log("에러 데이터 : " + error.data);
       });
