@@ -136,8 +136,8 @@ export default {
     }
   },
   beforeMount(){
-    this.status = 2
-    // this.status = localStorage.getItem('p')
+    //this.status = 2
+    this.status = localStorage.getItem('p')
     this.modelNo = localStorage.getItem('no')
     this.rentNo = localStorage.getItem('rent')
     console.log(this.status+" is status");
