@@ -14,7 +14,7 @@
             출금 계좌만 등록하세요.<br />
             가까운 ATM에서 현금을 출금할 수 있습니다.
           </p>
-          <button id='btn_01' class="btn_on" :class="{btn_end:status>1}"  type="button" @click="ToEleccontract()" style="display: block;  width: 100%;padding: 16px;border-radius: 10px;">
+          <button id='btn_01' class="btn_on" :class="{btn_end:status>1, btn_yet:status<1}"  type="button" @click="ToEleccontract()" style="display: block;  width: 100%;padding: 16px;border-radius: 10px;">
             사용하기
           </button>
         </div>
@@ -31,7 +31,7 @@
             출금 계좌만 등록하세요.<br />
             가까운 ATM에서 현금을 출금할 수 있습니다.
           </p>
-          <button id='btn_02' class="btn_on" :class="{btn_end:status>2}"  type="button" @click="ToHwakjung()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
+          <button id='btn_02' class="btn_on" :class="{btn_end:status>2, btn_yet:status<2}"  type="button" @click="ToHwakjung()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
             사용하기
           </button>
         </div>
@@ -48,7 +48,7 @@
             출금 계좌만 등록하세요.<br />
             가까운 ATM에서 현금을 출금할 수 있습니다.
           </p>
-          <button id='btn_03'  class="btn_on" :class="{btn_end:status>3}"  type="button" @click="ToBojeong()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
+          <button id='btn_03'  class="btn_on" :class="{btn_end:status>3, btn_yet:status<3}"  type="button" @click="ToBojeong()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
             사용하기
           </button>
         </div>
@@ -65,7 +65,7 @@
             출금 계좌만 등록하세요.<br />
             가까운 ATM에서 현금을 출금할 수 있습니다.
           </p>
-          <button id='btn_04' class="btn_on" :class="{btn_end:status>4}"  type="button" @click="ToJunyip()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
+          <button id='btn_04' class="btn_on" :class="{btn_end:status>4, btn_yet:status<4}"  type="button" @click="ToJunyip()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
             사용하기
           </button>
         </div>
@@ -79,6 +79,17 @@
 import Header from "./HeaderLayout.vue";
 export default {
   name: "NewStaging",
+  data(){
+    return {
+      modelNo : 0,
+      status : 0,
+      rentNo : 0,
+      btn1 : 0,
+      btn2 : 0,
+      btn3 : 0,
+      btn4 : 0
+    }
+  },
   components: {
     Header,
   },
@@ -130,6 +141,35 @@ export default {
     this.modelNo = localStorage.getItem('no')
     this.rentNo = localStorage.getItem('rent')
     console.log(this.status+" is status");
+  },
+  mounted(){
+    this.btn1 = document.getElementById('btn_01');
+    this.btn2 = document.getElementById('btn_02');
+    this.btn3 = document.getElementById('btn_03');
+    this.btn4 = document.getElementById('btn_04');
+    
+    if(this.status==2)
+    {
+        this.btn1.innerText = "완료";
+    }
+    else if(this.status==3)
+    {
+        this.btn1.innerText = "완료";
+        this.btn2.innerText = "완료";
+    }
+    else if(this.status==4)
+    {
+        this.btn1.innerText = "완료";
+        this.btn2.innerText = "완료";
+        this.btn3.innerText = "완료";
+    }
+    else
+    {   
+        this.btn1.innerText = "완료";
+        this.btn2.innerText = "완료";
+        this.btn3.innerText = "완료";
+        this.btn4.innerText = "완료";
+    }
   }
 };
 </script>
