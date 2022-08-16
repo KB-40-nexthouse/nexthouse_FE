@@ -4,14 +4,14 @@
     
     <div class="v74_18">
       <div class="v74_20">
-        <div class="v74_21"></div>
-        <span class="v74_22"><b>확정일자 신고</b></span>
+        <div class="v74_21" ></div>
+        <span class="v74_22" @click="goBack"><b>확정일자 신고</b></span>
         <div class="v74_23">
           <div class="v74_24"></div>
           <div class="v74_25"></div>
           <div class="v74_26"></div>
         </div>
-        <div class="v74_27"></div>
+        <div class="v74_27" @click="goBack"></div>
         <div class="v74_28"></div>
       </div>
       <span class="v74_29"><b>개인정보와 전세계약서 수집 이용을<br> 동의하고 확정일자를 신고해주세요.</b></span>
@@ -81,6 +81,9 @@ export default {
         localStorage.setItem('rent', this.rentNo);
         this.$router.push('/MyHwakjungEnd');
       }
+    },
+    goBack() {
+      this.$router.go(-1);
     },
     ChangeCheck(){
         this.checked = !this.checked;

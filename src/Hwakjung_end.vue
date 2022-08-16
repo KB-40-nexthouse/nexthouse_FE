@@ -4,9 +4,9 @@
       <div class="v76_88"></div>
       <div class="v76_89">
         <div class="v76_90"></div>
-        <span class="v76_91"><b>확정일자 신고</b></span>
+        <span class="v76_91" @click="goBack"><b>확정일자 신고</b></span>
         <div class="v76_92"></div>
-        <div class="v76_96"></div>
+        <div class="v76_96" @click="goBack"></div>
         <div class="v76_97"></div>
       </div>
       <span class="v76_98"><b>확정일자 신고가<br> 완료되었습니다.</b></span>
@@ -46,6 +46,9 @@ export default {
       localStorage.setItem('rent', this.rentNo);
       this.postProgress();
       this.$router.go(-2);
+    },
+    goBack() {
+      this.$router.go(-1);
     },
     postProgress() {
         this.$axios.post('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=2')
