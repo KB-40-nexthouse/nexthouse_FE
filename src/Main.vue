@@ -186,7 +186,8 @@ export default {
     },
 
     onBoard(data) {
-      console.log(data);
+      console.log(this.HomeList[0].length);
+      if(this.HomeList[0].length == 0){
       //const article = { custNo: "100000001", modelNo: "APT000002"};
       this.$axios
         .post("http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrIn/custNo=100000001&modelNo=" + data.modelNo)
@@ -201,10 +202,7 @@ export default {
           console.log("");
         });
       location.reload();
-      //localStorage.setItem('no', data.modelNo);
-      //localStorage.setItem('p', data.progress);
-      //localStorage.setItem('rent', data.rentCntrNo);
-      //this.$router.push('/staging');
+      }
     },
     checkContract(data){
       console.log(data)
