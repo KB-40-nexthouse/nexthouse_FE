@@ -187,7 +187,8 @@ export default {
 
     onBoard(data) {
       console.log(this.HomeList[0].length);
-      if(this.HomeList[0].length == 0){
+      //if(this.HomeList[0].length == 0)
+      {
       //const article = { custNo: "100000001", modelNo: "APT000002"};
       this.$axios
         .post("http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrIn/custNo=100000001&modelNo=" + data.modelNo)
