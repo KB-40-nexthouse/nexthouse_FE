@@ -99,7 +99,7 @@
         <!-- 종료한 각 계약정보-->
         <div v-for="(H,index)  in Home" :key="index">
           <!-- 계약프로세스 이동 버튼으로 감싸기-->
-          <div class="종료한매물정보&클릭시계약서확인" type="button" style="padding-top:0px;padding-bottom:15px;">
+          <div class="종료한매물정보&클릭시계약서확인" type="button" @click="checkContract(H)" style="padding-top:0px;padding-bottom:15px;">
             <div class="FinishedLayout clear" style="padding-bottom:10px; padding-top:5px;">
               <div class="finished-image" style="float:left; padding-left:20px;">
                   <img src="@/assets/sampleImg2.png" alt="sampleRoom" style="width:120px; height: 120px; border-radius:15px;">
@@ -208,6 +208,11 @@ export default {
       //localStorage.setItem('rent', data.rentCntrNo);
       //this.$router.push('/staging');
     },
+    checkContract(data){
+      console.log(data)
+      localStorage.setItem('rent', data.rentCntrNo);
+      this.$router.push('/checkContract');
+    }
   },
   beforeMount() {
     this.fetchData();
