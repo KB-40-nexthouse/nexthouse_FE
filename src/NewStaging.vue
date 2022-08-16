@@ -163,7 +163,7 @@ export default {
         this.btn2.innerText = "완료";
         this.btn3.innerText = "완료";
     }
-    else
+    else if(this.status==5)
     {   
         this.btn1.innerText = "완료";
         this.btn2.innerText = "완료";
