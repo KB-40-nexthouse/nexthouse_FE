@@ -28,7 +28,7 @@
         <div style="padding: 33px 20px 20px;background-color: #ffffff;border-radius: 10px;">
           <p><span style="color: #246990"><b>방문없이 </b></span><b>확정일자 신고하기</b></p>
           <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px">
-            주민센터까지 방문하실 필요 없습니다.<br />
+            주민센터까지 방문하실 필요 없어요.<br />
             앱을 통해 간편하게 확정일자를 신고해보세요.
           </p>
           <button id='btn_02' class="btn_on" :class="{btn_end:status>2, btn_yet:status<2}"  type="button" @click="ToHwakjung()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
@@ -62,7 +62,7 @@
         <div style="padding: 33px 20px 20px;background-color: #ffffff;border-radius: 10px;">
           <p><span style="color: #246990"><b>방문없이 </b></span><b>전입일자 신고하기</b></p>
           <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px">
-            주민센터까지 방문하실 필요 없습니다.<br />
+            주민센터까지 방문하실 필요 없어요.<br />
             앱을 통해 간편하게 전입일자를 신고해보세요.
           </p>
           <button id='btn_04' class="btn_on" :class="{btn_end:status>4, btn_yet:status<4}"  type="button" @click="ToJunyip()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
