@@ -9,13 +9,13 @@
           1. 전자계약서
         </h3>
         <div style="padding: 33px 20px 20px;background-color: #ffffff;border-radius: 10px;">
-          <p><span style="color: #246990"><b>카드없이 </b></span><b>현금 출금하기</b></p>
+          <p><span style="color: #246990"><b>종이없이 </b></span><b>계약서 작성하기</b></p>
           <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px">
-            출금 계좌만 등록하세요.<br />
-            가까운 ATM에서 현금을 출금할 수 있습니다.
+            잃어버리기 쉬운 실물 계약서 대신<br />
+            보관과 조회가 편리한 전자계약서를 작성할 수 있어요.
           </p>
           <button id='btn_01' class="btn_on" :class="{btn_end:status>1, btn_yet:status<1}"  type="button" @click="ToEleccontract()" style="display: block;  width: 100%;padding: 16px;border-radius: 10px;">
-            사용하기
+            작성하기
           </button>
         </div>
       </div>
@@ -26,13 +26,13 @@
           2. 확정일자
         </h3>
         <div style="padding: 33px 20px 20px;background-color: #ffffff;border-radius: 10px;">
-          <p><span style="color: #246990"><b>카드없이 </b></span><b>현금 출금하기</b></p>
+          <p><span style="color: #246990"><b>방문없이 </b></span><b>확정일자 신고하기</b></p>
           <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px">
-            출금 계좌만 등록하세요.<br />
-            가까운 ATM에서 현금을 출금할 수 있습니다.
+            주민센터까지 방문하실 필요 없습니다.<br />
+            앱을 통해 간편하게 확정일자를 신고해보세요.
           </p>
           <button id='btn_02' class="btn_on" :class="{btn_end:status>2, btn_yet:status<2}"  type="button" @click="ToHwakjung()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
-            사용하기
+            신고하기
           </button>
         </div>
     </div>
@@ -43,13 +43,13 @@
           3. 보증금 송금
         </h3>
         <div style="padding: 33px 20px 20px;background-color: #ffffff;border-radius: 10px;">
-          <p><span style="color: #246990"><b>카드없이 </b></span><b>현금 출금하기</b></p>
+          <p><span style="color: #246990"><b>안전하게 </b></span><b>보증금 송금하기</b></p>
           <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px">
             출금 계좌만 등록하세요.<br />
-            가까운 ATM에서 현금을 출금할 수 있습니다.
+            잘못된 계좌로 가지 않게 KB국민은행이 도와드릴게요.
           </p>
           <button id='btn_03'  class="btn_on" :class="{btn_end:status>3, btn_yet:status<3}"  type="button" @click="ToBojeong()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
-            사용하기
+            송금하기
           </button>
         </div>
     </div>
@@ -60,13 +60,13 @@
           4. 전입신고
         </h3>
         <div style="padding: 33px 20px 20px;background-color: #ffffff;border-radius: 10px;">
-          <p><span style="color: #246990"><b>카드없이 </b></span><b>현금 출금하기</b></p>
+          <p><span style="color: #246990"><b>방문없이 </b></span><b>전입일자 신고하기</b></p>
           <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px">
-            출금 계좌만 등록하세요.<br />
-            가까운 ATM에서 현금을 출금할 수 있습니다.
+            주민센터까지 방문하실 필요 없습니다.<br />
+            앱을 통해 간편하게 전입일자를 신고해보세요.
           </p>
           <button id='btn_04' class="btn_on" :class="{btn_end:status>4, btn_yet:status<4}"  type="button" @click="ToJunyip()" style="display: block; width: 100%;padding: 16px;border-radius: 10px;">
-            사용하기
+            신고하기
           </button>
         </div>
     </div>
@@ -136,8 +136,8 @@ export default {
     }
   },
   beforeMount(){
-    this.status = 2
-    // this.status = localStorage.getItem('p')
+    //this.status = 2
+    this.status = localStorage.getItem('p')
     this.modelNo = localStorage.getItem('no')
     this.rentNo = localStorage.getItem('rent')
     console.log(this.status+" is status");
