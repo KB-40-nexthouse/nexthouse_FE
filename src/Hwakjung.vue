@@ -149,7 +149,7 @@ export default {
     position: absolute;
     top: 16px;
     left: 40px;
-    font-family: Inter;
+    /* font-family: Inter; */
     font-weight: Regular;
     font-size: 14px;
     opacity: 1;
@@ -226,7 +226,7 @@ export default {
     position: absolute;
     top: 153px;
     left: 23px;
-    font-family: Inter;
+    /* font-family: Inter; */
     font-weight: Semi Bold;
     font-size: 16px;
     opacity: 1;
@@ -271,7 +271,7 @@ export default {
     position: absolute;
     top: 16px;
     left: 23px;
-    font-family: Inter;
+    /* font-family: Inter; */
     font-weight: Bold;
     font-size: 14px;
     opacity: 1;
@@ -326,7 +326,7 @@ export default {
     position: absolute;
     top: 16px;
     left: 102px;
-    font-family: Inter;
+    /* font-family: Inter; */
     font-weight: Semi Bold;
     font-size: 18px;
     opacity: 1;
@@ -351,7 +351,7 @@ export default {
     position: absolute;
     top: 0px;
     left: 41px;
-    font-family: Inter;
+    /* font-family: Inter; */
     font-weight: Semi Bold;
     font-size: 16px;
     opacity: 1;
@@ -412,7 +412,7 @@ export default {
     position: absolute;
     top: 0px;
     left: 32px;
-    font-family: Inter;
+    /* font-family: Inter */
     font-weight: Regular;
     font-size: 16px;
     opacity: 1;
@@ -450,7 +450,7 @@ export default {
     position: absolute;
     top: 0px;
     left: 32px;
-    font-family: Inter;
+    /* font-family: Inter; */
     font-weight: Regular;
     font-size: 16px;
     opacity: 1;

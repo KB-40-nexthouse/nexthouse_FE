@@ -137,7 +137,7 @@ body {
   position: absolute;
   top: 100px;
   left: 70px;
-  font-family: Inter;
+  /* font-family: Inter; */
   font-weight: Semi Bold;
   font-size: 18px;
   opacity: 1;
@@ -150,7 +150,7 @@ body {
   position: absolute;
   top: 11px;
   left: 27px;
-  font-family: Inter;
+  /* font-family: Inter; */
   font-weight: Semi Bold;
   font-size: 18px;
   opacity: 1;
@@ -197,7 +197,7 @@ body {
   position: absolute;
   top: 11px;
   left: 110px;
-  font-family: Inter;
+  /* font-family: Inter; */
   font-weight: Semi Bold;
   font-size: 18px;
   opacity: 1;

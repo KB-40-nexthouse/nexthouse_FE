@@ -115,7 +115,7 @@ hr.bold { height: 12px; }
 }
 
 h2, h3, h4, h5{
-  font-family: 'Inter';
+  /* font-family: 'Inter'; */
   font-style: normal;
   font-weight: 100;
   font-size: 16px;
@@ -125,7 +125,7 @@ h2, h3, h4, h5{
 }
 
 h6{
-  font-family: 'Inter';
+  /* font-family: 'Inter'; */
   font-style: normal;
   font-size: 12px;
   color:#000000;
