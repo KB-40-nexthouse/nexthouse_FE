@@ -10,8 +10,8 @@
     </div>
     <div class="v259_19"></div>
     <!-- <span class="v123123">전자계약서 서명</span> -->
-    <canvas id="canvasT" width="50" height="50" class="v76_1232" ref = "myCanvas" ></canvas>
-    <img id="source" :src="image_source_link" width="0" height="0" class="v76_1232">
+    <canvas id="canvasT" width="50" height="50" class="v76_1233" ref = "myCanvas" ></canvas>
+    <img id="source" :src="image_source_link" width="0" height="0" class="v76_1233">
 </div>
 </nav>
 <router-view/>
@@ -120,7 +120,7 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.v76_1232 {
+.v76_1233 {
     width: 70px;
     height: 70px;
     /* background: red; */
