@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --production
 RUN npm i @vue/cli-service
+RUN npm install materialize-css@next
 COPY . .
 RUN npm run build
 
