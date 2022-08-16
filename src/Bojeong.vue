@@ -40,7 +40,7 @@
     <div style="padding: 0 24px;">
         <div style="background-color: lightgray; border-radius: 4px; margin-bottom: 8px; padding: 4px 8px; text-align: left;">
             <select name="" id="" style="background-color: transparent; border: 0 none; width: 100%;">
-                <option value="">은행가상계좌 {{ this.depositInfo.BankNm }} {{ this.depositInfo.acctNo }}</option>
+                <option value="">은행가상계좌 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ this.depositInfo.acctBankNm }}&nbsp;{{ this.depositInfo.acctNo }}</option>
             </select>
         </div>
         <div style="border-radius: 4px; border: 1px solid lightgray; overflow: hidden; padding : 4px 8px; margin-bottom: 8px;">
@@ -64,7 +64,7 @@
         </div> -->
     </div>
     <div style="position: fixed; left:0; bottom:0; padding: 0 24px 16px; width: 100%">
-        <button type="button"  @click="MoneySending" style="display: block; width:100%; padding: 16px 0; background-color: yellow; border-radius: 8px;">보증금 송금</button>
+        <button type="button"  @click="MoneySending" style="display: block; width:100%; padding: 16px 0; background-color: #FAE34C; border-radius: 8px;">보증금 송금</button>
     </div>
 </div>
 </template>
