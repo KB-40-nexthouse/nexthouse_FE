@@ -10,7 +10,6 @@
     </div>
     <div class="v259_19"></div>
     <!-- <span class="v123123">전자계약서 서명</span> -->
-    {{this.Home.ownerNm}}
     <canvas id="canvasT" width="50" height="50" class="v76_1232" ref = "myCanvas" ></canvas>
     <img id="source" :src="image_source_link" width="0" height="0" class="v76_1232">
 </div>
