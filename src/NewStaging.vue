@@ -84,7 +84,7 @@ export default {
   },
   methods: {
     ToHwakjung() {
-      //if(this.status==1)
+      if(this.status==2)
       {
         localStorage.setItem('no', this.modelNo);
         localStorage.setItem('p', this.status);
@@ -93,7 +93,7 @@ export default {
       }
     },
     ToBojeong() {
-      //if(this.status==3)
+      if(this.status==3)
       {
         localStorage.setItem('no', this.modelNo);
         localStorage.setItem('p', this.status);
@@ -102,7 +102,7 @@ export default {
       }
     },
     ToJunyip() {
-      //if(this.status==4)
+      if(this.status==4)
       {
         localStorage.setItem('no', this.modelNo);
         localStorage.setItem('p', this.status);
@@ -112,10 +112,13 @@ export default {
 
     },
     ToEleccontract() {
+      if(this.status==1)
+      {
         localStorage.setItem('no', this.modelNo);
         localStorage.setItem('p', this.status);
         localStorage.setItem('rent', this.rentNo);
         this.$router.push('/Eleccontract');
+      }
     },
     goBack() {
       this.$router.go(-1);

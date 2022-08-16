@@ -130,10 +130,13 @@ export default {
         var msgLast2 = JSON.parse(msgLast);
         console.log(msgLast2);
 
-        this.lastTime = msgLast2[0].msgTime;
-        this.ChatList.push(msgLast2[0]);
-        this.Write();
-        this.msg = '';
+        for(var i=0; i< msgLast2.length; i++)
+        {
+          this.lastTime = msgLast2[i].msgTime;
+          this.ChatList.push(msgLast2[i]);
+          this.Write();
+          this.msg = '';
+        }
       })
       .catch(error => {
         console.log("에러 데이터 : " + error.data);
