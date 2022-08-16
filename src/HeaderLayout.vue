@@ -1,6 +1,6 @@
 <template>
   <div class="header" >
-    <h2 @click="backButton" style="float: left;">
+    <h2 @click="backButton" style="float: left; hover: grab;">
         &nbsp; &lt; &nbsp; {{ title }}
     </h2>
     <div class="" style="float: right; padding-top: 15px; padding-right: 10px">
