@@ -126,8 +126,8 @@
     </div>
   <!-- </nav> -->
   </div>
-  <div class="ChatButton">
-    <img src="@/assets/chatImg.png" style="position: fixed; right: 10px; bottom: 10px; width: 60px; height:60px;"/>
+  <div class="ChatButton" @click="IntroChat">
+    <img src="@/assets/chatImg.png" style="position: fixed; right: 10px; bottom: 10px; width: 60px; height:60px; cursor: grab; "/>
   </div>
 </template>
 
