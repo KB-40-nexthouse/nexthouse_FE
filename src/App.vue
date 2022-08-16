@@ -8,7 +8,7 @@
 @import url('@/assets/style/reset.css');
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'NanumBarunGothic';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -23,10 +23,11 @@ nav a {
   font-weight: bold;
   color: #2c3e50;
 }
-
+/* 
 .v-application {
-  font-family: 'NanumBarunGothic', sans-serif !important;
-}
+  font-family: 'NanumBarunGothic'
+} */
+
 @font-face {
   font-family:'NanumBarunGothic';
   src: url('assets/fonts/NanumBarunGothic.ttf') format('truetype');
