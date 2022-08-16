@@ -7,7 +7,6 @@ import axios from "axios"
 // import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
 // import M from "materialize-css";
 // import "materialize-css/dist/css/materialize.css";
-// import "js/materialize.min.js"
 // import "material-design-icons/iconsfont/material-icons.css";
 
 const app = createApp(App)

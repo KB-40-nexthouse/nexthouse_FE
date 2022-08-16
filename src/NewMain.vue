@@ -1,5 +1,5 @@
 <template>
-<Header title="계약 진행" />
+<Header title="내가 본 부동산" />
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -7,15 +7,14 @@
 <body>
   <div class="row">
     <div class="">
-      <ul class="tabs">
-        <li class="tab col s3"><a href="#test1">Test 1</a></li>
-        <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
-        <!-- <li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li> -->
-        <li class="tab col s3"><a href="#test4">Test 4</a></li>
+      <ul id="tabs-swipe-demo" class="tabs">
+        <li class="tab col s3"><a href="#tab1">최근 본</a></li>
+        <li class="tab col s3"><a class="active" href="#tab2">계약진행</a></li>
+        <li class="tab col s3"><a href="#tab3">종료</a></li>
       </ul>
     </div>
-    <div id="test1" class="col s12">Test 1</div>
-    <div id="test2" class="">
+    <div id="tab1" class="col s12">Test 1</div>
+    <div id="tab2" class="">
         <div class="selectbar clear" style="">
             <div style="">전체 2개</div>
             <div style="float: left; font-size: 14px">
@@ -55,7 +54,7 @@
         </div>
     </div>
     <!-- <div id="test3" class="col s12">Test 3</div> -->
-    <div id="test4" class="col s12">Test 4</div>
+    <div id="tab3" class="col s12">Test 4</div>
   </div>
 </body>
 </template>
@@ -79,14 +78,44 @@ export default {
 </script>
 
 <style>
-  #body {
-    font-size: 14px;
-    background-color: rgb(251,251,251);
-  }
-  .header h2{
-    margin: 0 !important;
-  }
-    .selectbar { padding: 8px 16px; background-color: gray }
+    .body {
+        font-family: 'NanumBarunGothic';
+        font-size: 14px; 
+        background-color: rgb(251,251,251);
+    }
+    .header h2{
+        margin: 0 !important;
+    }
+
+    .tabs {
+        font-family: 'NanumBarunGothic';
+        border-bottom : 1px solid #F5F5F5;
+    }
+
+    .tabs .tab a{
+        color:black;
+        font-size:17px;
+        transition: none;
+    }
+    .tabs .tab a:focus, .tabs .tab a:focus.active {
+        background-color: white;
+        outline: none;
+        color:#4372F4;
+    }
+    .tabs .tab a:hover,tabs .tab a:active,.tabs .tab a.active {
+        background-color:transparent;
+        color:#4372F4;
+        font-weight : bolder;
+    }
+    .tabs .tab.disabled a,.tabs .tab.disabled a:hover {
+        color:#4372F4(102,147,153,0.7);
+    }
+    .tabs .indicator {
+        background-color:#4372F4;
+        padding : 1.4px;
+    }
+
+    .selectbar { padding: 8px 16px; background-color: #F5F5F5 }
     .selectbar > div { position: relative; float: left; font-size: 14px }
     .selectbar > div + div { margin-left: 8px; padding-left: 8px; }
     .selectbar > div + div::before { content: ""; position: absolute; left: 0; top: 0; width: 1px; height: 100%; background-color: lightgray; }
