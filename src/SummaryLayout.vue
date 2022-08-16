@@ -36,7 +36,7 @@
       <img src="./assets/liivFriends-300.jpeg" alt="tyIcon">
     </div>
   <!-- Footer Area-->
-  <div @type='button' @click="goNext()" class="footer clear">
+  <div type='button' @click="goNext()" class="footer clear">
     <h5 style="float: center; padding-top: 20px;">확인</h5>
   </div>
   </div>
@@ -141,8 +141,8 @@ export default {
     localStorage.setItem('no', this.modelNo);
     localStorage.setItem('p', 4);
     localStorage.setItem('rent', this.rentNo);
-    this.postProgress();
-    this.$router.go(-3);
+    //this.postProgress();
+    this.$router.go(-5);
     },
     getInfo(){
         this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrRslt/'+this.rentNo)
