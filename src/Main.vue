@@ -2,7 +2,7 @@
   <div class="Wrapper">
   <!-- <nav> -->
     <!--헤더 -> 왜 position:fixed하니까 문제가 생기지? summary는 괜찮은데??-->
-    <Header title="임대차 계약 관리" style="position:fixed; left: 0; top: 0; border-bottom: 1px solid lightgray;"/>
+    <Header title="임대차 계약 관리" />
     <!--구분선-->
 
     <!-- 3종 계약 리스트 -->
@@ -219,6 +219,7 @@ export default {
 </script>
 
 <style>
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&display=swap");
 
 /* 구분선 */
