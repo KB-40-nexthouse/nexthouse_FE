@@ -1,10 +1,9 @@
 <template>
-  <div class="Wrapper" style="padding-bottom:110px;">
+  <div class="Wrapper">
   <!-- <nav> -->
     <!--헤더 -> 왜 position:fixed하니까 문제가 생기지? summary는 괜찮은데??-->
-    <Header title="임대차 계약 관리" style=""/>
+    <Header title="임대차 계약 관리" style="position:fixed; left: 0; top: 0; border-bottom: 1px solid lightgray;"/>
     <!--구분선-->
-    <hr>
 
     <!-- 3종 계약 리스트 -->
     <div v-for="(Home, index) in HomeList" :key="index">
@@ -99,7 +98,7 @@
         <!-- 종료한 각 계약정보-->
         <div v-for="(H,index)  in Home" :key="index">
           <!-- 계약프로세스 이동 버튼으로 감싸기-->
-          <div class="종료한매물정보&클릭시계약서확인" type="button" @click="checkContract(H)" style="padding-top:0px;padding-bottom:15px;">
+          <div class="종료한매물정보&클릭시계약서확인" type="button" style="padding-top:0px;padding-bottom:15px;">
             <div class="FinishedLayout clear" style="padding-bottom:10px; padding-top:5px;">
               <div class="finished-image" style="float:left; padding-left:20px;">
                   <img src="@/assets/sampleImg2.png" alt="sampleRoom" style="width:120px; height: 120px; border-radius:15px;">
@@ -125,14 +124,10 @@
       </div>
     <!-- End of three lists-->
     </div>
-
-    <!-- Footer -->
-    <!-- Need To Deal With It-->
-    <div class="Footer" style="float:center; position:fixed; bottom:0; width:100%;">
-      <hr>
-      <img src="@/assets/footerResized.png" alt="footer" style="width:100%;">
-    </div>
   <!-- </nav> -->
+  </div>
+  <div class="ChatButton">
+    <img src="@/assets/chatImg.png" style="position: fixed; right: 10px; bottom: 10px; width: 60px; height:60px;"/>
   </div>
 </template>
 
@@ -151,10 +146,10 @@ export default {
   },
   methods: {
     fetchData: function () {
+      //this.$axios.get('https://jsonplaceholder.typicode.com/users/')
       this.$axios
-      .get("http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrList/100000001")
+        .get("http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrList/100000001")
         //http://169.56.100.104:30650/nexthouse/RentCntrList/100000001
-        //http://nexthouse.169.56.100.104.nip.io/
         .then((res) => {
           console.log("");
           console.log("응답 데이터 : " + JSON.stringify(res.data));
@@ -166,6 +161,9 @@ export default {
             var weather = jData[i];
             console.log("******************************");
             this.HomeList[Number(weather.cntrDiv[0]) - 1].push(weather);
+            //console.log(weather.cntrDiv);
+            //console.log(weather.modelNo);
+            //console.log(weather.modelNm);
             console.log(weather.modelAddr);
           }
         })
@@ -191,7 +189,7 @@ export default {
       console.log(data);
       //const article = { custNo: "100000001", modelNo: "APT000002"};
       this.$axios
-        .post("http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrIn/custNo=100000001&modelNo=" + data.modelNo)
+        .post("/nexthouse/RentCntrIn/custNo=100000001&modelNo=" + data.modelNo)
         .then((res) => {
           console.log("");
           console.log("응답 데이터 : " + JSON.stringify(res.data));
@@ -208,11 +206,6 @@ export default {
       //localStorage.setItem('rent', data.rentCntrNo);
       //this.$router.push('/staging');
     },
-    checkContract(data){
-      console.log(data)
-      localStorage.setItem('rent', data.rentCntrNo);
-      this.$router.push('/checkContract');
-    }
   },
   beforeMount() {
     this.fetchData();
@@ -302,3 +295,4 @@ h6 {
   color: #000000;
 }
 </style>
+
