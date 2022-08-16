@@ -4,7 +4,7 @@ import { createWebHistory,createRouter } from 'vue-router'
 
 const routes = [
   {
-    path: '',
+    path: '/',
     redirect: {name : "Main"},
   },
   {
@@ -12,7 +12,6 @@ const routes = [
     name: 'Main',
     component: () => import(/* webpackChunkName: "about" */ '../Main.vue')
   },
-
   {
     path: '/MyHwakjung',
     name: 'MyHwakjung',
