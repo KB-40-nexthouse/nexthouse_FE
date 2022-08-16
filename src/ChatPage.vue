@@ -81,8 +81,8 @@ export default {
     }
   },
   methods:{
-    ChatData: function() {
-      this.$axios.get('http://nexthouse-chat.169.56.100.104.nip.io/nexthouse-chat/adsrMsgAll/100000001')
+    ChatData: async function() {
+      await this.$axios.get('http://nexthouse-chat.169.56.100.104.nip.io/nexthouse-chat/adsrMsgAll/100000001')
       .then(res => {
         console.log("채팅 데이터 : " + JSON.stringify(res.data));
         var chat = JSON.stringify(res.data);
@@ -100,8 +100,8 @@ export default {
         console.log("에러 데이터 : " + error.data);
       });
     },
-    CounselData: function() {
-      this.$axios.get('http://nexthouse-chat.169.56.100.104.nip.io/nexthouse-chat/curAdsrSel/100000001')
+    CounselData: async function() {
+      await this.$axios.get('http://nexthouse-chat.169.56.100.104.nip.io/nexthouse-chat/curAdsrSel/100000001')
       .then(res => {
         console.log("상담자 데이터: " + JSON.stringify(res.data));
         var counsel = JSON.stringify(res.data);
@@ -110,7 +110,6 @@ export default {
 
         this.Counseler = counselD[0];
         console.log(this.Counseler.adsrNo);
-        
       })
       .catch(error => {
         console.log("에러 데이터 : " + error.data);
@@ -137,7 +136,7 @@ export default {
           this.ChatList.push(msgLast2[i]);
           this.Write();
           this.msg = '';
-
+          location.reload();
         }
         // window.scrollTo(0,document.body.scrollHeight)
       })
@@ -149,14 +148,17 @@ export default {
     },
     Write() {
 
-    }
+    },
   },
 
-  beforeMount(){
-    this.ChatData();
+  async beforeMount(){
+    await this.ChatData();
     console.log("ChatData"); 
-    this.CounselData();
-  }
+    await this.CounselData();
+      window.scrollTo(0,document.body.scrollHeight)
+
+  },
+
 }
 
 </script>
