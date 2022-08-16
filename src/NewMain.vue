@@ -1,10 +1,17 @@
 <template>
 <Header title="계약 진행" />
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
 <body>
-<b-button>Button</b-button>
-<b-button variant="danger">Button</b-button>
-<b-button variant="success">Button</b-button>
-<b-button variant="outline-primary">Button</b-button>
+    <div class="blue lighten-4 center-align">
+        과제가 넘모 많다...
+    </div>
+
+    <div class="white-text teal darken-2">
+        종강 마렵다...
+    </div>
 </body>
 </template>
 
