@@ -116,8 +116,8 @@ export default {
     console.log(this.canvas.toDataURL());
     const link = document.createElement("a");
     link.href = image;
-    link.download = "PaintJS";
-    link.click();
+    //link.download = "PaintJS";
+    //link.click();
 
     this.testS();
     this.postProgress();

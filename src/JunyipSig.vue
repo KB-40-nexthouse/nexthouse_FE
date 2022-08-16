@@ -111,8 +111,8 @@ export default {
     const image = this.canvas.toDataURL();
     const link = document.createElement("a");
     link.href = image;
-    link.download = "PaintJS";
-    link.click();
+    //link.download = "PaintJS";
+    //link.click();
     },
     goNext(){
         localStorage.setItem('no', this.modelNo);
