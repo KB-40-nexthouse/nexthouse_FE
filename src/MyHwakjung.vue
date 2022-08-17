@@ -39,7 +39,7 @@ export default {
 
 </script>
 
-<style> 
+<style scoped> 
   /*#app 
   { 
     margin:0 auto; 

@@ -92,7 +92,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
  #app 
   { 
     margin:0 auto; 
@@ -125,8 +125,8 @@ export default {
       overflow: hidden;
     }
     .desc { font-size: 19px; font-weight: bold; margin-bottom: 34px; }
-    .layout_center { position: relative; width: 100%; height: 100vh;  }
-    .layout_center > .center { position: absolute; left: 0;  transform: translateY(-120%); width: 100%; }
+    .layout_center { position: relative;  width:100%;  margin:0 auto; text-align:center;  transform: translateY(80%); }
+    .layout_center > .center { position: center;  }
     .img-wrap img { max-width: 109px; }
     .v76_89 {
       width: 375px;

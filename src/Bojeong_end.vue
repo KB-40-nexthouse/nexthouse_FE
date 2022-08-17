@@ -76,8 +76,8 @@ export default {
 body {
       font-size: 14px;
     }    
-        .desc { font-size: 19px; font-weight: bold; margin-bottom: 34px; }
-    .layout_center { position: relative; width: 100%; height: 100vh;  }
-    .layout_center > .center { position: absolute; left: 0; top: 50%; transform: translateY(-120%); width: 100%; }
+    .desc { font-size: 19px; font-weight: bold; margin-bottom: 34px; }
+    .layout_center { position: relative;  width:100%;  margin:0 auto; text-align:center;  transform: translateY(80%); }
+    .layout_center > .center { position: center;  }
     .img-wrap img { max-width: 109px; }
 </style>
