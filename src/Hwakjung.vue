@@ -51,23 +51,23 @@
 </div> -->
 <div>
   <Header title="확정일자 신고" />
-  <div class="sub-title">확정일자 신고</div>
+  <!-- <div class="sub-title">확정일자 신고</div> -->
   <div class="contents">
     <div class="desc">
       개인정보와 전세계약서 수집·이용을 <br/>동의하고 확정일자를 신고해주세요.
     </div>
     <div class="checkbox-wrap">
       <div class="checkbox-item type2 border-b pb16 mb16">
-        <input type="checkbox" id="AllAgree" v-model="checked"/>
+        <input type="checkbox" id="AllAgree" v-model="checked" @click="clickAllAgree()"/>
         <label for="AllAgree">전체 동의</label>
       </div>
       <div class="checkbox-item">
-        <input type="checkbox" id="Agree01" value="" />
+        <input type="checkbox" id="Agree01" value="" v-model="check1" @click="clickAgree1()"/>
         <label for="Agree01">개인정보 수집·이용 동의(필수)</label>
-        <button class="arrow-right" type="button"></button>
+        <button class="arrow-right" type="button" ></button>
       </div>
       <div class="checkbox-item">
-        <input type="checkbox" id="Agree02" value="" />
+        <input type="checkbox" id="Agree02" value="" v-model="check2" @click="clickAgree2()"/>
         <label for="Agree02">계약서 정보 수집·이용 동의(필수)</label>
         <button class="arrow-right" type="button"></button>
       </div>
@@ -100,7 +100,9 @@ export default {
         checked : false,
         modelNo : 0,
         status : 0,
-        rentNo : 0
+        rentNo : 0,
+        check1 : false,
+        check2 : false
     }
   },
   methods: {
@@ -117,7 +119,31 @@ export default {
     },
     ChangeCheck(){
         this.checked = !this.checked;
-    }
+    },
+     clickAllAgree(){
+      this.check1 = !this.checked;
+      this.check2 = !this.checked;
+     },
+     clickAgree1(){
+      if(!this.check1 && this.check2 )
+      {
+         this.checked = true;
+      }
+      else
+      {
+        this.checked = false;
+      }
+     },
+     clickAgree2(){
+      if(this.check1 && !this.check2 )
+      {
+         this.checked = true;
+      }
+      else
+      {
+        this.checked = false;
+      }
+     }
     },
   beforeMount(){
     this.status = localStorage.getItem('p')
