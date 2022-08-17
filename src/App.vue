@@ -6,6 +6,7 @@
 <style>
 
 @import url('@/assets/style/reset.css');
+@import url('@/assets/style/style.css');
 
 #app {
   font-family: 'NanumBarunGothic';

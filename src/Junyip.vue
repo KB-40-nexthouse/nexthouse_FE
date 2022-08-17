@@ -21,12 +21,16 @@
         <span class="v74_33">정보 수집·이용 동의</span>
         <div class="v74_34"></div>
       </div>
-      <button @click="Research()">
+      <!-- <button @click="Research()">
         <div class="v74_35">
           <div :class="{v74_36 : checked, v74_36_1 : !checked}"></div>
           <span class="v74_37"><b>동의하고 신고</b></span>
         </div>
-      </button>
+      </button> -->
+      
+    <div class="fixed_button">
+      <button type="button" @click="Research()">다음</button>
+    </div>
       <div class="v74_38">
         <span class="v74_39"><b>전체 동의</b></span>
         <div id="checkID" type='button' @click="ChangeCheck()" :class="{v74_40 : checked, v74_401 : !checked}">

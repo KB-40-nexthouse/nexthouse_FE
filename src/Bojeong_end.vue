@@ -95,6 +95,5 @@ body {
     .layout_center > .center { position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 100%; }
     .desc { font-size: 19px; font-weight: bold; margin-bottom: 34px; }
     .img-wrap img { max-width: 109px; }
-    .fixed_button { position: fixed; left: 0; bottom: 0; width: 100%; }
-    .fixed_button button { display: block; width: 100%; padding: 16px; background-color: #F9BE20; color: #ffffff; font-size: 18px; font-weight: bold; }
+   
 </style>
