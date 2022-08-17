@@ -50,7 +50,7 @@
         </div>
         <div style="border-radius: 4px; border: 1px solid lightgray; overflow: hidden; padding : 4px 8px; margin-bottom: 8px;">
             <div style="float: left; width: 150px; text-align: left;">실행 예정 대출</div>
-            <div style="float: right; width: calc(100% - 150px); text-align: right;"><input type="text" name="" id="" placeholder="100,000,000" style="display: inline-block; border: 0 none; text-align: right; width: 100%;"/></div>
+            <div style="float: right; width: calc(100% - 150px); text-align: right;"><input type="text" name="" id="" placeholder="100,000,000" readonly style="display: inline-block; border: 0 none; text-align: right; width: 100%;"/></div>
         </div>
         <div style="border-radius: 4px; border: 1px solid lightgray; overflow: hidden; padding : 4px 8px; margin-bottom: 8px;">
             <div style="float: left; width: 150px; text-align: left;">계약 일자</div>
@@ -103,7 +103,7 @@ export default {
         console.log("보증금 데이터 : " + JSON.stringify(res.data));
         var depo = JSON.stringify(res.data);
         var deposit = JSON.parse(depo);
-        console.log(deposit);
+        console.log(deposit , 'deposit');
         this.depositInfo = deposit[0];
         console.log(this.depositInfo.price)
       })
@@ -117,7 +117,7 @@ export default {
       this.modelNo = localStorage.getItem('no')
       this.rentNo = localStorage.getItem('rent')
       this.SendingData()
-  }
+  },
 }
 </script>
 

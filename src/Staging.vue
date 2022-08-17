@@ -27,7 +27,7 @@
       <span type='button' @click="goBack()" class="v223_85"><b><u>메인 이동</u></b></span>
     </div>
 <!-- </nav> -->
-<router-view/>
+<!-- <router-view/> -->
 </template>
 
 <script>

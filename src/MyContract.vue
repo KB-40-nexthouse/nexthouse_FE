@@ -14,7 +14,7 @@
     <img id="source" :src="image_source_link" width="0" height="0" class="v76_1233">
 </div>
 </nav>
-<router-view/>
+<!-- <router-view/> -->
 </template>
 
 

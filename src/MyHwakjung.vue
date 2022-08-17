@@ -18,7 +18,7 @@
 <div class="v74_58"><span class="v74_59"><b>계약서 정보 수집·이용 동의(필수)</b></span><div class="v74_60"></div></div>
 <div class="v74_47"></div><div class="v74_62"></div></div>
 </nav>
-  <router-view/>
+  <!-- <router-view/> -->
 </div>
 </template>
 
