@@ -1,11 +1,14 @@
 <template>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 <div>
-  <Header title="확정일자 신고" />
+  <Header title="내가 본 부동산" />
   <div>
     <div class="tab-button-wrap">
-      <button type="button" class="tabbutton" @click="tabNum = 0">최근 본</button>
-      <button type="button" class="tabbutton" @click="tabNum = 1">계약진행</button>
-      <button type="button" class="tabbutton" @click="tabNum = 2">종료</button>
+      <button type="button" class="tabbutton" :class="{blue:tabNum==0}" @click="tabNum = 0">최근 본</button>
+      <button type="button" class="tabbutton" :class="{blue:tabNum==1}" @click="tabNum = 1">계약진행</button>
+      <button type="button" class="tabbutton" :class="{blue:tabNum==2}" @click="tabNum = 2">종료</button>
       <span class="bar"></span>
     </div>
     <div class="tabs" v-if="tabNum === 0">
@@ -140,6 +143,12 @@
             </div>
         </div>
     </div>
+    <!-- 채팅버튼 -->
+    <div class="right-corder-container">
+      <!-- <button class="right-corder-container-button" >  -->
+        <button class="material-icons" style="color:#4372F4" @click="IntroChat">person_pin</button>
+      <!-- </button> -->
+    </div>
   </div>
 </div>
 </template>
@@ -242,12 +251,31 @@ export default {
   .tabbutton{font-size:15px;}
   .tab-button-wrap { position: relative; }
   .tab-button-wrap .bar { position: absolute; bottom: 0; left: 0; width: 33.3333%; height: 2px; padding: 1.4px; background-color: #4372F4; will-change: left, right; z-index: 1; transition:cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s; }
-  .tab-button-wrap .tabbutton { padding: 16px; width: 33.333%; }
-  .tab-button-wrap .tabbutton:hover { color: #4372F4; font-weight: bolder;}
-  /* .tab-button-wrap .tabbutton:active { color: #4372F4; } */
+  .tab-button-wrap .tabbutton { padding: 16px; width: 33.333%;   }
+  /* .tab-button-wrap .tabbutton:hover { color: #4372F4; font-weight: bolder;} */
+  .tab-button-wrap .tabbutton:active { color: #4372F4; }
+
+  .blue {color: #4372F4; font-weight:bolder;}
 
   .header h2{
         margin: 0 !important;
+  }
+
+  .right-corder-container {     
+      position:fixed;     
+      right:20px;     
+      bottom:20px; 
+  }
+
+  .right-corder-container .material-icons {     
+      font-size: 70px;
+      height: 70px;     
+      width: 70px;     
+      /* border:none;      
+      border-radius: 62px;        
+      transition: all 300ms;
+      box-shadow:2px 2px 5px rgb(25, 73, 15);     
+      cursor:pointer;   */
   }
 
   /* .row {

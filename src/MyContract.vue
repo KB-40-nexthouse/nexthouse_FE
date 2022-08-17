@@ -16,8 +16,8 @@
     <div class="fixed_button button">
       <button type="button" @click="goBack()" :disabled="!checked">확인</button>
     </div>
-    <!-- <canvas id="canvasT" width="50" height="50" class="v76_1233" ref = "myCanvas" ></canvas> -->
-    <!-- <img id="source" :src="image_source_link" width="0" height="0" class="v76_1233"> -->
+    <canvas id="canvasT" width="50" height="50" class="v76_1233" ref = "myCanvas" ></canvas>
+    <img id="source" :src="image_source_link" width="0" height="0" class="v76_1233">
 </div>
 </template>
 

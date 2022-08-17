@@ -177,8 +177,8 @@
 
 <script>
 import Header from "./HeaderLayout.vue";
-import "materialize-css/dist/css/materialize.css";
-import M from 'materialize-css'
+// import "materialize-css/dist/css/materialize.css";
+// import M from 'materialize-css'
 
 
 
@@ -193,7 +193,7 @@ export default {
     Header,
   },
   mounted () {
-    M.AutoInit()
+    // M.AutoInit()
   },
   methods: {
     fetchData: async function () {
