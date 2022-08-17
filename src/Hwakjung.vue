@@ -50,8 +50,8 @@
   <router-view/>
 </div> -->
 <div>
-  <Header title="정보 수집·이용 동의" />
-  <div class="sub-title">정보 수집·이용 동의</div>
+  <Header title="확정일자 신고" />
+  <div class="sub-title">확정일자 신고</div>
   <div class="contents">
     <div class="desc">
       개인정보와 전세계약서 수집·이용을 <br/>동의하고 확정일자를 신고해주세요.

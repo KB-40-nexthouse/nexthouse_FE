@@ -18,6 +18,7 @@
       <div class="v76_109"><div class="v76_110"></div></div>
     </div>
   </div> -->
+  <Header title="송금 완료" />
   <div>
     <div class="layout_center">
       <div class="center">
@@ -32,12 +33,13 @@
       </div>
     </div>
     <div class="fixed_button">
-      <button type="button">다음</button>
+      <button type="button" @click="goNext()">다음</button>
     </div>
   </div>
 </template>
 
 <script>
+import Header from "./HeaderLayout.vue";
 export default {
   name: "MyBojeongEnd",
   data(){
@@ -46,6 +48,9 @@ export default {
         status : 0,
         rentNo : 0
     }
+  },
+  components:{
+    Header
   },
   props: {},
   methods: {

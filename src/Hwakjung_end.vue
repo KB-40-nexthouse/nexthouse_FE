@@ -1,5 +1,5 @@
 <template>
-<nav>
+<!-- <nav>
     <div class="v76_87">
       <div class="v76_88"></div>
       <div class="v76_89">
@@ -22,15 +22,34 @@
       </div>
     </div>
 </nav>
-<router-view/>
+<router-view/> -->
+  <Header title="확정일자 신고" />
+  <div>
+    <div class="layout_center">
+      <div class="center">
+        <div class="desc">
+          {{  }}
+          <!-- 확정일자 신고가<br/> -->
+          완료되었습니다.
+        </div>
+        <div class="img-wrap">
+          <img src="../images/check_y.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="fixed_button">
+      <button type="button" @click="goNext()">다음</button>
+    </div>
+  </div>
 </template>
         
 
 <script>
-
+import Header from "./HeaderLayout.vue";
 export default {
   name: 'MyHwakjungEnd',
   components: {
+    Header
   },
   data(){
       return {

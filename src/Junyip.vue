@@ -1,6 +1,6 @@
 <template>
 <div>
-    <nav>
+ 
     
     <div class="v74_18">
       <div class="v74_20">
@@ -49,9 +49,6 @@
       <div class="v74_62"></div>
     </div>
 
-
-    </nav>
-  <router-view/>
 </div>
 </template>
 <script>
