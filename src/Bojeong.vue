@@ -40,7 +40,7 @@
     </div>
     <div style="padding: 0 24px;">
         <div style="background-color: lightgray; border-radius: 4px; margin-bottom: 8px; padding: 4px 8px; text-align: left;">
-            은행가상계좌 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ this.depositInfo.acctBankNm }}&nbsp;{{ this.depositInfo.acctNo }}
+            은행가상계좌 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ this.depositInfo.acctBankNm }}&nbsp;{{ this.depositInfo.acctNo }}
             <!-- <select name="" id="" style="background-color: transparent; border: 0 none; width: 100%;">
                 <option value="">은행가상계좌 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ this.depositInfo.acctBankNm }}&nbsp;{{ this.depositInfo.acctNo }}</option>
             </select> -->

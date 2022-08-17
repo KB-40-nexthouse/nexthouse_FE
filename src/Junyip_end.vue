@@ -8,7 +8,7 @@
           완료되었습니다.
         </div>
         <div class="img-wrap">
-          <img src="../images/check_y.png" alt="">
+          <img src="../images/check_ytob.png" alt="">
         </div>
       </div>
     </div>
@@ -237,7 +237,7 @@ export default {
     .v76_109 {
       width: 112px;
       height: 112px;
-      background: url("../images/check_y.png");
+      background: url("../images/check_ytob.png");
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;

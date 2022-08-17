@@ -55,7 +55,7 @@
 <template>
 <div>
     <Header title="전입일자 신고" />
-  <div class="sub-title">전입일자 신고</div>
+  <!-- <div class="sub-title">전입일자 신고</div> -->
   <div class="contents">
     <div class="desc">
       개인정보와 전세계약서 수집·이용을 <br/>동의하고 전입일자를 신고해주세요.
