@@ -1,4 +1,7 @@
 <template>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 <div>
   <Header title="확정일자 신고" />
   <div>
@@ -140,6 +143,12 @@
             </div>
         </div>
     </div>
+    <!-- 채팅버튼 -->
+    <div class="right-corder-container">
+      <!-- <button class="right-corder-container-button" >  -->
+        <button class="material-icons" style="color:#4372F4" @click="IntroChat">person_pin</button>
+      <!-- </button> -->
+    </div>
   </div>
 </div>
 </template>
@@ -248,6 +257,23 @@ export default {
 
   .header h2{
         margin: 0 !important;
+  }
+
+  .right-corder-container {     
+      position:fixed;     
+      right:20px;     
+      bottom:20px; 
+  }
+
+  .right-corder-container .material-icons {     
+      font-size: 70px;
+      height: 70px;     
+      width: 70px;     
+      /* border:none;      
+      border-radius: 62px;        
+      transition: all 300ms;
+      box-shadow:2px 2px 5px rgb(25, 73, 15);     
+      cursor:pointer;   */
   }
 
   /* .row {
