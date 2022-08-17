@@ -186,7 +186,7 @@ hr.bold { height: 12px; }
   .chat > div.text { display: inline-block; max-width: 500px; width: auto; padding: 8px 16px; border-radius: 50px;  word-break: break-all; }
   .chat > div.date { font-size: 12px; vertical-align: bottom;}
   .my.chat { padding-bottom: 5px; padding-top: 5px; }
-  .my.chat > div.text { background-color: #FFCC3C; }
+  .my.chat > div.text { background-color: #4372F4; }
   .your.chat > div.text { background-color: #D3D3D3; }
   .chat > div.date { display: inline-block; }
 
