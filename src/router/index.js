@@ -93,9 +93,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../NewMain.vue')
   },
   {
-    path: '/NewHwakjung',
-    name: 'NewHwakjung',
-    component: () => import(/* webpackChunkName: "about" */ '../NewHwakjung.vue')
+    path: '/NewNewMain',
+    name: 'NewNewMain',
+    component: () => import(/* webpackChunkName: "about" */ '../NewNewMain.vue')
   }
 ]
 

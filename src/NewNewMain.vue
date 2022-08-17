@@ -18,7 +18,7 @@
 <script>
 import Header from "./HeaderLayout.vue";
 export default {
-  name: 'NewHwakjung',
+  name: 'NewNewMain',
   data() {
     return {
       tabNum : 0
