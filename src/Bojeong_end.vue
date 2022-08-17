@@ -1,30 +1,10 @@
 <template>
-  <!-- <div class="v76_87">
-    <div class="v76_88"></div>
-    <div class="v76_89">
-      <div class="v76_90"></div>
-      <span class="v76_91"><b>보증금 송금</b></span>
-      <div class="v76_92"></div>
-      <div class="v76_96"></div>
-      <div class="v76_97"></div>
-    </div>
-    <span class="v76_98"><b>보증금 송금이 <br>완료되었습니다.</b></span>
-    <div class="v76_104">
-      <div class="v76_105" type='button' @click="goNext()">
-      <span class="v76_106"><b>다음</b></span>
-      </div>
-    </div>
-    <div class="v76_107">
-      <div class="v76_109"><div class="v76_110"></div></div>
-    </div>
-  </div> -->
-  <Header title="송금 완료" />
+    <Header title="송금 완료" />
   <div>
     <div class="layout_center">
-      <div class="center">
+      <div class="center" style="text-align: center">
         <div class="desc">
-          {{  }}
-          <!-- 확정일자 신고가<br/> -->
+          보증금 송금이<br/>
           완료되었습니다.
         </div>
         <div class="img-wrap">
@@ -85,20 +65,19 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 #app {
   margin: 0 auto;
   width: 350px;
   height: 650px;
-  /* text-align: center; */
+  text-align: center;
   background-color: #ffffff;
 }
 body {
       font-size: 14px;
     }    
+        .desc { font-size: 19px; font-weight: bold; margin-bottom: 34px; }
     .layout_center { position: relative; width: 100%; height: 100vh;  }
     .layout_center > .center { position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 100%; }
-    .desc { font-size: 19px; font-weight: bold; margin-bottom: 34px; }
     .img-wrap img { max-width: 109px; }
-   
 </style>
