@@ -6,9 +6,9 @@
   <Header title="확정일자 신고" />
   <div>
     <div class="tab-button-wrap">
-      <button type="button" class="tabbutton" @click="tabNum = 0">최근 본</button>
-      <button type="button" class="tabbutton" @click="tabNum = 1">계약진행</button>
-      <button type="button" class="tabbutton" @click="tabNum = 2">종료</button>
+      <button type="button" class="tabbutton" :class="{blue:tabNum==0}" @click="tabNum = 0">최근 본</button>
+      <button type="button" class="tabbutton" :class="{blue:tabNum==1}" @click="tabNum = 1">계약진행</button>
+      <button type="button" class="tabbutton" :class="{blue:tabNum==2}" @click="tabNum = 2">종료</button>
       <span class="bar"></span>
     </div>
     <div class="tabs" v-if="tabNum === 0">
@@ -251,9 +251,11 @@ export default {
   .tabbutton{font-size:15px;}
   .tab-button-wrap { position: relative; }
   .tab-button-wrap .bar { position: absolute; bottom: 0; left: 0; width: 33.3333%; height: 2px; padding: 1.4px; background-color: #4372F4; will-change: left, right; z-index: 1; transition:cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s; }
-  .tab-button-wrap .tabbutton { padding: 16px; width: 33.333%; }
-  .tab-button-wrap .tabbutton:hover { color: #4372F4; font-weight: bolder;}
-  /* .tab-button-wrap .tabbutton:active { color: #4372F4; } */
+  .tab-button-wrap .tabbutton { padding: 16px; width: 33.333%;   }
+  /* .tab-button-wrap .tabbutton:hover { color: #4372F4; font-weight: bolder;} */
+  .tab-button-wrap .tabbutton:active { color: #4372F4; }
+
+  .blue {color: #4372F4; font-weight:bolder;}
 
   .header h2{
         margin: 0 !important;
