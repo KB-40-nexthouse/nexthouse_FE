@@ -28,7 +28,7 @@
                 <div class="찜한매물정보&클릭시계약" type="button" @click="onBoard(H)" style="padding : 15px; ">
                     <div class="ChekedLayout clear" style="">
                         <div class="checked-image" style="float:left; ">
-                            <img src="@/assets/sampleImg2.png" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
+                            <img :src="H.modelImg" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
                         </div>
                         <div class="checked-info" style="width:calc(100% - 150px); float:left; padding-left:18px; margin-top:1%; font-family: 'NanumBarunGothicBold'">
                             <p style=" font-size: 18px; color: #000000; line-height:2; ">
@@ -79,7 +79,7 @@
                 <div class="찜한매물정보&클릭시계약" type="button" @click="Staging(H)" style="padding : 15px; ">
                     <div class="ChekedLayout clear" style="">
                         <div class="checked-image" style="float:left; ">
-                            <img src="@/assets/sampleImg2.png" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
+                            <img :src="H.modelImg" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
                         </div>
                         <div class="checked-info" style="width:calc(100% - 150px); float:left; padding-left:18px; margin-top:1%; font-family: 'NanumBarunGothicBold'">
                             <p style=" font-size: 18px; color: #000000; line-height:2; ">
@@ -131,7 +131,7 @@
                 <div class="찜한매물정보&클릭시계약" type="button" @click="checkContract(H)" style="padding : 15px; ">
                     <div class="ChekedLayout clear" style="">
                         <div class="checked-image" style="float:left; ">
-                            <img src="@/assets/sampleImg2.png" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
+                            <img :src="H.modelImg" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
                         </div>
                         <div class="checked-info" style="width:calc(100% - 150px); float:left; padding-left:18px; margin-top:1%; font-family: 'NanumBarunGothicBold'">
                             <p style=" font-size: 18px; color: #000000; line-height:2; ">
@@ -196,8 +196,8 @@ export default {
     M.AutoInit()
   },
   methods: {
-    fetchData: function () {
-      this.$axios
+    fetchData: async function () {
+     await this.$axios
         .get("http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrList/100000001")
         .then((res) => {
           console.log("응답 데이터 : " + JSON.stringify(res.data));
