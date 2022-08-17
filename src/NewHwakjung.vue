@@ -8,7 +8,7 @@
 <script>
 import Header from "./HeaderLayout.vue";
 export default {
-  name: 'NewStaging',
+  name: 'NewHwakjung',
   components: {
     Header,
   },
