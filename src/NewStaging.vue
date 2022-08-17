@@ -211,7 +211,7 @@ export default {
 }
 
 .btn_on {
-    background-color: #FAE34C;
+    background-color: #4372F4;
 }
 
 .btn_end {
@@ -219,7 +219,7 @@ export default {
 }
 
 .btn_yet {
-    background-color: #FFF08E;
+    background-color: #E0EBFF;
 
 }
 </style>

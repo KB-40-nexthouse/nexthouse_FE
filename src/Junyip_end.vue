@@ -1,32 +1,27 @@
 <template>
-<nav>
-    <div class="v76_87">
-      <div class="v76_88"></div>
-      <div class="v76_89">
-        <div class="v76_90"></div>
-        <span class="v76_91"><b>전입일자 신고</b></span>
-        <div class="v76_92"></div>
-        <div class="v76_96"></div>
-        <div class="v76_97"></div>
-      </div>
-      <span class="v76_98"><b>전입일자 신고가<br> 완료되었습니다.</b></span>
-      <div class="v76_104">
-        <div class="v76_105" @type='button' @click="goNext()">
-        <span type='button'  class="v76_106"><b>다음</b></span>
+  <Header title="전입일자 신고" />
+  <div>
+    <div class="layout_center">
+      <div class="center">
+        <div class="desc">
+          전입일자 신고가<br/>
+          완료되었습니다.
         </div>
-      </div>
-      <div class="v76_107">
-        <div class="v76_109">
-          <div class="v76_110"></div>
+        <div class="img-wrap">
+          <img src="../images/check_y.png" alt="">
         </div>
       </div>
     </div>
-</nav>
-<!-- <router-view/> -->
+    <div class="fixed_button">
+      <button type="button" @click="goNext()">다음</button>
+    </div>
+  </div>
+
 </template>
         
 
 <script>
+import Header from "./HeaderLayout.vue";
 
 export default {
   name: 'MyJunyipEnd',
@@ -34,10 +29,12 @@ export default {
     return {
         modelNo : 0,
         status : 0,
-        rentNo : 0
+        rentNo : 0,
+        checked : true
     }
   },
   components: {
+    Header
   },
   methods:{
     goNext() {
@@ -93,6 +90,10 @@ export default {
       left: 0px;
       overflow: hidden;
     }
+        .desc { font-size: 19px; font-weight: bold; margin-bottom: 34px; }
+    .layout_center { position: relative; width: 100%; height: 100vh;  }
+    .layout_center > .center { position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 100%; }
+    .img-wrap img { max-width: 109px; }
     .v76_88 {
       width: 375px;
       height: 30px;

@@ -1,24 +1,29 @@
 <template>
-<nav>
-<div class="v259_4">
+<!-- <div class="v259_4"> -->
     <!-- <div class="v57_78"> -->
       <!-- <span class="v57_77"><b>전자계약서 확인</b></span> -->
     <!-- </div> -->
-    <div class="v259_16">
+    <!-- <div class="v259_16">
         <div class="v259_17"></div>
         <span class="v259_18" type='button' @click="goBack()">확인</span>
     </div>
-    <div class="v259_19"></div>
+    <div class="v259_19"></div> -->
     <!-- <span class="v123123">전자계약서 서명</span> -->
-    <canvas id="canvasT" width="50" height="50" class="v76_1233" ref = "myCanvas" ></canvas>
-    <img id="source" :src="image_source_link" width="0" height="0" class="v76_1233">
+<!-- </div> -->
+<div>
+    <Header title="전자계약서 확인" />
+    <div class="contract_page"></div>
+    <div class="fixed_button button">
+      <button type="button" @click="goBack()" :disabled="!checked">확인</button>
+    </div>
+    <!-- <canvas id="canvasT" width="50" height="50" class="v76_1233" ref = "myCanvas" ></canvas> -->
+    <!-- <img id="source" :src="image_source_link" width="0" height="0" class="v76_1233"> -->
 </div>
-</nav>
-<!-- <router-view/> -->
 </template>
 
 
 <script>
+import Header from "./HeaderLayout.vue";
 
 export default {
   name: 'MyContract',
@@ -31,9 +36,11 @@ export default {
         canvas : null,
         image : null,
         image_source : '',
+        checked : true
     }
   },
   components: {
+    Header
   },
   computed : {
     image_source_link(){
@@ -119,6 +126,16 @@ body {
   top: 0px;
   left: 0px;
   overflow: hidden;
+}
+.contract_page {
+  width: 340x;
+  height: 640px;
+  background-image: url("../images/contract.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  opacity: 1;
+  top: 70px;
 }
 .v76_1233 {
     width: 70px;
