@@ -37,15 +37,15 @@ export default {
     Header
   },
   methods:{
-    goNext() {
+    async goNext() {
       localStorage.setItem('no', this.modelNo);
       localStorage.setItem('p', 5);
       localStorage.setItem('rent', this.rentNo);
-      this.postProgress();
+      await this.postProgress();
       this.$router.push('/summary');
     },
-    postProgress() {
-        this.$axios.post('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=4')
+    async postProgress() {
+        await this.$axios.post('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=4')
           .then(res => {
           console.log("응답 데이터 : " + JSON.stringify(res.data));
           })
@@ -92,7 +92,7 @@ export default {
     }
         .desc { font-size: 19px; font-weight: bold; margin-bottom: 34px; }
     .layout_center { position: relative; width: 100%; height: 100vh;  }
-    .layout_center > .center { position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 100%; }
+    .layout_center > .center { position: absolute; left: 0; top: 50%; transform: translateY(-120%); width: 100%; }
     .img-wrap img { max-width: 109px; }
     .v76_88 {
       width: 375px;

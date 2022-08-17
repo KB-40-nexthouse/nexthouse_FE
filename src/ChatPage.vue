@@ -1,5 +1,5 @@
 <template>
-<Header title="KB전문가 상담" style="position:fixed; top:0; border-bottom: 1px solid lightgray;"/>
+<Header title="KB전문가 상담" />
   <!--Header-->
   <!-- <div class="header" >
     <h2 style="float: left;">

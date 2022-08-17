@@ -2,7 +2,7 @@
   <div class="header" >
     <div class="title-wrap">
       <button class="arrow-left" type="button" @click="backButton">이전</button>
-      <h2>{{ title }}</h2>
+      <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}</h2>
     </div>
     <div class="" style="float: right; padding-top: 15px; padding-right: 10px">
       <img src="@/assets/hamResized.png" alt="menuIcon">
