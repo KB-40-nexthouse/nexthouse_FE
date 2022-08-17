@@ -17,7 +17,7 @@
         <img src="@/assets/profileImg.png" alt="상담사 이미지" />
       </div>
       <!-- 상담사 정보-->
-      <div class="right" style="float:left; padding-left: 10px;">
+      <div class="right" style="float:left; padding-left: 1px;">
         <h3>상담가 {{ this.Counseler.adsrNm }}</h3>
         <div style="padding-top:10px;">
           <h6>&#8226; {{ this.Counseler.departmentNm }}<br></h6>
