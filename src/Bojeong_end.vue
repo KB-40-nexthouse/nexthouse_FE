@@ -1,5 +1,5 @@
 <template>
-  <div class="v76_87">
+  <!-- <div class="v76_87">
     <div class="v76_88"></div>
     <div class="v76_89">
       <div class="v76_90"></div>
@@ -16,6 +16,23 @@
     </div>
     <div class="v76_107">
       <div class="v76_109"><div class="v76_110"></div></div>
+    </div>
+  </div> -->
+  <div>
+    <div class="layout_center">
+      <div class="center">
+        <div class="desc">
+          {{  }}
+          <!-- 확정일자 신고가<br/> -->
+          완료되었습니다.
+        </div>
+        <div class="img-wrap">
+          <img src="../images/check_y.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="fixed_button">
+      <button type="button">다음</button>
     </div>
   </div>
 </template>
@@ -73,178 +90,11 @@ export default {
 }
 body {
       font-size: 14px;
-    }
-    .v76_87 {
-      width: 400px;
-      height: 830px;
-      background: rgba(255,255,255,1);
-      opacity: 1;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      overflow: hidden;
-    }
-    .v76_88 {
-      width: 400px;
-      height: 30px;
-      background: rgba(255,255,255,1);
-      opacity: 1;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      overflow: hidden;
-    }
-    .v76_89 {
-      width: 400px;
-      height: 44px;
-      /* background: url("../images/v76_89.png"); */
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: 30px;
-      left: 0px;
-      overflow: hidden;
-    }
-    .v76_90 {
-      width: 400px;
-      height: 44px;
-      background: rgba(255,255,255,1);
-      opacity: 1;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      overflow: hidden;
-    }
-    .v76_91 {
-      width: 210px;
-      color: rgba(0,0,0,1);
-      position: absolute;
-      top: 12px;
-      left: 45px;
-      /* font-family: Inter; */
-      font-weight: Regular;
-      font-size: 14px;
-      opacity: 1;
-      text-align: left;
-    }
-    .v76_92 {
-      width: 17px;
-      height: 15px;
-      background: url("../images/3_layer.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: 16px;
-      left: 340px;
-      overflow: hidden;
-    }
-    .v76_96 {
-      width: 13px;
-      height: 13px;
-      background: url("../images/arrow.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: 16px;
-      left: 26px;
-    }
-    .v76_97 {
-      width: 400px;
-      height: 1px;
-      background: rgba(238,238,238,1);
-      opacity: 1;
-      position: absolute;
-      top: 43px;
-      left: 0px;
-      overflow: hidden;
-    }
-    .v76_98 {
-      width: 170px;
-      color: rgba(0,0,0,1);
-      position: absolute;
-      top: 207px;
-      left: 126px;
-      /* font-family: Inter; */
-      font-weight: Semi Bold;
-      font-size: 19px;
-      opacity: 1;
-      text-align: left;
-    }
-    .v76_104 {
-      width: 400px;
-      height: 60px;
-      /* background: url("../images/v76_104.png"); */
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: 706px;
-      left: 0px;
-      overflow: hidden;
-    }
-    .v76_105 {
-      width: 400px;
-      height: 60px;
-      background: rgba(249,190,32,1);
-      opacity: 1;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      overflow: hidden;
-    }
-    .v76_106 {
-      width: 166px;
-      color: rgba(255,255,255,1);
-      position: absolute;
-      top: 17px;
-      left: 102px;
-      /* font-family: Inter; */
-      font-weight: Semi Bold;
-      font-size: 18px;
-      opacity: 1;
-      text-align: center;
-    }
-    .v76_107 {
-      width: 109px;
-      height: 109px;
-      /* background: url("../images/v76_107.png"); */
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: 301px;
-      left: 133px;
-      overflow: hidden;
-    }
-    .v76_109 {
-      width: 112px;
-      height: 112px;
-      background: url("../images/check_y.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      overflow: hidden;
-    }
-    .v76_110 {
-      width: 109px;
-      height: 109px;
-      background: rgba(249,190,32,1);
-      opacity: 1;
-      position: absolute;
-      top: 0px;
-      left: 109px;
-      border-radius: 50%;
-    }
+    }    
+    .layout_center { position: relative; width: 100%; height: 100vh;  }
+    .layout_center > .center { position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 100%; }
+    .desc { font-size: 19px; font-weight: bold; margin-bottom: 34px; }
+    .img-wrap img { max-width: 109px; }
+    .fixed_button { position: fixed; left: 0; bottom: 0; width: 100%; }
+    .fixed_button button { display: block; width: 100%; padding: 16px; background-color: #F9BE20; color: #ffffff; font-size: 18px; font-weight: bold; }
 </style>
