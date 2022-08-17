@@ -74,7 +74,7 @@ export default {
         localStorage.setItem('no', this.modelNo);
         localStorage.setItem('p', this.status);
         localStorage.setItem('rent', this.rentNo);
-        this.$router.push('/JunyipSig');
+        this.$router.push('/MyJunyipEnd');
       }
     },
     goBack() {
