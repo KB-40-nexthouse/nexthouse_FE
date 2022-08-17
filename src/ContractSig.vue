@@ -485,6 +485,7 @@ export default {
     font-size: 18px;
     opacity: 1;
     text-align: center;
+    cursor: grab;
   }
     .v76_1231_1 {
     width: 181px;

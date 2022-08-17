@@ -222,6 +222,7 @@ export default {
       font-size: 18px;
       opacity: 1;
       text-align: center;
+      cursor: grab;
     }
     .v76_107 {
       width: 109px;

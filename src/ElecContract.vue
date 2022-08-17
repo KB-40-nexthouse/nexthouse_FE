@@ -86,6 +86,7 @@ body {
   top: 0px;
   left: 0px;
   overflow: hidden;
+  text-align: center;
 }
 .v123123 {
   width: 166px;
@@ -156,6 +157,8 @@ body {
   top: 0px;
   left: 0px;
   overflow: hidden;
+  text-align: center;
+  cursor: grab;
 }
 .v259_18 {
   width: 166px;
@@ -168,6 +171,7 @@ body {
   font-size: 18px;
   opacity: 1;
   text-align: center;
+  cursor: grab;
 }
 .v259_19 {
   width: 340x;

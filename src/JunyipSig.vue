@@ -34,7 +34,7 @@
     <div type='button' @click="[handleSaveClick(), goNext()]" class="v76_1230"></div>
     <span class="v76_1231"><b>서명 완료</b></span>
     <!-- 캔버스테스트 -->
-    <canvas id="canvasT" width="150" height="150" class="v76_1232"
+    <canvas id="canvasT" class="v76_1232"
         v-on:mousedown="onMouseDown"
         v-on:mousemove="onMouseMove"
         v-on:mouseup="onMouseUp"
@@ -429,6 +429,7 @@ export default {
     font-size: 18px;
     opacity: 1;
     text-align: center;
+    cursor: grab;
   }
   .v76_1232 {
     width: 375px;
@@ -439,5 +440,6 @@ export default {
     top: 469px;
     left: 0px;
     overflow: hidden;
+    
   }
   </style>

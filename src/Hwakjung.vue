@@ -50,6 +50,7 @@
   <router-view/>
 </div> -->
 <div>
+  <Header title="정보 수집·이용 동의" />
   <div class="sub-title">정보 수집·이용 동의</div>
   <div class="contents">
     <div class="desc">
@@ -87,10 +88,12 @@ Vue.use(AxiosPlugin);
 
 axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded'
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';*/
+import Header from "./HeaderLayout.vue";
 
 export default {
   name: 'MyHwakjung',
   components: {
+    Header
   },
   data(){
     return {

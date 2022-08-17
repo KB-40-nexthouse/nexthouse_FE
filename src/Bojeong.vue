@@ -34,8 +34,9 @@
 </nav>
 <router-view/> -->
 <div>
+    <Header title="송금하기" />
     <div>
-        <p style="padding: 80px 0; font-size: 24px; font-weight: 600;">총금액 : {{ this.depositInfo.price }}<span>원</span></p> 
+        <p style="padding: 80px 0; font-size: 24px; font-weight: 600; text-align: center; ">총금액 : {{ this.depositInfo.price }}<span>원</span></p> 
     </div>
     <div style="padding: 0 24px;">
         <div style="background-color: lightgray; border-radius: 4px; margin-bottom: 8px; padding: 4px 8px; text-align: left;">
@@ -70,6 +71,8 @@
 </template>
 
 <script>
+import Header from "./HeaderLayout.vue";
+
 export default {
   name: 'MyBojeong',
     data(){
@@ -80,6 +83,9 @@ export default {
         rentNo : 0,
         depositInfo : 0
     }
+  },
+  components: {
+    Header
   },
   props: {
     
