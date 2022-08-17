@@ -294,7 +294,7 @@ export default {
   .v74_40 {
     width: 29px;
     height: 29px;
-    background: url("../images/check_y.png");
+    background: url("../images/check_ytob.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

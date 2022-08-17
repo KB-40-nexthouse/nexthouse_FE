@@ -8,7 +8,7 @@
           완료되었습니다.
         </div>
         <div class="img-wrap">
-          <img src="../images/check_y.png" alt="">
+          <img src="../images/check_ytob.png" alt="">
         </div>
       </div>
     </div>
