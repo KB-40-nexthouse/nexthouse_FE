@@ -66,6 +66,9 @@
                 <!-- 계약프로세스 이동 버튼으로 감싸기-->
                 <div class="찜한매물정보&클릭시계약" type="button" @click="Staging(H)" style="padding : 15px; ">
                     <div class="ChekedLayout clear" style="">
+                    <!-- 계약 취소하는 버튼 , 8월18일 마무리 예정 / 아이콘 추천받음-->
+                        <button>X</button> 
+                        
                         <div class="checked-image" style="float:left; ">
                             <img :src="H.modelImg" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
                         </div>
