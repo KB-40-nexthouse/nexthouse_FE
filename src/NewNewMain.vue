@@ -10,50 +10,6 @@
     </div>
     <div class="tabs" v-if="tabNum === 0">
         <div class="selectbar clear" style="">
-            <div style="font-weight: bold; ">전체 {{HomeList[0].length}}개</div>
-            <div>등록순 <span style="font-size:5px; padding-left:3px">▼</span></div>
-            <a href="#">편집</a>
-        </div>
-        <div v-if="HomeList[0].length != 0" > 
-            <div v-for="(H, index) in HomeList[0]" :key="index">
-                <!-- 계약프로세스 이동 버튼으로 감싸기-->
-                <div class="찜한매물정보&클릭시계약" type="button" @click="onBoard(H)" style="padding : 15px; ">
-                    <div class="ChekedLayout clear" style="">
-                        <div class="checked-image" style="float:left; ">
-                            <img :src="H.modelImg" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
-                        </div>
-                        <div class="checked-info" style="width:calc(100% - 150px); float:left; padding-left:18px; margin-top:1%; font-family: 'NanumBarunGothicBold'">
-                            <p style=" font-size: 18px; color: #000000; line-height:2; ">
-                                <b style="color:#41BE4E; font-size: 15px; padding-right:4px">전세</b>
-                                <b>{{H.price}}</b>
-                            </p>
-                            <p style=" font-size: 13.6px; color: #000000; line-height:1.1; ">
-                                {{H.modelAddr}}
-                            </p>
-                            <p style="font-size: 13.6px; color: #777777; line-height:2.1; ">
-                                {{H.modelSpec}}
-                            </p>
-                            <p style="font-size: 13px; color: black; line-height:1.1; white-space : nowrap; overflow:hidden; text-overflow:ellipsis;" >
-                                {{H.modelNm}}
-                            </p>
-                            <div style="font-size: 11px; color: #000000; line-height:2.45; ">
-                                <img src="@/assets/Human_Icon.png" alt="sampleRoom" style="width:25px; height: 22px; padding-right:5px; padding-top:5px">
-                                <span>{{H.ownerNm}}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr style="width:90%; margin: auto; height:0.5px">
-            </div>
-        </div>
-        <div v-else>
-            <div style="color:#696868; font-size:15px; text-align:center; padding-top:25%">
-                최근 본 매물이 없어요.
-            </div>
-        </div>
-    </div>
-    <div class="tabs" v-if="tabNum === 1">
-        <div class="selectbar clear" style="">
             <div style="font-weight: bold; ">전체 {{HomeList[1].length}}개</div>
             <div>등록순 <span style="font-size:5px; padding-left:3px">▼</span></div>
             <a href="#">편집</a>
@@ -96,16 +52,16 @@
             </div>
         </div>
     </div>
-    <div class="tabs" v-if="tabNum === 2">
+    <div class="tabs" v-if="tabNum === 1">
         <div class="selectbar clear" style="">
-            <div style="font-weight: bold; ">전체 {{HomeList[2].length}}개</div>
+            <div style="font-weight: bold; ">전체 {{HomeList[0].length}}개</div>
             <div>등록순 <span style="font-size:5px; padding-left:3px">▼</span></div>
             <a href="#">편집</a>
         </div>
-        <div v-if="HomeList[2].length != 0" > 
-            <div v-for="(H, index) in HomeList[2]" :key="index">
+        <div v-if="HomeList[0].length != 0" > 
+            <div v-for="(H, index) in HomeList[0]" :key="index">
                 <!-- 계약프로세스 이동 버튼으로 감싸기-->
-                <div class="찜한매물정보&클릭시계약" type="button" @click="onBoard(H)" style="padding : 15px; ">
+                <div class="찜한매물정보&클릭시계약" type="button" @click="Staging(H)" style="padding : 15px; ">
                     <div class="ChekedLayout clear" style="">
                         <div class="checked-image" style="float:left; ">
                             <img :src="H.modelImg" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
@@ -136,7 +92,51 @@
         </div>
         <div v-else>
             <div style="color:#696868; font-size:15px; text-align:center; padding-top:25%">
-                최근 본 매물이 없어요.
+                계약을 진행하는 매물이 없어요.
+            </div>
+        </div>
+    </div>
+    <div class="tabs" v-if="tabNum === 2">
+        <div class="selectbar clear" style="">
+            <div style="font-weight: bold; ">전체 {{HomeList[2].length}}개</div>
+            <div>등록순 <span style="font-size:5px; padding-left:3px">▼</span></div>
+            <a href="#">편집</a>
+        </div>
+        <div v-if="HomeList[2].length != 0" > 
+            <div v-for="(H, index) in HomeList[2]" :key="index">
+                <!-- 계약프로세스 이동 버튼으로 감싸기-->
+                <div class="찜한매물정보&클릭시계약" type="button" @click="checkContract(H)" style="padding : 15px; ">
+                    <div class="ChekedLayout clear" style="">
+                        <div class="checked-image" style="float:left; ">
+                            <img :src="H.modelImg" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
+                        </div>
+                        <div class="checked-info" style="width:calc(100% - 150px); float:left; padding-left:18px; margin-top:1%; font-family: 'NanumBarunGothicBold'">
+                            <p style=" font-size: 18px; color: #000000; line-height:2; ">
+                                <b style="color:#41BE4E; font-size: 15px; padding-right:4px">전세</b>
+                                <b>{{H.price}}</b>
+                            </p>
+                            <p style=" font-size: 13.6px; color: #000000; line-height:1.1; ">
+                                {{H.modelAddr}}
+                            </p>
+                            <p style="font-size: 13.6px; color: #777777; line-height:2.1; ">
+                                {{H.modelSpec}}
+                            </p>
+                            <p style="font-size: 13px; color: black; line-height:1.1; white-space : nowrap; overflow:hidden; text-overflow:ellipsis;" >
+                                {{H.modelNm}}
+                            </p>
+                            <div style="font-size: 11px; color: #000000; line-height:2.45; ">
+                                <img src="@/assets/Human_Icon.png" alt="sampleRoom" style="width:25px; height: 22px; padding-right:5px; padding-top:5px">
+                                <span>{{H.ownerNm}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="width:90%; margin: auto; height:0.5px">
+            </div>
+        </div>
+        <div v-else>
+            <div style="color:#696868; font-size:15px; text-align:center; padding-top:25%">
+                계약을 종료한 매물이 없어요.
             </div>
         </div>
     </div>
@@ -150,7 +150,7 @@ export default {
   name: 'NewNewMain',
   data() {
     return {
-      tabNum : 1,
+      tabNum : 0,
       HomeList: [[], [], []]
     }
   },
@@ -228,7 +228,6 @@ export default {
     }
   },
   beforeMount() {
-    this.tabNum = 1;
     this.fetchData();
     console.log("fetchData");
   }
