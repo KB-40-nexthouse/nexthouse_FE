@@ -36,9 +36,9 @@
     </button>
     <!-- 캔버스테스트 -->
     <canvas id="canvasT"  class="v76_1232"
-        v-on:mousedown="onMouseDown"
-        v-on:mousemove="onMouseMove"
-        v-on:mouseup="onMouseUp"
+        v-bind:ontouchstart="touchStart"
+        v-bind:ontouchmove="touchMove"
+        v-bind:ontouchend="touchEnd"
         ref = "myCanvas"
         >
         <!-- <div class="v76_1232"></div>  -->
@@ -52,6 +52,7 @@
 
 
 <script>
+ 
 
 export default {
   name: 'ContractSig',
@@ -78,23 +79,68 @@ export default {
     //     localStorage.setItem('rent', data.rentCntrNo);
     //     this.$router.push('/staging');
     // },
+    // this.canvas.addEventListener("touchmove", this.touchMove, false),
+    // this.canvas.addEventListener("touchstart", this.touchStart, false),
+    // this.canvas.addEventListener("touchend", this.touchEnd, false),
     draw(e) {
+      if (!this.isDrawing) {
+        this.ctx.beginPath();
+      }
 
-    if (!this.isDrawing) {
-        return;
-    }
-    
-    this.ctx.beginPath(); 
-    
-    // 3. Starting point
-    this.ctx.moveTo(this.startX, this.startY);
-    
-    // 4. Go point
-    this.ctx.lineTo(e.offsetX, e.offsetY);
-    this.ctx.stroke();
-    
-    this.startX = e.offsetX;
-    this.startY = e.offsetY;
+      
+      console.log(" e :: ", e.offsetX, " , ", e.offsetY);
+      // 3. Starting point
+      this.ctx.moveTo(this.startX, this.startY);
+
+      // 4. Go point
+      this.ctx.lineTo(e.offsetX, e.offsetY);
+      this.ctx.stroke();
+
+      this.startX = e.offsetX;
+      this.startY = e.offsetY;
+    },
+    getTouchPos(e) {
+      // console.log("터치 :: ", e);
+        return {
+            // x: e.touches[0].clientX,
+            // y: e.touches[0].clientY,
+            x: e.touches[0].clientX - e.target.offsetLeft - 25,
+            y: e.touches[0].clientY - e.target.offsetTop + document.documentElement.scrollTop -5
+        }
+    },
+    touchStart(e) {
+        console.log("시작");
+
+        e.preventDefault();
+        this.isDrawing = true;
+        const { x, y } = this.getTouchPos(e);
+        this.startX = x;
+        this.startY = y;
+    },
+    touchMove(e) {
+        console.log("움직");
+
+        // if(!this.isDrawing) return;
+        const { x, y } = this.getTouchPos(e);
+        
+        e.offsetY = y;
+        e.offsetX = x;
+
+        this.draw(e);
+        // this.startX = x;
+        // this.startY = y;
+    },
+    touchEnd() {
+        console.log("끝");
+
+        if(!this.isDrawing) return;
+        // 점을 찍을 경우 위해 마지막에 점을 찍는다.
+        // touchEnd 이벤트의 경우 위치정보가 없어서 startX, startY를 가져와서 점을 찍는다.
+        this.ctx.beginPath();
+        this.ctx.arc(this.startX, this.startY, this.ctx.lineWidth/2, 0, 2*Math.PI);
+        this.ctx.fillStyle = this.ctx.strokeStyle;
+        this.ctx.fill();
+        this.isDrawing = false;
     },
     onMouseMove(e){
         this.draw(e);
