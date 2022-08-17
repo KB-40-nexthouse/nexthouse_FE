@@ -82,7 +82,7 @@
                             <img :src="H.modelImg" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
                         </div>
                         <div class="checked-info" style="width:calc(100% - 150px); float:left; padding-left:18px; margin-top:1%; font-family: 'NanumBarunGothicBold'">
-                            <p style=" font-size: 18px; color: #000000; line-height:2; ">
+                            <p style=" font-size: 17px; color: #000000; line-height:2; ">
                                 <b style="color:#41BE4E; font-size: 15px; padding-right:4px">전세</b>
                                 <b>{{H.price}}</b>
                             </p>

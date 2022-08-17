@@ -463,7 +463,7 @@ export default {
   .v76_1230_1 {
     width: 340px;
     height: 53px;
-    background: rgba(249,190,32,1);
+    background: #4372F4;
     opacity: 1;
     position: absolute;
     top: 677px;

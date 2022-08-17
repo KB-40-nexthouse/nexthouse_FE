@@ -60,7 +60,7 @@
     /* position: absolute; */
     text-align: center;
     position: fixed;
-    background-color: #F9BE20;
+    background-color: #4372F4;
     width: 100%;
     bottom: 0;
     padding-bottom: 16px;

@@ -65,7 +65,7 @@
         </div> -->
     </div>
     <div style="position: fixed; left:0; bottom:0; padding: 0 24px 16px; width: 100%">
-        <button type="button"  @click="MoneySending" style="display: block; width:100%; padding: 16px 0; background-color: #FAE34C; border-radius: 8px;">보증금 송금</button>
+        <button type="button"  @click="MoneySending" style="display: block; width:100%; padding: 16px 0; background-color: #4372F4; border-radius: 8px;">보증금 송금</button>
     </div>
 </div>
 </template>
