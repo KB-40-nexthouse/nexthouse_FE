@@ -28,8 +28,7 @@
     <div class="layout_center">
       <div class="center">
         <div class="desc">
-          {{  }}
-          <!-- 확정일자 신고가<br/> -->
+          확정일자 신고가<br/>
           완료되었습니다.
         </div>
         <div class="img-wrap">
@@ -125,6 +124,10 @@ export default {
       left: 0px;
       overflow: hidden;
     }
+    .desc { font-size: 19px; font-weight: bold; margin-bottom: 34px; }
+    .layout_center { position: relative; width: 100%; height: 100vh;  }
+    .layout_center > .center { position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 100%; }
+    .img-wrap img { max-width: 109px; }
     .v76_89 {
       width: 375px;
       height: 44px;
