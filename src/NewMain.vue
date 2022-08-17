@@ -164,6 +164,13 @@
         </div>
     </div>
   </div>
+    <div class="fixed-action-btn" type="button" @click="IntroChat">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+        </ul>
+    </div>
 </body>
 </template>
 
@@ -172,6 +179,9 @@
 import Header from "./HeaderLayout.vue";
 import "materialize-css/dist/css/materialize.css";
 import M from 'materialize-css'
+
+
+
 export default {
   name: 'NewStaging',
   data() {

@@ -5,7 +5,7 @@ import { createWebHistory,createRouter } from 'vue-router'
 const routes = [
   {
     path: '/',
-    redirect: {name : "Main"},
+    redirect: {name : "NewMain"},
   },
   {
     path: '/Main',
