@@ -41,7 +41,7 @@
     <h5 style="float: center; padding-top: 20px;">확인</h5>
   </div> -->
   <div class="fixed_button button">
-      <button type="button" @click="goNext()" :disabled="!checked">확인</button>
+      <button type="button" @click="goNext()" >확인</button>
     </div>
   </div>
 
@@ -153,7 +153,8 @@ export default {
     localStorage.setItem('p', 4);
     localStorage.setItem('rent', this.rentNo);
     //this.postProgress();
-    this.$router.go(-5);
+    console.log("click")
+    this.$router.go(-4);
     },
     getInfo(){
         this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrRslt/'+this.rentNo)
