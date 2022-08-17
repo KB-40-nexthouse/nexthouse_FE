@@ -10,8 +10,8 @@
             1. 전자계약서
           </h3>
           <div style="padding: 33px 20px 20px;background-color: #ffffff;border-radius: 10px;">
-            <p><span style="color: #246990"><b>종이없이 </b></span><b>계약서 작성하기</b></p>
-            <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px">
+            <p style="text-align: center;"><span style="color: #246990; text-align: center;"><b>종이없이 </b></span><b>계약서 작성하기</b></p>
+            <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px; text-align: center;">
               잃어버리기 쉬운 실물 계약서 대신<br />
               보관과 조회가 편리한 전자계약서를 작성할 수 있어요.
             </p>
@@ -27,8 +27,8 @@
             2. 확정일자
           </h3>
           <div style="padding: 33px 20px 20px;background-color: #ffffff;border-radius: 10px;">
-            <p><span style="color: #246990"><b>방문없이 </b></span><b>확정일자 신고하기</b></p>
-            <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px">
+            <p style="text-align: center;"><span style="color: #246990"><b>방문없이 </b></span><b>확정일자 신고하기</b></p>
+            <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px; text-align: center;">
               주민센터까지 방문하실 필요 없어요.<br />
               앱을 통해 간편하게 확정일자를 신고해보세요.
             </p>
@@ -43,9 +43,9 @@
           <h3 style="text-align: left; font-size: 16px; margin: 0px 0px 8px 5px">
             3. 보증금 송금
           </h3>
-          <div style="padding: 33px 20px 20px;background-color: #ffffff;border-radius: 10px;">
-            <p><span style="color: #246990"><b>안전하게 </b></span><b>보증금 송금하기</b></p>
-            <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px">
+          <div style="padding: 33px 20px 20px;background-color: #ffffff;border-radius: 10px; ">
+            <p style="text-align: center;"><span style="color: #246990"><b>안전하게 </b></span><b>보증금 송금하기</b></p>
+            <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px; text-align: center;">
               출금 계좌만 등록하세요.<br />
               잘못된 계좌로 가지 않게 KB국민은행이 도와드릴게요.
             </p>
@@ -61,8 +61,8 @@
             4. 전입신고
           </h3>
           <div style="padding: 33px 20px 20px;background-color: #ffffff;border-radius: 10px;">
-            <p><span style="color: #246990"><b>방문없이 </b></span><b>전입일자 신고하기</b></p>
-            <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px">
+            <p style="text-align: center;"><span style="color: #246990"><b>방문없이 </b></span><b>전입일자 신고하기</b></p>
+            <p style="font-size: 12.5px; color: #A1A1A2; padding-bottom: 20px; padding-top:9px; text-align: center;">
               주민센터까지 방문하실 필요 없어요.<br />
               앱을 통해 간편하게 전입일자를 신고해보세요.
             </p>
