@@ -11,7 +11,7 @@
     </div>
     <div id="tab1" class="">
         <div class="selectbar clear" style="">
-            <div style="">전체 {{HomeList[0].length}}개</div>
+            <div style="">전체 {{HomeList[1].length}}개</div>
             <!-- <div v-if="HomeList[2].length != 0" > -->
             <div style="float:left;">
                 <select name="" id="" style="font-size:10px">
@@ -22,8 +22,8 @@
             <a href="#">편집</a>
             <!-- </div> -->
         </div>
-        <div v-if="HomeList[0].length != 0" > 
-            <div v-for="(H, index) in HomeList[0]" :key="index">
+        <div v-if="HomeList[1].length != 0" > 
+            <div v-for="(H, index) in HomeList[1]" :key="index">
                 <!-- 계약프로세스 이동 버튼으로 감싸기-->
                 <div class="찜한매물정보&클릭시계약" type="button" @click="onBoard(H)" style="padding : 15px; ">
                     <div class="ChekedLayout clear" style="">
@@ -62,7 +62,7 @@
     </div>
     <div id="tab2" class="">
         <div class="selectbar clear" style="">
-            <div style="">전체 {{HomeList[1].length}}개</div>
+            <div style="">전체 {{HomeList[0].length}}개</div>
             <!-- <div v-if="HomeList[1].length != 0" > -->
                 <div style="float:left;">
                     <select name="" id="" style="font-size:10px">
@@ -73,10 +73,10 @@
                 <a href="#">편집</a>
             <!-- </div> -->
         </div>
-        <div v-if="HomeList[1].length != 0" > 
-            <div v-for="(H, index) in HomeList[1]" :key="index">
+        <div v-if="HomeList[0].length != 0" > 
+            <div v-for="(H, index) in HomeList[0]" :key="index">
                 <!-- 계약프로세스 이동 버튼으로 감싸기-->
-                <div class="찜한매물정보&클릭시계약" type="button" @click="onBoard(H)" style="padding : 15px; ">
+                <div class="찜한매물정보&클릭시계약" type="button" @click="Staging(H)" style="padding : 15px; ">
                     <div class="ChekedLayout clear" style="">
                         <div class="checked-image" style="float:left; ">
                             <img src="@/assets/sampleImg2.png" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
@@ -128,7 +128,7 @@
         <div v-if="HomeList[2].length != 0" > 
             <div v-for="(H, index) in HomeList[2]" :key="index">
                 <!-- 계약프로세스 이동 버튼으로 감싸기-->
-                <div class="찜한매물정보&클릭시계약" type="button" @click="onBoard(H)" style="padding : 15px; ">
+                <div class="찜한매물정보&클릭시계약" type="button" @click="checkContract(H)" style="padding : 15px; ">
                     <div class="ChekedLayout clear" style="">
                         <div class="checked-image" style="float:left; ">
                             <img src="@/assets/sampleImg2.png" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
@@ -207,7 +207,7 @@ export default {
             var weather = jData[i];
             console.log("******************************");
             this.HomeList[Number(weather.cntrDiv[0]) - 1].push(weather);
-            console.log(weather.modelAddr);
+            console.log(weather.modelAddr + " " + (Number(weather.cntrDiv[0]) - 1));
           }
         })
         .catch((error) => {
@@ -230,6 +230,7 @@ export default {
 
     onBoard(data) {
       console.log(this.HomeList[0].length);
+      console.log("onBoard");
       //if(this.HomeList[0].length == 0)
       {
       //const article = { custNo: "100000001", modelNo: "APT000002"};
