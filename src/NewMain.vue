@@ -311,6 +311,11 @@ export default {
         padding-top:1.5px;
     }
 
+    .dropdown-content li > span {
+        color : black;
+        font-size:13px
+    }
+
     .selectbar { padding: 9px 20px; background-color: #F5F5F5; font-size: 13px; }
     .selectbar > div { position: relative; float: left; font-weight: bold;  }
     .selectbar > div + div { margin-left: 10px; padding-left: 10px;  }
