@@ -219,7 +219,7 @@ export default {
 }
 
 .btn_yet {
-    background-color: #FFF08E;
+    background-color: #E0EBFF;
 
 }
 </style>
