@@ -78,6 +78,6 @@ body {
     }    
         .desc { font-size: 19px; font-weight: bold; margin-bottom: 34px; }
     .layout_center { position: relative; width: 100%; height: 100vh;  }
-    .layout_center > .center { position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 100%; }
+    .layout_center > .center { position: absolute; left: 0; top: 50%; transform: translateY(-120%); width: 100%; }
     .img-wrap img { max-width: 109px; }
 </style>
