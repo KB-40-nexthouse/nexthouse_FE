@@ -29,7 +29,8 @@ export default {
     return {
         modelNo : 0,
         status : 0,
-        rentNo : 0
+        rentNo : 0,
+        checked : true
     }
   },
   components: {
