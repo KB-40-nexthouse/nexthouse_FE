@@ -1,23 +1,29 @@
 <template>
-<nav>
-<div class="v259_4">
-    <!-- <div class="v57_78"> -->
-      <!-- <span class="v57_77"><b>전자계약서 확인</b></span> -->
-    <!-- </div> -->
+<!-- <div class="v259_4">
+     <div class="v57_78"> 
+      <span class="v57_77"><b>전자계약서 확인</b></span> 
+     </div> --
     <div class="v259_16">
         <div class="v259_17"></div>
         <span class="v259_18" type='button' @click="goBack()">확인</span>
     </div>
     <div class="v259_19"></div>
-    <!-- <span class="v123123">전자계약서 서명</span> -->
+    <span class="v123123">전자계약서 서명</span> 
     {{this.Home.ownerNm}}
+</div> -->
+<!-- <router-view/> -->
+<div>
+    <Header title="전자계약서 확인" />
+    <div class="contract_page"></div>
+    <div class="fixed_button button">
+      <button type="button" @click="goBack()" :disabled="!checked">확인</button>
+    </div>
 </div>
-</nav>
-<router-view/>
 </template>
 
 
 <script>
+import Header from "./HeaderLayout.vue";
 
 export default {
   name: 'ElecContract',
@@ -28,9 +34,11 @@ export default {
         status : 0,
         rentNo : 0,
         Home : 0,
+        checked : true
     }
   },
   components: {
+    Header
   },
   methods: {
     goBack(){
@@ -173,7 +181,7 @@ body {
   text-align: center;
   cursor: grab;
 }
-.v259_19 {
+.contract_page {
   width: 340x;
   height: 640px;
   background-image: url("../images/contract.png");
