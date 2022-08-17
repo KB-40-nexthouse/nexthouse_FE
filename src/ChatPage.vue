@@ -164,7 +164,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 /* 폰트 import후 사용 */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&display=swap');
 /* 헤더 디자인 */
