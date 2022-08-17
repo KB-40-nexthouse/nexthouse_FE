@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="fixed_button">
-      <button type="button" :disabled="!checked">동의하고 신고</button>
+      <button type="button" @click="Research()" :disabled="!checked">동의하고 신고</button>
     </div>
   </div>
 </div>
