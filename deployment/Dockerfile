@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --production
 RUN npm i @vue/cli-service
-RUN npm install materialize-css@next
+# RUN npm install materialize-css@next
 RUN npm i -S vue2-touch-events
 COPY . .
 RUN npm run build
