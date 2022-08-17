@@ -1,18 +1,19 @@
 <template>
 <div class="Wrapper" style="padding-bottom:110px;">
   <!--Header-->
-  <div class="header" style="position:fixed;">
+  <!-- <div class="header" style="position:fixed;">
     <h2 style="float: left;">
         &nbsp; &lt; &nbsp; 전세계약서 요약정리
     </h2>
     <div class="" style="float: right; padding-top: 15px; padding-right: 10px">
       <img src="@/assets/hamResized.png" alt="menuIcon">
     </div>
-  </div>
+  </div> -->
+  <Header title="전세계약서 요약정리" />
   <!-- 구분선 -->
   <p class="chat-date"></p>
   <!-- 내용 -->
-  <div class="summaryPage" style="padding-left:10px;">
+  <div class="summaryPage" style="text-align: center;">
     <h3>고객님께서 진행하신 결과를 요약한 내용입니다.</h3>
     <br>
     <h4>&#8226; 매물정보</h4>
@@ -36,9 +37,12 @@
       <img src="./assets/liivFriends-300.jpeg" alt="tyIcon">
     </div>
   <!-- Footer Area-->
-  <div type='button' @click="goNext()" class="footer clear">
+  <!-- <div type='button' @click="goNext()" class="footer clear">
     <h5 style="float: center; padding-top: 20px;">확인</h5>
-  </div>
+  </div> -->
+  <div class="fixed_button button">
+      <button type="button" @click="goNext()" :disabled="!checked">확인</button>
+    </div>
   </div>
 
 </div>
@@ -122,6 +126,9 @@ h6{
 </style>
 
 <script type="text/javascript">
+
+import Header from "./HeaderLayout.vue";
+
 export default {
   name: 'summaryLayout',
   mounted () {
@@ -132,8 +139,12 @@ export default {
         modelNo : 0,
         status : 0,
         rentNo : 0,
-        Home : 0
+        Home : 0,
+        checked : true
     }
+  },
+  components: {
+    Header
   },
   props: {},
   methods: {
@@ -142,7 +153,7 @@ export default {
     localStorage.setItem('p', 4);
     localStorage.setItem('rent', this.rentNo);
     //this.postProgress();
-    this.$router.push("/NewMain");
+    this.$router.go(-5);
     },
     getInfo(){
         this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrRslt/'+this.rentNo)
