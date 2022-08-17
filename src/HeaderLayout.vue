@@ -52,7 +52,7 @@ h2, h3, h4, h5, h6 {
 a {
   color: #42b983;
 }
-.title-wrap { text-align: left; padding-left: 20px;  }
+.title-wrap { text-align: left; padding-left: 20px; float: left; width: calc(100% - 40px);  }
 .title-wrap .arrow-left { position: relative; display: inline-block; width: 10px; height: 10px; vertical-align: middle; text-indent: -9999px; }
 .title-wrap .arrow-left::after { content: ""; position: absolute; left: 0; top: 0; display: block; width: 8px; height: 8px; border-style: solid; border-color: #222222; border-width: 1px 1px 0 0; transform: rotate(-135deg); }
 .title-wrap .arrow-left + h2 { display: inline-block; }

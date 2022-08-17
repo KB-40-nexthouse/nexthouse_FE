@@ -2,3 +2,23 @@
 
 .fixed_button { position: fixed; left: 0; bottom: 0; width: 100%; }
 .fixed_button button { display: block; width: 100%; padding: 16px; background-color: #F9BE20; color: #ffffff; font-size: 18px; font-weight: bold; }
+.fixed_button button:disabled { background-color: #eeeeee; color: #222222; }
+
+/*checkbox*/
+.checkbox-item { line-height: 40px; }
+.checkbox-item input[type="checkbox"] { position:absolute; opacity:0; cursor: default; width: 24px; height: 24px; cursor: pointer; }
+.checkbox-item input[type="checkbox"] + label { display:inline-block; position: relative; min-height:24px; cursor: pointer; padding-left: 32px; font-size: 16px; font-weight: 400; color: #323234; }
+.checkbox-item input[type="checkbox"] + label::before,
+.checkbox-item input[type="checkbox"]:not(:checked)+label:before { display: inline-block; position: absolute; content: ""; width: 24px; height: 24px; left: 0px; top: 6px;  }
+.checkbox-item input[type="checkbox"] + label:after { content:''; position:absolute; width: 4px; height:8px; left: 10px; top: 12px; border-style: solid; border-color: #cccccc; border-width: 2px 0 0 2px; transform: rotate(-135deg);  }
+.checkbox-item input[type="checkbox"]:checked + label:after { border-color: #222222 }
+
+.checkbox-item.type2 input[type="checkbox"] + label::before,
+.checkbox-item.type2 input[type="checkbox"]:not(:checked)+label:before {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 100%;
+    transition: all 0.2s;
+}
+.checkbox-item.type2 input[type="checkbox"] + label:after { border-color: #ffffff; }
+.checkbox-item.type2 input[type="checkbox"]:checked + label:before { background-color: #F9BE20; border: 1px solid #F9BE20; }

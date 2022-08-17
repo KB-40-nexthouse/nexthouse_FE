@@ -85,7 +85,7 @@ export default {
   margin: 0 auto;
   width: 350px;
   height: 650px;
-  text-align: center;
+  /* text-align: center; */
   background-color: #ffffff;
 }
 body {

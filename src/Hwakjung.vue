@@ -1,5 +1,5 @@
 <template>
-<div>
+<!-- <div>
     <nav>
     
     <div class="v74_18">
@@ -48,6 +48,33 @@
 
     </nav>
   <router-view/>
+</div> -->
+<div>
+  <div class="sub-title">정보 수집·이용 동의</div>
+  <div class="contents">
+    <div class="desc">
+      개인정보와 전세계약서 수집·이용을 <br/>동의하고 확정일자를 신고해주세요.
+    </div>
+    <div class="checkbox-wrap">
+      <div class="checkbox-item type2 border-b pb16 mb16">
+        <input type="checkbox" id="AllAgree" v-model="checked"/>
+        <label for="AllAgree">전체 동의</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="Agree01" value="" />
+        <label for="Agree01">개인정보 수집·이용 동의(필수)</label>
+        <button class="arrow-right" type="button"></button>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="Agree02" value="" />
+        <label for="Agree02">계약서 정보 수집·이용 동의(필수)</label>
+        <button class="arrow-right" type="button"></button>
+      </div>
+    </div>
+    <div class="fixed_button">
+      <button type="button" :disabled="!checked">동의하고 신고</button>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -98,13 +125,12 @@ export default {
 
 </script>
 
-<style> 
+<style scoped> 
   #app 
   { 
     margin:0 auto; 
     width:350px;
     height:650px;
-    text-align:center; 
     background-color: #ffffff;
   }
 
@@ -497,4 +523,14 @@ export default {
     left: 339px;
   }
   
+.sub-title { padding: 12px 20px; font-size: 14px; font-weight: bold; border-bottom: 1px solid #eeeeee; }
+.desc { font-size: 19px; font-weight: bold; }
+.contents { padding: 32px 20px; }
+.checkbox-wrap { margin-top: 32px; }
+.border-b { border-bottom: 1px solid #eeeeee; }
+
+.checkbox-item { display: flex; justify-content: space-between; align-items: center; }
+
+.arrow-right { position: relative; width: 24px; height: 24px; float: right; }
+.arrow-right::after { content: ""; vertical-align: middle; display: inline-block; width: 8px; height: 8px; border-style: solid; border-color: #222222; border-width: 1px 0 0 1px; transform: rotate(135deg); }
   </style>
