@@ -6,7 +6,7 @@
 </head>
 <body>
   <div class="row">
-    <div class="">
+    <div class="col s12">
       <ul id="tabs-swipe-demo" class="tabs">
         <li class="tab col s3"><a href="#tab1">최근 본</a></li>
         <li class="tab col s3"><a class="active" href="#tab2">계약진행</a></li>
@@ -17,8 +17,8 @@
     <div id="tab2" class="">
         <div class="selectbar clear" style="">
             <div style="">전체 2개</div>
-            <div style="float: left; font-size: 14px">
-                <select name="" id="">
+            <div style="float: left;">
+                <select name="" id="" >
                     <option value="">등록순</option>
                     <option value="">최신순</option>
                 </select>
@@ -115,11 +115,11 @@ export default {
         padding : 1.4px;
     }
 
-    .selectbar { padding: 8px 16px; background-color: #F5F5F5 }
-    .selectbar > div { position: relative; float: left; font-size: 14px }
-    .selectbar > div + div { margin-left: 8px; padding-left: 8px; }
+    .selectbar { padding: 9px 20px; background-color: #F5F5F5; font-size: 13px; }
+    .selectbar > div { position: relative; float: left; font-weight: bold;  }
+    .selectbar > div + div { margin-left: 10px; padding-left: 10px; }
     .selectbar > div + div::before { content: ""; position: absolute; left: 0; top: 0; width: 1px; height: 100%; background-color: lightgray; }
-    .selectbar > div .select-wrapper { max-width: 70px; }
+    .selectbar > div .select-wrapper { max-width: 66px; font-size:8px; }
     .selectbar > div .select-wrapper input.select-dropdown { height: auto; border: 0 none; line-height: initial; margin-bottom: 0; }
-    .selectbar > a{ float: right; font-size: 14px; text-decoration: underline; }
+    .selectbar > a{ float: right;  text-decoration: underline; color:#4372F4;}
 </style>
