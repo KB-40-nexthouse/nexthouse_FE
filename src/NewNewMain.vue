@@ -3,8 +3,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <div>
-  <Header title="내가 본 부동산" />
-  <div>
+  <Header style="position: fixed;" title="내가 본 부동산" />
+  <div style="padding-top:60px;">
     <div class="tab-button-wrap">
       <button type="button" class="tabbutton" :class="{blue:tabNum==0}" @click="tabNum = 0">최근 본</button>
       <button type="button" class="tabbutton" :class="{blue:tabNum==1}" @click="tabNum = 1">계약진행</button>
@@ -66,8 +66,6 @@
                 <!-- 계약프로세스 이동 버튼으로 감싸기-->
                 <div class="찜한매물정보&클릭시계약" type="button" @click="Staging(H)" style="padding : 15px; ">
                     <div class="ChekedLayout clear" style="">
-                    <!-- 계약 취소하는 버튼 , 8월18일 마무리 예정 / 아이콘 추천받음-->
-                        <button>X</button> 
                         
                         <div class="checked-image" style="float:left; ">
                             <img :src="H.modelImg" alt="sampleRoom" style="width:128px; height: 128px; border-radius:5px; ">
