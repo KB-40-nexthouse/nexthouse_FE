@@ -142,7 +142,7 @@ export default {
     localStorage.setItem('p', 4);
     localStorage.setItem('rent', this.rentNo);
     //this.postProgress();
-    this.$router.go(-5);
+    this.$router.push("/NewMain");
     },
     getInfo(){
         this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrRslt/'+this.rentNo)
