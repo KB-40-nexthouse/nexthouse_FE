@@ -37,15 +37,15 @@ export default {
     Header
   },
   methods:{
-    goNext() {
+    async goNext() {
       localStorage.setItem('no', this.modelNo);
       localStorage.setItem('p', 5);
       localStorage.setItem('rent', this.rentNo);
-      this.postProgress();
+      await this.postProgress();
       this.$router.push('/summary');
     },
-    postProgress() {
-        this.$axios.post('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=4')
+    async postProgress() {
+        await this.$axios.post('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=4')
           .then(res => {
           console.log("응답 데이터 : " + JSON.stringify(res.data));
           })

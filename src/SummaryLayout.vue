@@ -156,8 +156,8 @@ export default {
     console.log("click")
     this.$router.go(-4);
     },
-    getInfo(){
-        this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrRslt/'+this.rentNo)
+    async getInfo(){
+        await this.$axios.get('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrRslt/'+this.rentNo)
         .then(res => {
           console.log("");
           console.log("응답 데이터 : " + JSON.stringify(res.data));
@@ -174,7 +174,7 @@ export default {
         });
     }
   },
-  beforeMount(){
+  async beforeMount(){
     this.status = localStorage.getItem('p')
     this.modelNo = localStorage.getItem('no')
     this.rentNo = localStorage.getItem('rent')
@@ -182,7 +182,7 @@ export default {
     console.log(this.status+":status");
     console.log(this.modelNo+":modelNo");
     console.log(this.rentNo+":rentNo");
-    this.getInfo();
+    await this.getInfo();
   }
 }
 
