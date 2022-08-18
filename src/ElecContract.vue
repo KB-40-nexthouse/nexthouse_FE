@@ -13,7 +13,7 @@
 </div> -->
 <!-- <router-view/> -->
 <div>
-    <Header title="전자계약서 확인" style="border-bottom: 1px solid;"/>
+    <Header title="전자계약서 확인" style="border-bottom: 0.8px solid #DFDEDE;"/>
     <div class="contract_page"></div>
     <div class="fixed_button button">
       <button type="button" @click="goBack()" :disabled="!checked">확인</button>

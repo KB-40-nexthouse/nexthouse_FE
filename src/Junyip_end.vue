@@ -1,5 +1,5 @@
 <template>
-  <Header style="border-bottom: 1px solid;"  title="전입일자 신고" />
+  <Header style="border-bottom: 0.8px solid #DFDEDE;"  title="전입일자 신고" />
   <div>
     <div class="layout_center">
       <div class="center">

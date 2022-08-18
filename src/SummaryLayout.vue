@@ -1,5 +1,5 @@
 <template>
-<div class="Wrapper" style="padding-bottom:110px; border-bottom: 1px solid;">
+<div class="Wrapper" style="padding-bottom:110px; border-bottom: 0.8px solid #DFDEDE;">
   <!--Header-->
   <!-- <div class="header" style="position:fixed;">
     <h2 style="float: left;">
@@ -9,7 +9,7 @@
       <img src="@/assets/hamResized.png" alt="menuIcon">
     </div>
   </div> -->
-  <Header style="position: fixed; border-bottom: 1px solid;" title="전세계약서 요약정리" />
+  <Header style="position: fixed; border-bottom: 0.8px solid #DFDEDE;" title="전세계약서 요약정리" />
   <!-- 구분선 -->
   <p class="chat-date"></p>
   <!-- 내용 -->

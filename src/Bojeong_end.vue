@@ -1,5 +1,5 @@
 <template>
-    <Header style="border-bottom: 1px solid;"  title="송금 완료" />
+    <Header style="border-bottom: 0.8px solid #DFDEDE;"  title="송금 완료" />
   <div>
     <div class="layout_center">
       <div class="center" style="text-align: center">

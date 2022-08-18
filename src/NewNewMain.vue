@@ -3,7 +3,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <div>
-  <Header style="position: fixed; border-bottom: 1px solid;" title="내가 본 부동산" />
+  <Header style="position: fixed; border-bottom: 0.8px solid #DFDEDE;" title="내가 본 부동산" />
   <div style="padding-top:60px;">
     <div class="tab-button-wrap">
       <button type="button" class="tabbutton" :class="{blue:tabNum==0}" @click="tabNum = 0">최근 본</button>
