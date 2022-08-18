@@ -9,7 +9,7 @@
       <img src="@/assets/hamResized.png" alt="menuIcon">
     </div>
   </div> -->
-  <Header title="전세계약서 요약정리" />
+  <Header style="position: fixed;" title="전세계약서 요약정리" />
   <!-- 구분선 -->
   <p class="chat-date"></p>
   <!-- 내용 -->
