@@ -23,7 +23,7 @@
     </div>
 </nav>
 <router-view/> -->
-  <Header title="확정일자 신고" />
+  <Header style="border-bottom: 1px solid;" title="확정일자 신고" />
   <div>
     <div class="layout_center">
       <div class="center">

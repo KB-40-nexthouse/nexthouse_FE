@@ -9,11 +9,11 @@
       <img src="@/assets/hamResized.png" alt="menuIcon">
     </div>
   </div> -->
-  <Header style="position: fixed;" title="전세계약서 요약정리" />
+  <Header style="position: fixed; border-bottom: 1px solid;" title="전세계약서 요약정리" />
   <!-- 구분선 -->
   <p class="chat-date"></p>
   <!-- 내용 -->
-  <div class="summaryPage" style="text-align: center;">
+  <div class="summaryPage" style="padding-top:60px; text-align: center;">
     <h3>고객님께서 진행하신 결과를 요약한 내용입니다.</h3>
     <br>
     <h4>&#8226; 매물정보</h4>
