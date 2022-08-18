@@ -218,7 +218,7 @@ export default {
 
 .btn_end {
     background-color: #A6A6A6;
-    color:black;
+    color:white;
     font-weight : normal;
 }
 
