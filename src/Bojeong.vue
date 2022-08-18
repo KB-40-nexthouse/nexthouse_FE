@@ -1,6 +1,6 @@
 <template>
 <div>
-    <Header style="border-bottom: 0.8px solid #DFDEDE;"  title="송금하기" />
+    <Header style="border-bottom: 0.8px solid #DFDEDE; position: fixed;"  title="송금하기" />
     <div>
         <p style="padding: 80px 0; font-size: 24px; font-weight: 600; text-align: center; ">{{ this.depositInfo.price }}<span>원</span></p> 
     </div>
