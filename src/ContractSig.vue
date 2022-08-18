@@ -16,8 +16,8 @@
             v-bind:ontouchend="touchEnd"
             ref = "myCanvas">
     </canvas>
-    <div style="position: relative;">
-    <div class="fixed_button" >
+    <div style="position: relative; height:100px;">
+    <div class="fixed_button" style="position: relative; height:100px;">
       <button type="button" @click="handleSaveClick()" >다음</button>
     </div>
     </div>
@@ -194,7 +194,7 @@ export default {
   .contents{
     background-color:#B3B3B4;
     width:100%;
-    height:300px;
+    height:150px;
     position:relative;
   }
 
@@ -229,7 +229,7 @@ export default {
 
   .canvasClass {
     width: 100%;
-    height:300px;
+    height:250px;
     background: rgba(229,229,229,1);
     opacity: 1;
     position: relative;
