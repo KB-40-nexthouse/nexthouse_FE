@@ -228,5 +228,9 @@ export default {
     height:500px;
     background: rgba(229,229,229,1);
     opacity: 1;
+    position: absolute;
+    /* top: 469px; */
+    /* left: 0px; */
+    overflow: hidden;
   }
   </style>
