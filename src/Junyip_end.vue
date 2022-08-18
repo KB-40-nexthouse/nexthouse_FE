@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="fixed_button">
-      <button type="button" @click="goNext()">다음</button>
+      <button type="button" @click="goNext()">완료</button>
     </div>
   </div>
 
@@ -42,7 +42,7 @@ export default {
       localStorage.setItem('p', 5);
       localStorage.setItem('rent', this.rentNo);
       await this.postProgress();
-      this.$router.push('/summary');
+      this.$router.push('/');
     },
     async postProgress() {
         await this.$axios.post('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=4')

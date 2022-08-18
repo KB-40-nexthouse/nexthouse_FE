@@ -1,49 +1,12 @@
 <template>
-<!-- <nav>
-    
-<div class="v231_117">
-    <div class="v231_118"></div>
-    <div class="v231_119"></div>  
-    <div class="v231_122">
-        <div class="v231_123"></div>
-        <div class="v231_124">
-            <div class="v231_125"></div>
-            <div class="v231_126"></div>
-            <div class="v231_127"></div>
-        </div>
-        <span class="v231_128"><b>보증금 송금</b></span>
-        <div class="v231_129"></div>
-        <div class="v231_130"></div>
-    </div>
-    
-    <span class="v231_131"><b>계약 일자  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ this.depositInfo.cntrDt }}</b></span>
-    <span class="v231_132"><b>송금 금액 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ this.depositInfo.price }}</b></span>
-    <span class="v231_133"><b>총 금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ this.depositInfo.price }}</b></span>
-    <span class="v231_134"></span>
-    <span class="v231_140"><b>은행 가상 계좌 &nbsp;&nbsp;&nbsp;&nbsp; {{ this.depositInfo.BankNm }} {{ this.depositInfo.acctNo }}</b></span>
-    <div class="v231_139"></div>
-    <span class="v231_142"><b>실행 예정 대출&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100,000,000</b></span>
-
-    <div class="v231_143">
-        <div type='button' @click="MoneySending" class="v231_144"></div>
-        <span class="v231_145"><b>보증금 송금</b></span>
-    </div>
-</div>
-
-
-</nav>
-<router-view/> -->
 <div>
     <Header style="border-bottom: 0.8px solid #DFDEDE;"  title="송금하기" />
     <div>
-        <p style="padding: 80px 0; font-size: 24px; font-weight: 600; text-align: center; ">총금액 : {{ this.depositInfo.price }}<span>원</span></p> 
+        <p style="padding: 80px 0; font-size: 24px; font-weight: 600; text-align: center; ">{{ this.depositInfo.price }}<span>원</span></p> 
     </div>
     <div style="padding: 0 24px;">
-        <div style="background-color: lightgray; border-radius: 4px; margin-bottom: 8px; padding: 4px 8px; text-align: left;">
+        <div style="background-color: #F8F8F8; border: 1px solid lightgray;  border-radius: 4px; margin-bottom: 8px; padding: 4px 8px; text-align: left;">
             은행가상계좌 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ this.depositInfo.acctBankNm }}&nbsp;{{ this.depositInfo.acctNo }}
-            <!-- <select name="" id="" style="background-color: transparent; border: 0 none; width: 100%;">
-                <option value="">은행가상계좌 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ this.depositInfo.acctBankNm }}&nbsp;{{ this.depositInfo.acctNo }}</option>
-            </select> -->
         </div>
         <div style="border-radius: 4px; border: 1px solid lightgray; overflow: hidden; padding : 4px 8px; margin-bottom: 8px;">
             <div style="float: left; width: 150px; text-align: left;">송금 금액</div>
@@ -51,22 +14,17 @@
         </div>
         <div style="border-radius: 4px; border: 1px solid lightgray; overflow: hidden; padding : 4px 8px; margin-bottom: 8px;">
             <div style="float: left; width: 150px; text-align: left;">실행 예정 대출</div>
-            <div style="float: right; width: calc(100% - 150px); text-align: right;"><input type="text" name="" id="" placeholder="100,000,000" readonly style="display: inline-block; border: 0 none; text-align: right; width: 100%;"/></div>
+            <div style="float: right; width: calc(100% - 150px); text-align: right;"><input type="text" name="" id="" placeholder="100,000,000" readonly style="display: inline-block; border: 0 none; text-align: right; width: 100%; font-size:16px;"/></div>
         </div>
         <div style="border-radius: 4px; border: 1px solid lightgray; overflow: hidden; padding : 4px 8px; margin-bottom: 8px;">
             <div style="float: left; width: 150px; text-align: left;">계약 일자</div>
             <div style="float: right; width: calc(100% - 150px); text-align: right;">
-            <!-- <input type="text" name="" id="" placeholder="날짜" style="display: inline-block; border: 0 none; text-align: right; width: 100%;"/> -->
             {{ this.depositInfo.cntrDt }}
             </div>
         </div>
-        <!-- <div>
-            <button></button>
-            <a href="#"></a>
-        </div> -->
     </div>
-    <div style="position: fixed; left:0; bottom:0; padding: 0 24px 16px; width: 100%">
-        <button type="button"  @click="MoneySending" style="display: block; width:100%; padding: 16px 0; background-color: #4372F4; border-radius: 8px; color:white; font-weight:bold;">보증금 송금</button>
+    <div class="fixed_button">
+      <button type="button" @click="MoneySending()">보증금 송금</button>
     </div>
 </div>
 </template>
