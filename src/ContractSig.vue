@@ -192,7 +192,7 @@ export default {
   .contents{
     background-color:#B3B3B4;
     width:100%;
-    height:25vh;
+    height:39vh;
     position:relative;
   }
 
@@ -203,7 +203,7 @@ export default {
 
   .sign {
     width:100%;
-    height:100px;
+    height:14vh;
     position: relative;
     top: 40%;
     background-color: white;
