@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
 <Header style="position: fixed; background-color: white;" title="KB전문가 상담" />
   <!--Header-->
   <!-- <div class="header" >
@@ -11,9 +10,7 @@
       <img src="@/assets/hamResized.png" alt="menuIcon">
     </div>
   </div> -->
-=======
 <Header title="KB전문가 상담" />
->>>>>>> 78efe677229d6feaa5010e91d9d01f51f891a271
   <div class="contents" style="padding-top:44px; padding-bottom:50px;">
     <!-- <hr class="bold"/> -->
     <div style="position: fixed; background-color: #E8E8E8; border-radius: 1em; height:90px; width:300px;" class="top clear">
