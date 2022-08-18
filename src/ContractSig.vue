@@ -70,7 +70,7 @@ export default {
             // x: e.touches[0].clientX,
             // y: e.touches[0].clientY,
             x: e.touches[0].clientX - e.target.offsetLeft - 25,
-            y: e.touches[0].clientY - e.target.offsetTop + document.documentElement.scrollTop -5
+            y: e.touches[0].clientY - e.target.offsetTop + document.documentElement.scrollTop -40
         }
     },
     touchStart(e) {
@@ -227,7 +227,7 @@ export default {
 
   .canvasClass {
     width: 100%;
-    height:300px;
+    height:250px;
     background: rgba(229,229,229,1);
     opacity: 1;
     position: relative;
