@@ -16,8 +16,10 @@
             v-bind:ontouchend="touchEnd"
             ref = "myCanvas">
     </canvas>
+    <div style="position: relative;">
     <div class="fixed_button" >
       <button type="button" @click="handleSaveClick()" >다음</button>
+    </div>
     </div>
 </div>
 </template>
