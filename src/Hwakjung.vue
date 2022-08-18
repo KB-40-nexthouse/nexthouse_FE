@@ -50,9 +50,9 @@
   <router-view/>
 </div> -->
 <div>
-  <Header style="border-bottom: 0.8px solid #DFDEDE;" title="확정일자 신고" />
+  <Header style="border-bottom: 0.8px solid #DFDEDE; position: fixed;" title="확정일자 신고" />
   <!-- <div class="sub-title">확정일자 신고</div> -->
-  <div class="contents">
+  <div class="contents" style="padding-top: 70px;">
     <div class="desc">
       개인정보와 전세계약서 수집·이용을 <br/>동의하고 확정일자를 신고해주세요.
     </div>
