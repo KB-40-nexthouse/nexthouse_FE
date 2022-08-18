@@ -12,13 +12,14 @@
   </div> -->
   <div class="contents" style="padding-top:44px; padding-bottom:50px;">
     <!-- <hr class="bold"/> -->
-    <div style="position: fixed; background-color: #E8E8E8; border-radius: 1em; height:90px; width:300px;" class="top clear">
+    
+    <div style="position: fixed; background-color: #E8E8E8; border-radius: 1em; height:90px; width:300px; " class="top clear">
       <!-- 상담사 프로필 이미지-->
-      <div class="left" style="float:left; padding-top:5px;">
-        <img src="@/assets/profileImg.png" alt="상담사 이미지" />
+      <div class="left" style="float:left; padding-top:5px; padding-bottom z-index: 1;">
+        <img src="@/assets/counselor.jpg" alt="상담사 이미지" />
       </div>
       <!-- 상담사 정보-->
-      <div class="right" style="float:left; padding-left: 1px;">
+      <div class="right" style="float:left; padding-left: 8px;">
         <h3>상담가 {{ this.Counseler.adsrNm }}</h3>
         <div style="padding-top:10px;">
           <h6>&#8226; {{ this.Counseler.departmentNm }}<br></h6>
@@ -29,15 +30,16 @@
           <button class="button">상담사 변경</button>
       </div> -->
     </div>
+
     <!-- 채팅내역 -->
     <div class="bottom">
-      <p class="chat-date"><span>2022.08.19</span></p>
-      <ul style="padding : 0 16px;">
+      <p class="chat-date" style=""><span>2022.08.19</span></p>
+      <ul style="padding : 50px 0 16px;">
         <div v-for="(C,index) in ChatList" :key="index">
           <div class="clear" v-if="C.sendId=='100000001'">
-            <li class="my chat" style="float:right;">
+            <li class="my chat" style=" float:right;">
             <div class="date">{{C.msgTime}}</div>
-            <div class="text" style="color: white;">{{C.msg}}</div>
+            <div class="text" >{{C.msg}}</div>
             </li>
           <!-- {{C.sendId}} -->
           </div>
@@ -50,16 +52,16 @@
         </div>
       </ul>
     </div>
-
   </div>
+
       <!-- 채팅입력 -->
-    <div class="input-wrap clear" style="position: fixed; bottom: 0; width: 100%; background-color:white; ">
-    <p class="chat-date"></p>
+    <div class="input-wrap clear" style="position: fixed; bottom: 0; height:60px; width: 100%; background-color:white; ">
+    <!-- <p class="chat-date"></p> -->
       <div class="Text-Input">
-        <input @keyup.enter ="MessageSending()" name="user-text" type="text" v-model ="msg" style="width:100%; padding-top:10px;" placeholder="메세지를 입력하세요."/>
+        <input @keyup.enter ="MessageSending()" name="user-text" type="text" v-model ="msg" style="width:100%; padding-top:20px; border-top: 0.5px solid #e2e2e2;" placeholder="메세지를 입력하세요."/>
       </div>
       <div class="Send-Icon" style="float: right;">
-        <img @click="MessageSending()" src="@/assets/SendIcon.png" style="vertical-align: middle; padding-right: 10px; padding-top: 10px; cursor: grab;" alt="sendIcon">
+        <img @click="MessageSending()" src="@/assets/SendIconB.png" style="vertical-align: middle; padding-right: 10px; padding-top: 10px; cursor: grab;" alt="sendIcon">
       </div>
     </div>
 </template>
@@ -181,14 +183,14 @@ export default {
 /* text-align: left , right , center */
 
 hr.bold { height: 12px; }
-  .chat-date { position: relative; text-align: center;}
-  .chat-date::before { content: ""; position: absolute; left: 0%; top: 50%; transform: translateY(-50%); width: 100%; height: 1px; background-color: #d0d0d0 }
+  .chat-date { position: relative; text-align: right;}
+  /* .chat-date::before { content: ""; position: absolute; left: 0%; top: 50%; transform: translateY(-50%); width: 100%; height: 1px; background-color: #d0d0d0 } */
   .chat-date > span { position: relative; z-index: 1; background-color: #ffffff; display: inline-block; padding : 4px 8px; }
   .chat > div.text { display: inline-block; max-width: 500px; width: auto; padding: 8px 16px; border-radius: 50px;  word-break: break-all; }
   .chat > div.date { font-size: 12px; vertical-align: bottom;}
   .my.chat { padding-bottom: 5px; padding-top: 5px; }
-  .my.chat > div.text { background-color: #4372F4; }
-  .your.chat > div.text { background-color: #D3D3D3; }
+  .my.chat > div.text { background-color: #E0EBFF; }
+  .your.chat > div.text { background-color: #E2E2E2; }
   .chat > div.date { display: inline-block; }
 
 .Text-Input{
