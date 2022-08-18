@@ -143,8 +143,8 @@ body {
     /* background: red; */
     opacity: 1;
     position: absolute;
-    top: 530px;
-    left: 375px;
+    top: 520px;
+    left: 315px;
     overflow: hidden;
     z-index: 1;
   }
