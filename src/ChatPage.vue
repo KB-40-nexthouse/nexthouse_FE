@@ -24,14 +24,15 @@
         <div v-for="(C,index) in ChatList" :key="index">
           <div class="clear" v-if="C.sendId=='100000001'">
             <li class="my chat" style=" float:right;">
-            <div class="date">{{C.msgTime}}</div>
-            <div class="text" >{{C.msg}}</div>
+            <span class="date">{{"오후"+C.msgTime.substr(10,6)}}</span>
+            <span class="text" >{{C.msg}}</span>
+            
             </li>
           </div>
           <div v-else>
             <li class="your chat clear" style="float:left">
-            <div class="text">{{C.msg}}</div>
-            <div class="date">{{C.msgTime}}</div>
+            <span class="text">{{C.msg}}</span>
+            <span class="date">{{"오후"+C.msgTime.substr(10,6)}}</span>
             </li>
           </div>
         </div>
@@ -155,19 +156,16 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&display=swap');
 /* 헤더 디자인 */
 
-/* float: left , right */
-/* text-align: left , right , center */
-
 hr.bold { height: 12px; }
   .chat-date { position: relative; text-align: right;}
   .chat-date > span { position: relative; z-index: 1; display: inline-block; padding : 4px 8px; }
-  .chat > div.text { display: inline-block; max-width: 500px; width: auto; padding: 8px 16px; border-radius: 50px;  word-break: break-all; }
-  .chat > div.date { font-size: 12px; vertical-align: bottom; }
-  .my.chat { float:left; padding: 10px; max-width: 250px;}
-  .my.chat > div.text { background-color: #4372F4; color:white}
-  .your.chat {max-width: 250px;}
-  .your.chat > div.text { background-color: white; }
-  .chat > div.date { display: inline-block; }
+  .chat > span.text { display: inline-block; max-width: 500px; width: auto; padding: 8px 16px; border-radius: 50px;  word-break: break-all; }
+  .chat > span.date { font-size: 12px; vertical-align: bottom; }
+  .your.chat{float:right; padding:5px;}
+  .my.chat { float:left; padding: 5px; }
+  .my.chat > span.text { background-color: #E1EBFD; color:black; max-width: 250px;}
+  .your.chat > span.text { background-color: white; max-width: 250px; }
+  .chat > span.date { display: inline-block; }
 
 .profile{
   border-radius: 70%; 
