@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Header title="계약 진행" />
-    <div style=" background-color: #f9f8f8">
+    <Header style="position: fixed; z-index: 1;" title="계약 진행" />
+    <div style=" padding-top:60px; background-color: #f9f8f8">
       <div style="padding: 30px">
       
         <!-- 1. 전자계약서카드  -->
