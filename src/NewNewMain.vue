@@ -4,7 +4,7 @@
 </head>
 <div>
   <Header style="position: fixed; border-bottom: 0.8px solid #DFDEDE;" title="내가 본 부동산" />
-  <div style="padding-top:60px;">
+  <div style="padding-top:50px;">
     <div class="tab-button-wrap">
       <button type="button" class="tabbutton" :class="{blue:tabNum==0}" @click="tabNum = 0">최근 본</button>
       <button type="button" class="tabbutton" :class="{blue:tabNum==1}" @click="tabNum = 1">계약진행</button>
