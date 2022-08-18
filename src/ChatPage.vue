@@ -10,7 +10,6 @@
       <img src="@/assets/hamResized.png" alt="menuIcon">
     </div>
   </div> -->
-<Header title="KB전문가 상담" />
   <div class="contents" style="padding-top:44px; padding-bottom:50px;">
     <!-- <hr class="bold"/> -->
     <div style="position: fixed; background-color: #E8E8E8; border-radius: 1em; height:90px; width:300px;" class="top clear">
