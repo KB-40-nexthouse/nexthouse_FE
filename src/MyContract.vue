@@ -138,13 +138,13 @@ body {
   top: 70px;
 }
 .v76_1233 {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     /* background: red; */
     opacity: 1;
     position: absolute;
-    top: 420px;
-    left: 330px;
+    top: 530px;
+    left: 375px;
     overflow: hidden;
     z-index: 1;
   }

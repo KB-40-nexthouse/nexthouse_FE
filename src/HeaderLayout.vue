@@ -7,6 +7,7 @@
     <div class="" style="float: right; padding-top: 15px; padding-right: 10px">
       <img src="@/assets/hamResized.png" alt="menuIcon">
     </div>
+    
   </div>
 </template>
 
@@ -34,7 +35,8 @@ export default {
   text-align: center;
   background-color: white;
   width: 100%;
-  height: 44px;
+  height: 50px;
+  border-bottom : 3px;
 }
 
 /* 헤더 텍스트 색상 */

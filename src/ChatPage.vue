@@ -1,7 +1,9 @@
 <template>
-<Header title="KB전문가 상담" />
+<<<<<<< HEAD
+<Header style="position: fixed; background-color: white;" title="KB전문가 상담" />
   <!--Header-->
   <!-- <div class="header" >
+
     <h2 style="float: left;">
         &nbsp; &lt; &nbsp; KB 전문가 상담
     </h2>
@@ -9,9 +11,12 @@
       <img src="@/assets/hamResized.png" alt="menuIcon">
     </div>
   </div> -->
+=======
+<Header title="KB전문가 상담" />
+>>>>>>> 78efe677229d6feaa5010e91d9d01f51f891a271
   <div class="contents" style="padding-top:44px; padding-bottom:50px;">
     <!-- <hr class="bold"/> -->
-    <div class="top clear">
+    <div style="position: fixed; background-color: #E8E8E8; border-radius: 1em; height:90px; width:300px;" class="top clear">
       <!-- 상담사 프로필 이미지-->
       <div class="left" style="float:left; padding-top:5px;">
         <img src="@/assets/profileImg.png" alt="상담사 이미지" />
@@ -186,7 +191,7 @@ hr.bold { height: 12px; }
   .chat > div.text { display: inline-block; max-width: 500px; width: auto; padding: 8px 16px; border-radius: 50px;  word-break: break-all; }
   .chat > div.date { font-size: 12px; vertical-align: bottom;}
   .my.chat { padding-bottom: 5px; padding-top: 5px; }
-  .my.chat > div.text { background-color: #4372F4; }
+  .my.chat > div.text { background-color: #E0EBFF; }
   .your.chat > div.text { background-color: #D3D3D3; }
   .chat > div.date { display: inline-block; }
 

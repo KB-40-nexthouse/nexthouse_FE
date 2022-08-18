@@ -32,7 +32,7 @@
     <span class="v76_1224"><b>아래 서명을 기입해주세요.</b></span>
     <span class="v76_1229"><b>전자계약서 서명</b></span>
     <button type='button' @click="handleSaveClick()" class="v76_1230_1" >
-      <span class=""><b>서명 완료</b></span>
+      <span class="" style="color:white; font-weight:bold;"><b>서명 완료</b></span>
     </button>
     <!-- 캔버스테스트 -->
     <canvas id="canvasT"  class="v76_1232"
