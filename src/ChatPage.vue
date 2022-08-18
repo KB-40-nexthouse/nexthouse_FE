@@ -1,47 +1,32 @@
 <template>
-<Header style="position: fixed; background-color: white;" title="KB전문가 상담" />
-  <!--Header-->
-  <!-- <div class="header" >
-
-    <h2 style="float: left;">
-        &nbsp; &lt; &nbsp; KB 전문가 상담
-    </h2>
-    <div class="" style="float: right; padding-top: 15px; padding-right: 10px">
-      <img src="@/assets/hamResized.png" alt="menuIcon">
-    </div>
-  </div> -->
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<Header style="position: fixed; background-color: white; border-bottom: 0.8px solid #DFDEDE;" title="KB전문가 상담" />
   <div class="contents" style="padding-top:44px; padding-bottom:50px;">
     <!-- <hr class="bold"/> -->
-    
-    <div style="position: fixed; background-color: #E8E8E8; border-radius: 1em; height:90px; width:300px; " class="top clear">
+    <div style="position: fixed; background-color: white;  width:100%;border-top: 0.8px solid #DFDEDE; border-bottom: 1px solid #DFDEDE; padding: 10px 0 10px 20px " class="top clear">
       <!-- 상담사 프로필 이미지-->
-      <div class="left" style="float:left; padding-top:5px; padding-bottom z-index: 1;">
-        <img src="@/assets/counselor.jpg" alt="상담사 이미지" />
+      <div style="float:left; ">
+        <img class="profile" src="@/assets/counselor.jpg" alt="상담사 이미지" />
       </div>
       <!-- 상담사 정보-->
-      <div class="right" style="float:left; padding-left: 8px;">
-        <h3>상담가 {{ this.Counseler.adsrNm }}</h3>
-        <div style="padding-top:10px;">
-          <h6>&#8226; {{ this.Counseler.departmentNm }}<br></h6>
-          <h6>&#8226; {{ this.Counseler.dtlInfo }}<br></h6>
-        </div>
+      <div class="right" style="float:left; padding-left: 16px; padding-top:12px; ">
+        <div style="font-size:15px;line-height: 1.3;">{{ this.Counseler.adsrNm }} 상담사님</div>
+        <span style="font-size:13px; color:#9A9A9A">KB국민은행 {{ this.Counseler.departmentNm }} </span>
+        <span class="material-icons" style="font-size:17px; color:#9A9A9A; padding-left:2px;">help_outline</span>
       </div>
-      <!-- <div class="changeButton" style="float:right; padding-right:20px; padding-top:10px;">
-          <button class="button">상담사 변경</button>
-      </div> -->
     </div>
 
     <!-- 채팅내역 -->
-    <div class="bottom">
-      <p class="chat-date" style=""><span>2022.08.19</span></p>
-      <ul style="padding : 50px 0 16px;">
+    <div class="bottom" style="background-color:#FAF8F8;">
+      <ul style="padding : 100px 0 16px;">
         <div v-for="(C,index) in ChatList" :key="index">
           <div class="clear" v-if="C.sendId=='100000001'">
             <li class="my chat" style=" float:right;">
             <div class="date">{{C.msgTime}}</div>
             <div class="text" >{{C.msg}}</div>
             </li>
-          <!-- {{C.sendId}} -->
           </div>
           <div v-else>
             <li class="your chat clear" style="float:left">
@@ -55,14 +40,12 @@
   </div>
 
       <!-- 채팅입력 -->
-    <div class="input-wrap clear" style="position: fixed; bottom: 0; height:60px; width: 100%; background-color:white; ">
-    <!-- <p class="chat-date"></p> -->
-      <div class="Text-Input">
-        <input @keyup.enter ="MessageSending()" name="user-text" type="text" v-model ="msg" style="width:100%; padding-top:20px; border-top: 0.5px solid #e2e2e2;" placeholder="메세지를 입력하세요."/>
-      </div>
-      <div class="Send-Icon" style="float: right;">
-        <img @click="MessageSending()" src="@/assets/SendIconB.png" style="vertical-align: middle; padding-right: 10px; padding-top: 10px; cursor: grab;" alt="sendIcon">
-      </div>
+    <div class="input-wrap clear" style="position: fixed; bottom: 0; height:50px; width: 100%; background-color:white; border-top: 0.5px solid #9A9A9A;">
+      <span style="float:left; color:#4372F4; padding:6px;"><i style="font-size:35px;" class="material-icons">add</i></span>
+      <span class="Text-Input" ><input @keyup.enter ="MessageSending()" name="user-text" type="text" v-model ="msg" style=" padding-top:18px; " placeholder="메세지를 입력하세요."/></span>
+      <span class="Send-Icon" style="float: right; padding-right:5px;">
+        <button class="material-icons" style="color:#4372F4;padding-top:5px; font-size:40px;" @click="MessageSending()">play_arrow</button>
+      </span>
     </div>
 </template>
 
@@ -172,32 +155,32 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&display=swap');
 /* 헤더 디자인 */
 
-.header {
-  text-align: center;
-  background-color: white;
-  width: 100%;
-  height: 44px;
-}
-
 /* float: left , right */
 /* text-align: left , right , center */
 
 hr.bold { height: 12px; }
   .chat-date { position: relative; text-align: right;}
-  /* .chat-date::before { content: ""; position: absolute; left: 0%; top: 50%; transform: translateY(-50%); width: 100%; height: 1px; background-color: #d0d0d0 } */
-  .chat-date > span { position: relative; z-index: 1; background-color: #ffffff; display: inline-block; padding : 4px 8px; }
+  .chat-date > span { position: relative; z-index: 1; display: inline-block; padding : 4px 8px; }
   .chat > div.text { display: inline-block; max-width: 500px; width: auto; padding: 8px 16px; border-radius: 50px;  word-break: break-all; }
-  .chat > div.date { font-size: 12px; vertical-align: bottom;}
-  .my.chat { padding-bottom: 5px; padding-top: 5px; }
-  .my.chat > div.text { background-color: #E0EBFF; }
-  .your.chat > div.text { background-color: #E2E2E2; }
+  .chat > div.date { font-size: 12px; vertical-align: bottom; }
+  .my.chat { float:left; padding: 10px; max-width: 250px;}
+  .my.chat > div.text { background-color: #4372F4; color:white}
+  .your.chat {max-width: 250px;}
+  .your.chat > div.text { background-color: white; }
   .chat > div.date { display: inline-block; }
+
+.profile{
+  border-radius: 70%; 
+  width:64px; 
+  height:64px;
+  box-shadow: 0 0 5px #4372F4; 
+}
 
 .Text-Input{
   float: left;
-  width: 100%;
-  max-width: calc(100% - 50px);
-  padding-left: 10px;
+  max-width: calc(100% - 100px);
+  padding-left: 2px;
+  padding-bottom:2px;
 }
 .Text-Input input{
   background: transparent;
@@ -206,29 +189,4 @@ hr.bold { height: 12px; }
   color: #000000;
 }
 
-h2, h3, h4, h5{
-  /* font-family: 'Inter'; */
-  font-style: normal;
-  font-weight: 100;
-  font-size: 16px;
-  line-height: 30px;
-  color: #000000;
-  padding-top: 15px;
-}
-
-h6{
-  /* font-family: 'Inter'; */
-  font-style: normal;
-  font-size: 12px;
-  color:#000000;
-}
-
-.button {
-  background-color: #FFCC3CCC;
-  border: 5px solid #FFCC3C;
-  color: black;
-  text-align: center;
-  border-radius: 5px;
-  font-weight: bold;
-}
 </style>

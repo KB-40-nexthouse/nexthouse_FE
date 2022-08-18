@@ -1,4 +1,9 @@
 <template>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
 <div>
     <nav>
     <!-- <router-link to="/">Home</router-link> | -->

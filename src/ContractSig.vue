@@ -151,12 +151,6 @@ export default {
         console.log("에러 데이터 : " + error.data);
       });
     },
-    // goNext(){
-    //     localStorage.setItem('no', this.modelNo);
-    //     localStorage.setItem('p', this.status);
-    //     localStorage.setItem('rent', this.rentNo);
-    //     this.$router.push('/MyJunyipEnd');
-    // }
     postProgress() {
     this.$axios.post('http://nexthouse.169.56.100.104.nip.io/nexthouse/RentCntrNextStep/rentCntrNo='+this.rentNo+'&progress=1')
       .then(res => {
@@ -165,7 +159,6 @@ export default {
       .catch(error => {
       console.log("에러 데이터 : " + error.data);
       });
-    //this.$router.push('/staging');
     },
   },
   beforeMount(){
