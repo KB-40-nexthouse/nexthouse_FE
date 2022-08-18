@@ -192,7 +192,7 @@ export default {
   .contents{
     background-color:#B3B3B4;
     width:100%;
-    height:39vh;
+    height:34vh;
     position:relative;
   }
 
