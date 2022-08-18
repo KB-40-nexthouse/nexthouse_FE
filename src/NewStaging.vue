@@ -15,7 +15,7 @@
               잃어버리기 쉬운 실물 계약서 대신<br />
               보관과 조회가 편리한 전자계약서를 작성할 수 있어요.
             </p>
-            <button id='btn_01' class="btn_on" :class="{btn_end:status>1, btn_yet:status<1}"  type="button" @click="ToEleccontract()" style="display: block;  width: 100%;padding: 16px;border-radius: 10px;">
+            <button id='btn_01' class="btn_on" :class="{btn_end:status>1, btn_yet:status<1}"  type="button" @click="ToEleccontract()" style="display: block;  width: 100%;padding: 16px;border-radius: 10px; ">
               작성하기
             </button>
           </div>
@@ -212,14 +212,19 @@ export default {
 
 .btn_on {
     background-color: #4372F4;
+    color: white;
+    font-weight : bolder;
 }
 
 .btn_end {
     background-color: #A6A6A6;
+    color:black;
+    font-weight : normal;
 }
 
 .btn_yet {
     background-color: #E0EBFF;
-
+    color:black;
+    font-weight : normal;
 }
 </style>

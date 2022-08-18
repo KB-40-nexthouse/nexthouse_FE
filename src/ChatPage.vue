@@ -1,14 +1,5 @@
 <template>
 <Header title="KB전문가 상담" />
-  <!--Header-->
-  <!-- <div class="header" >
-    <h2 style="float: left;">
-        &nbsp; &lt; &nbsp; KB 전문가 상담
-    </h2>
-    <div class="" style="float: right; padding-top: 15px; padding-right: 10px">
-      <img src="@/assets/hamResized.png" alt="menuIcon">
-    </div>
-  </div> -->
   <div class="contents" style="padding-top:44px; padding-bottom:50px;">
     <!-- <hr class="bold"/> -->
     <div class="top clear">
