@@ -1,4 +1,5 @@
 <template>
+<div>
     <Header title="전자계약서 확인" style="background-color:#B3B3B4;" />
     <div class="contents"></div>
     <div class="sign">
@@ -8,16 +9,17 @@
           </div>
           <div class="signText2">아래 서명을 기입해주세요.</div>
           
-          <canvas id="canvasT"  class="canvasT"
+    </div>
+    <canvas id="canvasT"  class="canvasClass"
             v-bind:ontouchstart="touchStart"
             v-bind:ontouchmove="touchMove"
             v-bind:ontouchend="touchEnd"
             ref = "myCanvas">
-          </canvas>
-    </div>
+    </canvas>
     <div class="fixed_button" >
       <button type="button" @click="handleSaveClick()" >다음</button>
     </div>
+</div>
 </template>
 <script>
  
@@ -190,19 +192,19 @@ export default {
   .contents{
     background-color:#B3B3B4;
     width:100%;
-    height:40%;
-    position:absolute;
+    height:25vh;
+    position:relative;
   }
 
   .close {width:40px; height:40px; float:right; padding-right:32px; margin-top:-19px;}
-  .close:before, .close:after {position: absolute;content:' ';height: 20px;width: 2px;background-color: #000;}
+  .close:before, .close:after {position: relative;content:' ';height: 20px;width: 2px;background-color: #000;}
   .close:before {transform: rotate(45deg);}
   .close:after {transform: rotate(-45deg);}
 
   .sign {
     width:100%;
     height:100px;
-    position: absolute;
+    position: relative;
     top: 40%;
     background-color: white;
     padding-top:15px;
@@ -223,14 +225,15 @@ export default {
     text-align: left;
   }
 
-  .canvasT {
+  .canvasClass {
     width: 100%;
-    height:500px;
+    height:300px;
     background: rgba(229,229,229,1);
     opacity: 1;
-    position: absolute;
+    position: relative;
     /* top: 469px; */
     /* left: 0px; */
     overflow: hidden;
+    z-index: 30;
   }
   </style>
