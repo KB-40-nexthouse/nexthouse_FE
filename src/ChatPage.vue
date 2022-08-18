@@ -35,9 +35,9 @@
       <ul style="padding : 0 16px;">
         <div v-for="(C,index) in ChatList" :key="index">
           <div class="clear" v-if="C.sendId=='100000001'">
-            <li class="my chat" style="float:right">
+            <li class="my chat" style="float:right;">
             <div class="date">{{C.msgTime}}</div>
-            <div class="text">{{C.msg}}</div>
+            <div class="text" style="color: white;">{{C.msg}}</div>
             </li>
           <!-- {{C.sendId}} -->
           </div>
@@ -187,7 +187,7 @@ hr.bold { height: 12px; }
   .chat > div.text { display: inline-block; max-width: 500px; width: auto; padding: 8px 16px; border-radius: 50px;  word-break: break-all; }
   .chat > div.date { font-size: 12px; vertical-align: bottom;}
   .my.chat { padding-bottom: 5px; padding-top: 5px; }
-  .my.chat > div.text { background-color: #E0EBFF; }
+  .my.chat > div.text { background-color: #4372F4; }
   .your.chat > div.text { background-color: #D3D3D3; }
   .chat > div.date { display: inline-block; }
 
