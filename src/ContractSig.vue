@@ -192,7 +192,7 @@ export default {
   .contents{
     background-color:#B3B3B4;
     width:100%;
-    height:34vh;
+    height:300px;
     position:relative;
   }
 
@@ -203,7 +203,7 @@ export default {
 
   .sign {
     width:100%;
-    height:14vh;
+    height:100px;
     position: relative;
     top: 40%;
     background-color: white;
@@ -227,7 +227,7 @@ export default {
 
   .canvasClass {
     width: 100%;
-    height:250px;
+    height:300px;
     background: rgba(229,229,229,1);
     opacity: 1;
     position: relative;
