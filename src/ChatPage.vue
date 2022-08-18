@@ -1,9 +1,11 @@
 <template>
+<div class="back" style="background-color:#FAF8F8; height:700px; !important; position:relative;"> 
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <Header style="position: fixed; background-color: white; border-bottom: 0.8px solid #DFDEDE;" title="KB전문가 상담" />
-  <div class="contents" style="padding-top:44px; padding-bottom:50px;">
+
+  <div class="contents" style="padding-top:44px; padding-bottom:50px; ">
     <!-- <hr class="bold"/> -->
     <div style="position: fixed; background-color: white;  width:100%;border-top: 0.8px solid #DFDEDE; border-bottom: 1px solid #DFDEDE; padding: 10px 0 10px 20px " class="top clear">
       <!-- 상담사 프로필 이미지-->
@@ -17,28 +19,27 @@
         <span class="material-icons" style="font-size:17px; color:#9A9A9A; padding-left:2px;">help_outline</span>
       </div>
     </div>
-
     <!-- 채팅내역 -->
-    <div class="bottom" style="background-color:#FAF8F8;">
-      <ul style="padding : 100px 0 16px;">
-        <div v-for="(C,index) in ChatList" :key="index">
-          <div class="clear" v-if="C.sendId=='100000001'">
-            <li class="my chat" style=" float:right;">
-            <span class="date">{{"오후"+C.msgTime.substr(10,6)}}</span>
-            <span class="text" >{{C.msg}}</span>
-            
-            </li>
+      <div class="bottom" style="background-color:#FAF8F8; ">
+        <ul style="padding : 100px 0 16px;">
+          <div v-for="(C,index) in ChatList" :key="index">
+            <div class="clear" v-if="C.sendId=='100000001'">
+              <li class="my chat" style=" float:right;">
+              <span class="date">{{"오후"+C.msgTime.substr(10,6)}}</span>
+              <span class="text" >{{C.msg}}</span>
+              
+              </li>
+            </div>
+            <div v-else>
+              <li class="your chat clear" style="float:left">
+              <span class="text">{{C.msg}}</span>
+              <span class="date">{{"오후"+C.msgTime.substr(10,6)}}</span>
+              </li>
+            </div>
           </div>
-          <div v-else>
-            <li class="your chat clear" style="float:left">
-            <span class="text">{{C.msg}}</span>
-            <span class="date">{{"오후"+C.msgTime.substr(10,6)}}</span>
-            </li>
-          </div>
-        </div>
-      </ul>
+        </ul>
+      </div>
     </div>
-  </div>
 
       <!-- 채팅입력 -->
     <div class="input-wrap clear" style="position: fixed; bottom: 0; height:50px; width: 100%; background-color:white; border-top: 0.5px solid #9A9A9A;">
@@ -48,6 +49,7 @@
         <button class="material-icons" style="color:#4372F4;padding-top:5px; font-size:40px;" @click="MessageSending()">play_arrow</button>
       </span>
     </div>
+  </div>
 </template>
 
 
@@ -154,7 +156,7 @@ export default {
 <style scoped>
 /* 폰트 import후 사용 */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&display=swap');
-/* 헤더 디자인 */
+
 
 hr.bold { height: 12px; }
   .chat-date { position: relative; text-align: right;}
@@ -163,9 +165,9 @@ hr.bold { height: 12px; }
   .chat > span.date { font-size: 12px; vertical-align: bottom; }
   .your.chat{float:right; padding:5px;}
   .my.chat { float:left; padding: 5px; }
-  .my.chat > span.text { background-color: #E1EBFD; color:black; max-width: 250px;}
+  .my.chat > span.text { background-color: #E1EBFD; max-width: 250px;}
   .your.chat > span.text { background-color: white; max-width: 250px; }
-  .chat > span.date { display: inline-block; }
+  /* .chat > span.date { display: inline-block; } */
 
 .profile{
   border-radius: 70%; 
