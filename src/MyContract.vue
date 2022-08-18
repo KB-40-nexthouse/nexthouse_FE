@@ -11,7 +11,7 @@
     <!-- <span class="v123123">전자계약서 서명</span> -->
 <!-- </div> -->
 <div>
-    <Header title="전자계약서 확인" />
+    <Header title="전자계약서 확인" style="border-bottom: 1px solid;"/>
     <div class="contract_page"></div>
     <div class="fixed_button button">
       <button type="button" @click="goBack()" :disabled="!checked">확인</button>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header style="position: fixed; z-index: 1;" title="계약 진행" />
+    <Header style="position: fixed; z-index: 1; border-bottom: 1px solid;" title="계약 진행" />
     <div style=" padding-top:60px; background-color: #f9f8f8">
       <div style="padding: 30px">
       

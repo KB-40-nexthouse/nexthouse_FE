@@ -1,5 +1,5 @@
 <template>
-<div class="Wrapper" style="padding-bottom:110px;">
+<div class="Wrapper" style="padding-bottom:110px; border-bottom: 1px solid;">
   <!--Header-->
   <!-- <div class="header" style="position:fixed;">
     <h2 style="float: left;">
